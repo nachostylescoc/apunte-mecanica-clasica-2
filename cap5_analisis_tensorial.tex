@@ -1,0 +1,1055 @@
+\chapter{Análisis Tensorial}
+
+\section{Convención de suma de Einstein}
+
+Sea el espacio vectorial $V(n,K)$, generalización a $n$ dimensiones sobre
+un campo $K$ del espacio vectorial estudiado en el capítulo anterior, con
+base $\{\vec e_i\}_{i=1}^n$. Si $\vec v\in V(n,K)$, se escribe como
+combinación lineal de la base elegida,
+\[
+\vec v = \sum_{i=1}^{n} v^i \vec e_i,
+\]
+donde $v^i$ es la componente del vector respecto de la base.
+
+\begin{definicion}[Convención de Einstein]
+Debido a que al trabajar con muchos índices aparecen muchas sumas,
+adoptamos la \textbf{convención de suma de Einstein}: eliminaremos el
+símbolo de suma $\sum$ y asumiremos que \textbf{índices repetidos
+significan suma}, a menos que se diga explícitamente lo contrario.
+\end{definicion}
+
+Con esta convención, la ecuación anterior se simplifica a
+\[
+\vec v = v^i \vec e_i .
+\]
+Del mismo modo, si $\vec f \in V^*(n,K)$ es un vector dual escrito en la
+base dual $\{\vec E^i\}_{i=1}^n$,
+\[
+\vec f = f_i \vec E^i .
+\]
+Los vectores del espacio dual son mapeos lineales que actúan sobre los
+vectores del espacio vectorial y los llevan a $K$,
+\[
+f(v) = f_i v^i \in K,
+\]
+donde recordamos que los vectores duales se definen mediante
+$E^i(e_j)=\delta^i_j$. A partir de aquí, salvo que se indique lo
+contrario, se usará siempre la convención de Einstein.
+
+\section{Subir y bajar índices}
+
+Como se estudió en el capítulo anterior, la métrica $g_{ij}$ permite
+definir el producto escalar y, además, permite pasar del espacio
+vectorial al espacio vectorial dual,
+\[
+g_{ij} : V(n,K) \longrightarrow V^*(n,K), \qquad v_i = g_{ij} v^j .
+\]
+Como $\det(g_{ij})\neq 0$, existe la métrica inversa $g^{ij}$, tal que
+$g^{ik}g_{kj}=\delta^i_j$, la cual permite pasar del espacio vectorial
+dual al espacio vectorial,
+\[
+g^{ij} : V^*(n,K) \longrightarrow V(n,K), \qquad f^i = g^{ij} f_j .
+\]
+
+\begin{observacion}
+Decimos que la métrica \textbf{baja índices}: convierte índices
+contravariantes en covariantes. La métrica inversa \textbf{sube
+índices}: convierte índices covariantes en contravariantes.
+\end{observacion}
+
+\begin{proposicionc}
+La cantidad $v_i = g_{ij}v^j$, construida a partir del tensor $v^i$ de
+orden $(1,0)$, es un tensor de orden $(0,1)$.
+\end{proposicionc}
+
+\begin{proof}
+Sea la transformación de coordenadas $x'^i=x'^i(x^j)$. Usando la
+definición $v_i=g_{ij}v^j$ en el sistema $O'x'^i$ y las leyes de
+transformación de $g_{ij}$ y $v^j$,
+\[
+v'_i = g'_{ij} v'^j = \frac{\partial x^k}{\partial x'^i}\frac{\partial
+x^l}{\partial x'^j} g_{kl}\, \frac{\partial x'^j}{\partial x^n} v^n =
+\frac{\partial x^k}{\partial x'^i}\left(\frac{\partial x^l}{\partial
+x'^j}\frac{\partial x'^j}{\partial x^n}\right) g_{kl} v^n = \frac{\partial
+x^k}{\partial x'^i}\, \delta^l_n\, g_{kl} v^n = \frac{\partial
+x^k}{\partial x'^i}\, g_{kl} v^l = \frac{\partial x^k}{\partial x'^i}
+v_k,
+\]
+donde en el último paso se usó nuevamente $v_k=g_{kl}v^l$. Por lo tanto
+\[
+v'_i = \frac{\partial x^k}{\partial x'^i}\, v_k ,
+\]
+que es precisamente la ley de transformación de un tensor de orden
+$(0,1)$. \qedhere
+\end{proof}
+
+\begin{proposicionc}
+La cantidad $f^i=g^{ij}f_j$, construida a partir del tensor $f_i$ de
+orden $(0,1)$, es un tensor de orden $(1,0)$.
+\end{proposicionc}
+
+\begin{proof}
+Análogamente,
+\[
+f'^i = g'^{ij}f'_j = \frac{\partial x'^i}{\partial x^k}\frac{\partial
+x'^j}{\partial x^l} g^{kl}\, \frac{\partial x^n}{\partial x'^j} f_n =
+\frac{\partial x'^i}{\partial x^k}\left(\frac{\partial x'^j}{\partial
+x^l}\frac{\partial x^n}{\partial x'^j}\right) g^{kl} f_n = \frac{\partial
+x'^i}{\partial x^k}\, \delta^n_l\, g^{kl} f_n = \frac{\partial
+x'^i}{\partial x^k}\, g^{kl}f_l = \frac{\partial x'^i}{\partial x^k}
+f^k , \qedhere
+\]
+que es la ley de transformación de un tensor de orden $(1,0)$.
+\end{proof}
+
+\section{El producto tensorial}
+
+\subsection{Motivación: producto tensorial de matrices columna}
+
+Comencemos con $n=3$ y el espacio vectorial $\mathbb{R}^3$, escribiendo
+los vectores como matrices columna.
+
+\begin{definicion}[Producto tensorial de matrices columna]
+Sean los vectores $v=(v^1,v^2,v^3)^T$ y $w=(w^1,w^2,w^3)^T$. Se define el
+\textbf{producto tensorial} entre $v$ y $w$, denotado $\otimes$, como la
+matriz
+\[
+M = v\otimes w = \begin{pmatrix} v^1 \\ v^2 \\ v^3 \end{pmatrix} \otimes
+\begin{pmatrix} w^1 \\ w^2 \\ w^3 \end{pmatrix} = \begin{pmatrix}
+v^1w^1 & v^1w^2 & v^1w^3 \\ v^2w^1 & v^2w^2 & v^2w^3 \\ v^3w^1 & v^3w^2 &
+v^3w^3 \end{pmatrix}.
+\]
+\end{definicion}
+
+\begin{ejemplo}
+Sean $v=(1,-2,3)^T$ y $w=(1,1,2)^T$; entonces
+\[
+M = v\otimes w = \begin{pmatrix} 1 & 1 & 2 \\ -2 & -2 & -4 \\ 3 & 3 & 6
+\end{pmatrix}.
+\]
+\end{ejemplo}
+
+El producto tensorial entre dos matrices de $3\times 1$ genera una matriz
+de $3\times 3$; como las matrices de $3\times 3$ forman un espacio
+vectorial de dimensión $3\times 3=9$, su base canónica debe contener $9$
+matrices linealmente independientes, dadas por
+\[
+e_{ij} = \left(\text{matriz con un } 1 \text{ en la fila } i,\ \text{columna } j,\ \text{y } 0
+\text{ en el resto}\right), \qquad i,j=1,2,3.
+\]
+Cualquier matriz $M$ de $3\times 3$ se escribe entonces como combinación
+lineal de estas 9 matrices base. Reescribiendo el producto tensorial
+(11) en esta base:
+\[
+M = v\otimes w = v^1w^1e_{11} + v^1w^2e_{12} + \dots + v^3w^3e_{33} =
+v^iw^j e_{ij} \qquad \text{(convención de Einstein)}.
+\]
+Por otro lado, $M$ se escribe en términos de la misma base como
+$M = M^{ij}e_{ij}$, donde $M^{ij}$ es la componente de $M$ en la base
+$\{e_{ij}\}$. Comparando ambas expresiones,
+\[
+M^{ij} = v^iw^j .
+\]
+
+\begin{observacion}
+No todas las matrices de $3\times 3$ se pueden escribir en la forma
+$M^{ij}=v^iw^j$: por ejemplo, la matriz
+$\begin{pmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1\end{pmatrix}$
+no admite vectores $v,w$ tales que $M=v\otimes w$. Sin embargo,
+\textbf{todas} las matrices de $3\times3$, deriven o no de un producto
+tensorial, se pueden escribir en la base $\{e_{ij}\}$; esta forma general
+es la que se generaliza a continuación.
+\end{observacion}
+
+\subsection{Producto tensorial de espacios vectoriales genéricos}
+
+El producto tensorial es un producto lineal:
+\[
+v\otimes(w+u) = v\otimes w + v\otimes u, \qquad (w+u)\otimes v = w\otimes
+v + u\otimes v .
+\]
+Para $v,w\in V(n,K)$, el producto tensorial se escribe entonces
+\[
+M = v\otimes w = v^i\vec e_i \otimes w^j\vec e_j = v^iw^j\, \vec
+e_i\otimes\vec e_j = M^{ij}\, \vec e_i\otimes\vec e_j, \qquad M^{ij}=
+v^iw^j,
+\]
+y, comparando con el caso de matrices columna, se concluye que
+\[
+e_{ij} = \vec e_i \otimes \vec e_j, \qquad i,j=1,\dots,n.
+\]
+
+\begin{definicion}[Componente irreducible]
+La componente $M^{ij}$ de la matriz $M$ se dice \textbf{irreducible} si
+\emph{no} se puede escribir en la forma $M^{ij}=v^iw^j$, es decir, si
+$M \neq v\otimes w$.
+\end{definicion}
+
+\begin{definicion}[Espacio $V(n,K)\otimes V(n,K)$]
+Se define el espacio vectorial $V(n,K)\otimes V(n,K)$, con base
+$\{\vec e_i\otimes\vec e_j\}_{i,j=1}^n$, tal que un vector $T$ de este
+espacio se escribe como
+\[
+T = T^{ij}\, \vec e_i \otimes \vec e_j ,
+\]
+con $T^{ij}$ la componente de $T$ en la base elegida.
+\end{definicion}
+
+Bajo una transformación de coordenadas $x'^i=x'^i(x^j)$, la base
+$\{\vec e_i\}$ transforma como $\vec e\,'_i = (\partial x^j/\partial
+x'^i)\, \vec e_j$. Un vector $T\in V(n,K)\otimes V(n,K)$ escrito en los
+sistemas $Ox^i$ y $O'x'^i$ debe satisfacer el \textbf{principio de
+covariancia}, $T\big|_{O'}=T\big|_O$:
+
+\begin{proposicionc}
+Bajo la transformación de coordenadas $x'^i=x'^i(x^j)$, la componente de
+un vector $T\in V(n,K)\otimes V(n,K)$ transforma como
+\[
+T'^{ij} = \frac{\partial x'^i}{\partial x^k}\frac{\partial
+x'^j}{\partial x^l}\, T^{kl} .
+\]
+Es decir, $T^{ij}$ es un tensor de orden $(2,0)$.
+\end{proposicionc}
+
+\begin{proof}
+De $T^{ij}\vec e_i\otimes\vec e_j = T'^{kl}\vec e\,'_k\otimes\vec e\,'_l
+= T'^{kl}\dfrac{\partial x^i}{\partial x'^k}\dfrac{\partial
+x^j}{\partial x'^l}\, \vec e_i\otimes\vec e_j$ y la independencia lineal
+de la base $\{\vec e_i\otimes\vec e_j\}$, se obtiene
+\[
+T^{ij} = \frac{\partial x^i}{\partial x'^k}\frac{\partial
+x^j}{\partial x'^l}\, T'^{kl},
+\]
+de donde, despejando $T'^{ij}$ (transformación inversa), se sigue el
+resultado. \qedhere
+\end{proof}
+
+\subsection{Generalización a tensores de orden \texorpdfstring{$(p,0)$}
+{(p,0)}}
+
+\begin{definicion}
+Se define el espacio vectorial $\underbrace{V(n,K)\otimes\dots\otimes
+V(n,K)}_{p\text{ veces}}$, con base $\{\vec e_{i_1}\otimes\dots\otimes
+\vec e_{i_p}\}_{i_1,\dots,i_p=1}^n$, tal que un vector $T$ de este
+espacio se escribe
+\[
+T = T^{i_1i_2\dots i_p}\, \vec e_{i_1}\otimes\vec e_{i_2}\otimes\dots
+\otimes\vec e_{i_p}.
+\]
+\end{definicion}
+
+\begin{proposicionc}
+Bajo $x'^i=x'^i(x^j)$, la componente $T^{i_1\dots i_p}$ transforma como
+\[
+T'^{i_1i_2\dots i_p} = \frac{\partial x'^{i_1}}{\partial x^{j_1}}
+\frac{\partial x'^{i_2}}{\partial x^{j_2}} \cdots \frac{\partial
+x'^{i_p}}{\partial x^{j_p}}\, T^{j_1j_2\dots j_p}.
+\]
+\end{proposicionc}
+
+\begin{definicion}[Tensor contravariante de orden $p$]
+La cantidad $T^{i_1\dots i_p}$ se dice un \textbf{tensor contravariante
+de orden $p$}, o tensor de orden $(p,0)$, si bajo una transformación de
+coordenadas transforma como en la proposición anterior. Su ley de
+transformación contiene $p$ matrices $\partial x'^i/\partial x^j$ de
+forma homogénea (todas del mismo tipo).
+\end{definicion}
+
+\subsection{Generalización a tensores de orden \texorpdfstring{$(0,q)$}
+{(0,q)}}
+
+De manera análoga, usando el espacio vectorial dual $V^*(n,K)$: para
+$V,W\in V^*(n,K)$,
+\[
+T = V\otimes W = V_iE^i \otimes W_jE^j = V_iW_j\, E^i\otimes E^j =:
+T_{ij}\, E^i\otimes E^j, \qquad T_{ij}=V_iW_j.
+\]
+Nótese que $T\notin V^*(n,K)$, sino que pertenece a un nuevo espacio
+vectorial dual, y en general $T_{ij}\neq V_iW_j$ para un tensor
+arbitrario.
+
+\begin{definicion}
+Se define el espacio vectorial $\underbrace{V^*(n,K)\otimes\dots\otimes
+V^*(n,K)}_{q\text{ veces}}$, con base $\{E^{i_1}\otimes\dots\otimes
+E^{i_q}\}_{i_1,\dots,i_q=1}^n$, tal que $T$ en este espacio se escribe
+\[
+T = T_{i_1i_2\dots i_q}\, E^{i_1}\otimes E^{i_2}\otimes\dots\otimes
+E^{i_q}.
+\]
+\end{definicion}
+
+\begin{proposicionc}
+Bajo $x'^i=x'^i(x^j)$, la componente $T_{i_1\dots i_q}$ transforma como
+\[
+T'_{i_1i_2\dots i_q} = \frac{\partial x^{j_1}}{\partial x'^{i_1}}
+\frac{\partial x^{j_2}}{\partial x'^{i_2}} \cdots \frac{\partial
+x^{j_q}}{\partial x'^{i_q}}\, T_{j_1j_2\dots j_q}.
+\]
+\end{proposicionc}
+
+\begin{definicion}[Tensor covariante de orden $q$]
+La cantidad $T_{i_1\dots i_q}$ se dice un \textbf{tensor covariante de
+orden $q$}, o tensor de orden $(0,q)$, si transforma como en la
+proposición anterior; su ley de transformación contiene $q$ matrices
+$\partial x^j/\partial x'^i$ de forma homogénea.
+\end{definicion}
+
+Puesto que $V^*(n,K)\otimes\dots\otimes V^*(n,K)$ (con $q$ factores) es
+un espacio vectorial dual, actúa sobre $V(n,K)\otimes\dots\otimes
+V(n,K)$ ($p$ factores, con $p=q$, sin índices libres): si
+$V\in V(n,K)^{\otimes q}$ y $T\in V^*(n,K)^{\otimes q}$,
+\[
+T(V) = T_{i_1\dots i_q}\, V^{i_1\dots i_q} \in K .
+\]
+
+\subsection{Generalización a tensores de orden \texorpdfstring{$(1,1)$}
+{(1,1)} y \texorpdfstring{$(p,q)$}{(p,q)}}
+
+Para $V\in V(n,K)$ y $W\in V^*(n,K)$,
+\[
+T = V\otimes W = V^i\vec e_i\otimes W_jE^j = V^iW_j\, \vec e_i\otimes E^j
+=: T^i_{\ j}\, \vec e_i\otimes E^j, \qquad T^i_{\ j}=V^iW_j,
+\]
+donde $T$ pertenece a un nuevo \textbf{espacio vectorial mixto}
+$V(n,K)\otimes V^*(n,K)$ (en general $T^i_{\ j}\neq V^iW_j$).
+
+\begin{proposicionc}
+Si $T\in V(n,K)\otimes V^*(n,K)$, entonces bajo $x'^i=x'^i(x^j)$ la
+componente $T^i_{\ j}$ transforma como
+\[
+T'^i_{\ j} = \frac{\partial x'^i}{\partial x^k}\frac{\partial
+x^l}{\partial x'^j}\, T^k_{\ l} .
+\]
+\end{proposicionc}
+
+\begin{definicion}[Tensor de orden $(1,1)$]
+La cantidad $T^i_{\ j}$ se dice un tensor de orden $(1,1)$
+(contravariante de orden uno y covariante de orden uno) si transforma
+como en la proposición anterior.
+\end{definicion}
+
+\begin{observacion}
+El espacio mixto se escribe convencionalmente $V(n,K)\otimes V^*(n,K)$ y
+no al revés: como $V^*(n,K)$ es un espacio de funcionales lineales que
+actúan sobre $V(n,K)$, escribir $V^*(n,K)\otimes V(n,K)$ podría sugerir
+erróneamente que el dual actúa sobre el factor $V(n,K)$. (Alguna
+literatura usa el orden opuesto; no debe generar confusión.) En la ley de
+transformación de un tensor $(1,1)$ aparecen ambos tipos de matrices,
+$\partial x'^i/\partial x^j$ y $\partial x^j/\partial x'^i$, pero
+\emph{no} contraídas entre sí, pues actúan sobre índices distintos.
+\end{observacion}
+
+La generalización a un tensor de orden $(p,q)$ arbitrario es directa:
+
+\begin{definicion}[Tensor de orden $(p,q)$]
+Se define el espacio vectorial
+\[
+\underbrace{V(n,K)\otimes\dots\otimes V(n,K)}_{p\text{ veces}} \otimes
+\underbrace{V^*(n,K)\otimes\dots\otimes V^*(n,K)}_{q\text{ veces}},
+\]
+con base $\{\vec e_{i_1}\otimes\dots\otimes\vec e_{i_p}\otimes
+E^{j_1}\otimes\dots\otimes E^{j_q}\}$, tal que $T$ en este espacio se
+escribe
+\[
+T = T^{i_1\dots i_p}_{\quad\ j_1\dots j_q}\, \vec e_{i_1}\otimes\dots
+\otimes\vec e_{i_p}\otimes E^{j_1}\otimes\dots\otimes E^{j_q}.
+\]
+La cantidad $T^{i_1\dots i_p}_{\quad\ j_1\dots j_q}$ se dice un
+\textbf{tensor de orden $(p,q)$} (contravariante de orden $p$ y
+covariante de orden $q$) si bajo $x'^i=x'^i(x^j)$ transforma como
+\[
+T'^{i_1\dots i_p}_{\quad\ j_1\dots j_q} = \frac{\partial
+x'^{i_1}}{\partial x^{k_1}}\cdots\frac{\partial x'^{i_p}}{\partial
+x^{k_p}}\, \frac{\partial x^{l_1}}{\partial x'^{j_1}}\cdots\frac{\partial
+x^{l_q}}{\partial x'^{j_q}}\, T^{k_1\dots k_p}_{\quad\ l_1\dots l_q},
+\]
+con $p$ matrices $\partial x'^i/\partial x^j$ y $q$ matrices $\partial
+x^j/\partial x'^i$.
+\end{definicion}
+
+\begin{observacion}[Definición cualitativa]
+Un tensor es una entidad algebraica de varias componentes que generaliza
+los conceptos de escalar, vector y matriz de forma independiente del
+sistema de coordenadas elegido: es \textbf{invariante en forma} ante un
+cambio de coordenadas, $T\big|_O = T\big|_{O'}$.
+\end{observacion}
+
+\section{Subir y bajar índices en tensores generales}
+
+La métrica, al actuar sobre un tensor de orden $(0,p)$ (o, en general,
+sobre cualquier índice contravariante de un tensor de orden $(p,q)$),
+genera la cantidad
+\[
+T^{i_1\dots i_{s-1}}_{\quad\quad\ \ i_{s+1}\dots i_p\, j} = g_{jk}\,
+T^{i_1\dots i_{s-1}k i_{s+1}\dots i_p},
+\]
+que es un tensor de orden $(p-1,1)$ (se ``bajó'' un índice). En general
+se pueden bajar $r$ índices con $r$ métricas:
+\[
+T^{i_1\dots i_s}_{\quad\ \ i_{s+r+1}\dots i_p\, k_1\dots k_r} =
+g_{k_1j_1}\cdots g_{k_rj_r}\, T^{i_1\dots i_s j_1\dots j_r
+i_{s+r+1}\dots i_p},
+\]
+que es un tensor de orden $(p-r,r)$. De modo análogo, la métrica inversa
+permite \textbf{subir} $r$ índices covariantes de un tensor de orden
+$(0,q)$, obteniendo un tensor de orden $(r,q-r)$.
+
+\subsection{Los símbolos de Christoffel}
+
+\begin{definicion}[Símbolos de Christoffel]
+Los \textbf{símbolos de Christoffel} $\Gamma^k_{ij}$ se definen a
+través de la derivada de la base coordenada,
+\[
+\frac{\partial \vec e_i}{\partial x^j} = \Gamma^k_{ij}\, \vec e_k .
+\]
+Miden el cambio de dirección (y de magnitud) de los vectores base al ser
+trasladados a lo largo de curvas del espacio.
+\end{definicion}
+
+\begin{proposicionc}
+Bajo la transformación de coordenadas $x'^i=x'^i(x^j)$, los símbolos de
+Christoffel transforman como
+\[
+\Gamma'^{\,k}_{ij} = \frac{\partial x'^k}{\partial x^m}\frac{\partial
+x^l}{\partial x'^i}\frac{\partial x^n}{\partial x'^j}\, \Gamma^m_{ln} +
+\frac{\partial x'^k}{\partial x^m}\, \frac{\partial^2 x^m}{\partial
+x'^i\partial x'^j} .
+\]
+\end{proposicionc}
+
+\begin{observacion}
+Los símbolos de Christoffel \textbf{no son un tensor}: su ley de
+transformación contiene el término inhomogéneo
+$(\partial x'^k/\partial x^m)(\partial^2 x^m/\partial x'^i\partial
+x'^j)$, que depende del sistema de coordenadas, mientras que los
+tensores, al ser covariantes, no dependen de él. Si los símbolos de
+Christoffel fueran un tensor, transformarían únicamente con el primer
+término (homogéneo),
+$\Gamma'^{\,k}_{ij}=(\partial x'^k/\partial x^m)(\partial x^l/\partial
+x'^i)(\partial x^n/\partial x'^j)\Gamma^m_{ln}$.
+
+El primer término (homogéneo) mide el cambio \emph{covariante} de los
+vectores base al ser trasladados, lo cual no depende del sistema
+coordenado sino del tipo de espacio (curvo o plano) en el que se
+trasladan. El segundo término (inhomogéneo) mide el cambio de los
+vectores base al ser trasladados sobre líneas coordenadas curvas, y sí
+depende del sistema coordenado elegido.
+\end{observacion}
+
+\section{Operaciones con tensores}
+
+Los tensores viven en espacios vectoriales, por lo que satisfacen las
+operaciones propias de un espacio vectorial.
+
+\begin{definicion}[Suma]
+Sean $V^{i_1\dots i_p}_{\ \ j_1\dots j_q}$ y $W^{i_1\dots
+i_p}_{\ \ j_1\dots j_q}$ dos tensores del mismo orden $(p,q)$ (por
+homogeneidad, deben serlo). Se define la suma
+\[
+T^{i_1\dots i_p}_{\quad\ j_1\dots j_q} = \alpha\, V^{i_1\dots
+i_p}_{\quad\ j_1\dots j_q} + \beta\, W^{i_1\dots i_p}_{\quad\ j_1\dots
+j_q}, \qquad \alpha,\beta\in K.
+\]
+\end{definicion}
+
+\begin{definicion}[Producto tensorial]
+El producto tensorial entre un tensor $V^{i_1\dots
+i_p}_{\quad\ j_1\dots j_q}$ de orden $(p,q)$ y un tensor $W^{i_1\dots
+i_{p'}}_{\quad\ j_1\dots j_{q'}}$ de orden $(p',q')$ se define como
+\[
+M^{i_1\dots i_{p+p'}}_{\quad\quad\ \ j_1\dots j_{q+q'}} = V^{i_1\dots
+i_p}_{\quad\ j_1\dots j_q}\, W^{i_{p+1}\dots i_{p+p'}}_{\quad\quad\
+j_{q+1}\dots j_{q+q'}} .
+\]
+\end{definicion}
+
+\begin{proposicionc}
+El producto tensorial de un tensor de orden $(p,q)$ con uno de orden
+$(p',q')$ es un tensor de orden $(p+p',q+q')$.
+\end{proposicionc}
+
+Por lo tanto, el producto tensorial permite \textbf{construir tensores de
+mayor orden}. La operación complementaria, llamada \textbf{contracción},
+permite construir tensores de \textbf{menor orden}.
+
+\begin{ejemplo}
+Sea el tensor $K^i_{\ jl}$. Sumando (contrayendo) los índices $i$ y $l$,
+\[
+K^l_{\ jl} \qquad \text{(convención de Einstein: suma sobre } l\text{)},
+\]
+se obtiene una cantidad con un solo índice libre, $j$.
+\end{ejemplo}
+
+\begin{proposicionc}
+Sea el tensor $K^i_{\ jl}$ de orden $(1,2)$; la contracción $K^l_{\ jl}$
+es un tensor de orden $(0,1)$.
+\end{proposicionc}
+
+\begin{definicion}[Contracción]
+La \textbf{contracción} consiste en poner bajo la operación de suma la
+misma cantidad de índices contravariantes y covariantes.
+\end{definicion}
+
+\begin{proposicionc}
+Sea $V^{i_1\dots i_p}_{\quad\ j_1\dots j_q}$ un tensor de orden $(p,q)$.
+Efectuando una contracción de $r$ índices contravariantes con $r$
+índices covariantes ($r<\min\{p,q\}$),
+\[
+V^{i_1\dots i_s k_1\dots k_r\, i_{s+r+1}\dots i_p}_{\quad\quad\quad\quad\
+\ \, j_1\dots j_s k_1\dots k_r\, j_{s+r+1}\dots j_q},
+\]
+se obtiene un tensor de orden $(p-r,q-r)$.
+\end{proposicionc}
+
+\begin{observacion}
+Si se desea contraer dos índices de la misma naturaleza (por ejemplo, dos
+índices covariantes $j,k$ del tensor $T_{ijk}$), esto no cumple la
+definición de contracción directamente. La solución es subir uno de los
+dos índices con la métrica inversa antes de contraer:
+\[
+T_i^{\ k} = g^{kl}T_{ijl}\, \delta^j_{(\cdot)} \quad\longrightarrow\quad
+\text{primero } T^{\ \ k}_{ij} = g^{kl}T_{ijl}, \quad\text{luego se
+contrae } i \text{ con } k.
+\]
+\end{observacion}
+
+\section{Simetrías}
+
+\begin{definicion}[Tensor simétrico]
+Un tensor se dice \textbf{simétrico} si bajo el intercambio de dos
+índices el tensor no cambia:
+\[
+T^{\dots i\dots j\dots} = +T^{\dots j\dots i\dots}, \qquad T_{\dots
+i\dots j\dots} = +T_{\dots j\dots i\dots}.
+\]
+\end{definicion}
+
+\begin{ejemplo}
+La métrica y la métrica inversa son simétricas: $g_{ij}=g_{ji}$,
+$g^{ij}=g^{ji}$.
+\end{ejemplo}
+
+\begin{observacion}
+La simetría de un tensor afecta el número de componentes independientes.
+Por ejemplo, la métrica $g_{ij}$ posee, en principio, $n\times n=n^2$
+componentes, pero al ser simétrica solo tiene $n(n+1)/2$ componentes
+independientes.
+\end{observacion}
+
+\begin{proposicionc}
+Un tensor de orden $(p,0)$, $T^{i_1\dots i_p}$, posee en principio $n^p$
+componentes independientes. Si dos de sus índices son simétricos,
+\[
+T^{i_1\dots j\dots k\dots i_p} = +T^{i_1\dots k\dots j\dots i_p},
+\]
+el número de componentes independientes se reduce a
+\[
+n^{p-2}\times \frac{n(n+1)}{2} = \frac{1}{2}n^{p-1}(n+1).
+\]
+\end{proposicionc}
+
+La misma conclusión se obtiene para tensores de orden $(0,q)$.
+
+\begin{definicion}[Tensor antisimétrico]
+Un tensor se dice \textbf{antisimétrico} si bajo el intercambio de dos
+índices el tensor cambia de signo:
+\[
+T^{\dots i\dots j\dots} = -T^{\dots j\dots i\dots}, \qquad T_{\dots
+i\dots j\dots} = -T_{\dots j\dots i\dots}.
+\]
+\end{definicion}
+
+\begin{proposicionc}
+Un tensor de orden $(2,0)$ antisimétrico, $T^{ij}=-T^{ji}$, en un espacio
+plano de $n$ dimensiones posee $n(n-1)/2$ componentes independientes (en
+vez de $n^2$). En general, para un tensor de orden $(p,0)$ con dos
+índices antisimétricos,
+\[
+n^{p-2}\times\frac{n(n-1)}{2} = \frac{1}{2}n^{p-1}(n-1).
+\]
+La misma conclusión se obtiene para tensores de orden $(0,q)$.
+\end{proposicionc}
+
+\begin{proposicionc}
+Un tensor antisimétrico posee ceros en los índices que se repiten:
+$T^{\dots i\dots i\dots}=0$ (sin suma).
+\end{proposicionc}
+
+\begin{proof}
+Haciendo $i=j$ en la definición de antisimetría (sin sumar sobre $i$),
+$T^{\dots i\dots i\dots} = -T^{\dots i\dots i\dots}$, de donde
+$T^{\dots i\dots i\dots}=0$. \qedhere
+\end{proof}
+
+\begin{definicion}[Descomposición simétrica-antisimétrica]
+Dado un tensor $T^{ij}$, siempre es posible construir su parte simétrica
+y antisimétrica:
+\[
+T^{(ij)} := \frac{1}{2}\left(T^{ij}+T^{ji}\right) = T^{(ji)}, \qquad
+T^{[ij]} := \frac{1}{2}\left(T^{ij}-T^{ji}\right) = -T^{[ji]} .
+\]
+El factor $1/2$ evita contar dos veces. Lo mismo se aplica a $T_{ij}$.
+\end{definicion}
+
+\begin{proposicionc}
+Todo tensor $T^{ij}$ (o $T_{ij}$) se descompone como
+\[
+T^{ij} = T^{(ij)} + T^{[ij]} .
+\]
+\end{proposicionc}
+
+\begin{proposicionc}
+Si $A^{ij}$ es simétrico y $B_{ij}$ es antisimétrico, entonces
+$A^{ij}B_{ij}=0$.
+\end{proposicionc}
+
+\begin{proposicionc}
+Si $A^{ij}$ es antisimétrico y $B_{ij}$ es un tensor cualquiera, entonces
+$A^{ij}B_{ij} = A^{ij}B_{[ij]}$.
+\end{proposicionc}
+
+\begin{ejemplo}
+Sea $T^{jkl}_{\ \ \ i}$; formemos sus partes simétrica y antisimétrica en
+los índices $i,k$. Como $i$ es covariante y $k$ contravariante, son de
+distinta naturaleza y deben igualarse antes de (anti)simetrizar. Subiendo
+$i$ con la métrica inversa, $T^{ijkl}=g^{in}T^{jkl}_{\ \ \ n}$:
+\begin{align*}
+T^{(i|j|k)l} &= \frac{1}{2}\left(T^{ijkl}+T^{kjil}\right) =
+\frac{1}{2}\left(g^{in}T^{jkl}_{\ \ \ n} + g^{kn}T^{jil}_{\ \ \ n}\right)
+= g^{n(i|}T^{j|k)l}_{\quad\ n}, \\
+T^{[i|j|k]l} &= \frac{1}{2}\left(T^{ijkl}-T^{kjil}\right) = g^{n[i|}
+T^{j|k]l}_{\quad\ n},
+\end{align*}
+donde las barras verticales indican que el índice $j$ queda excluido de
+la (anti)simetrización. Alternativamente, bajando el índice $k$ con la
+métrica $g_{ij}$ se obtiene la descomposición equivalente
+$T^{j\ \ l}_{\ (i\,k)}$, $T^{j\ \ l}_{\ [i\,k]}$.
+\end{ejemplo}
+
+\begin{definicion}[Tensor completamente antisimétrico]
+Un tensor se dice \textbf{completamente antisimétrico} si cambia de
+signo bajo cualquier permutación de un par de índices.
+\end{definicion}
+
+El caso completamente antisimétrico es de particular interés (más que el
+completamente simétrico). Para un tensor de orden $(0,q)$ completamente
+antisimétrico, $T_{i_1i_2\dots i_q}$, el número de componentes
+independientes es
+\[
+\binom{n}{q} = \frac{n!}{q!(n-q)!} .
+\]
+
+\begin{observacion}
+Si $q>n$ (más índices que dimensiones), entonces $\binom{n}{q}=0$: el
+tensor es idénticamente nulo, pues los índices deben repetirse
+obligatoriamente y, como vimos, los índices repetidos anulan un tensor
+completamente antisimétrico.
+\end{observacion}
+
+Si $q=n$, el tensor completamente antisimétrico posee $\binom{n}{n}=1$
+componente independiente.
+
+\subsection{El símbolo de Levi-Civita}
+
+\begin{ejemplo}[Caso $n=2$]
+El tensor $T_{ij}$ completamente antisimétrico en $2$ dimensiones,
+$T_{ij}=-T_{ji}$, se escribe
+\[
+T_{ij} = \begin{pmatrix} 0 & T_{12} \\ -T_{12} & 0 \end{pmatrix} =
+T_{12} \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} = T_{12}\,
+\epsilon_{ij},
+\]
+posee una sola componente independiente $T_{12}$. Se define
+\[
+\epsilon_{ij} = \begin{cases} +1, & (ij)=(12) \\ -1, & (ij)=(21) \\ 0, &
+i=j \end{cases}
+\]
+llamado \textbf{símbolo de Levi-Civita} en dos dimensiones.
+\end{ejemplo}
+
+\begin{observacion}
+El símbolo de Levi-Civita \textbf{no} es un tensor de orden $(0,2)$, sino
+una \emph{densidad tensorial} de orden $(0,2)$ y peso $-1$.
+\end{observacion}
+
+\begin{ejemplo}[Caso $n=3$]
+El tensor totalmente antisimétrico $T_{ijk}$ en tres dimensiones posee
+una única componente independiente $T_{123}$, tal que
+\[
+T_{ijk} = T_{123}\, \epsilon_{ijk},
+\]
+donde $\epsilon_{ijk}$ es el símbolo de Levi-Civita en tres dimensiones,
+\[
+\epsilon_{ijk} = \begin{cases} +1, & (ijk) \text{ permutación par de }
+(123) \\ -1, & (ijk) \text{ permutación impar de } (123) \\ 0, & \text{en
+otro caso.} \end{cases}
+\]
+Por ejemplo, $\epsilon_{213}=-\epsilon_{123}=-1$,
+$\epsilon_{132}=-\epsilon_{123}=-1$, $\epsilon_{312} =
+-\epsilon_{132}=+1$. Los signos, usando índices simbólicos $ijk$ en vez
+de $123$, se obtienen por \textbf{permutación cíclica}: por ejemplo,
+$\epsilon_{jik}=-\epsilon_{ijk}$, $\epsilon_{ikj}=-\epsilon_{ijk}$,
+$\epsilon_{kji} = -\epsilon_{jki} = \epsilon_{jik}=-\epsilon_{ijk}$.
+\end{ejemplo}
+
+Las propiedades siguientes se establecen en un sistema coordenado
+cartesiano de un espacio plano, donde $g_{ij}=\delta_{ij}$.
+
+\begin{proposicionc}
+El símbolo de Levi-Civita $\epsilon_{ijk}$ se puede escribir como
+\[
+\epsilon_{ijk} = \det\begin{pmatrix} \delta_{i1} & \delta_{i2} &
+\delta_{i3} \\ \delta_{j1} & \delta_{j2} & \delta_{j3} \\ \delta_{k1} &
+\delta_{k2} & \delta_{k3} \end{pmatrix},
+\]
+y satisface
+\[
+\epsilon_{ijk}\epsilon_{lmn} = \det\begin{pmatrix} \delta_{il} &
+\delta_{im} & \delta_{in} \\ \delta_{jl} & \delta_{jm} & \delta_{jn} \\
+\delta_{kl} & \delta_{km} & \delta_{kn} \end{pmatrix}, \qquad
+\epsilon_{ijk}\epsilon_{lmk} = \delta_{il}\delta_{jm} -
+\delta_{im}\delta_{jl}, \qquad \epsilon_{ijk}\epsilon_{ljk} =
+2\delta_{il} .
+\]
+\end{proposicionc}
+
+\begin{proposicionc}
+El determinante de un tensor $A^{ij}$ se puede escribir como
+\[
+\det(A^{ij}) = \epsilon_{ijk}A^{i1}A^{j2}A^{k3} = \frac{1}{3!}\,
+\epsilon_{ijk}\epsilon_{lmn}\, A^{il}A^{jm}A^{kn} .
+\]
+\end{proposicionc}
+
+\section{Producto vectorial}
+
+La base canónica $\{\ihat,\jhat,\khat\}$ de $\mathbb{R}^3$ satisface
+$\ihat\times\jhat=\khat$, $\ihat\times\khat=-\jhat$,
+$\jhat\times\khat=\ihat$. Escribiendo $\vec e_1=\ihat$, $\vec
+e_2=\jhat$, $\vec e_3=\khat$, esta álgebra se resume como
+\[
+\vec e_i \times \vec e_j = \epsilon_{ijk}\, \vec e_k .
+\]
+
+\begin{proposicionc}
+El producto cruz entre $\vec A$ y $\vec B$, $\vec C = \vec A\times\vec
+B$, se escribe en notación de índices como
+\[
+C^i = \epsilon^{ijk}A_jB_k .
+\]
+\end{proposicionc}
+
+\begin{proof}
+\[
+\vec C = \vec A\times\vec B = A^i\vec e_i\times B^j\vec e_j = A^iB^j\,
+\vec e_i\times\vec e_j = A^iB^j\epsilon_{ijk}\vec e_k = \epsilon_{jki}
+A^jB^k \vec e_i = \epsilon_{ijk}A^jB^k\, \vec e_i,
+\]
+usando la simetría cíclica $\epsilon_{jki}=\epsilon_{ijk}$. Comparando
+con $\vec C = C^i\vec e_i$, se concluye $C^i = \epsilon^{ijk}A_jB_k$
+(en cartesianas, $\epsilon^{ijk}=\epsilon_{ijk}$ e índices arriba/abajo
+son intercambiables). \qedhere
+\end{proof}
+
+\begin{ejemplo}
+Desarrollando explícitamente para $i=1,2,3$ (usando
+$\epsilon_{1jk},\epsilon_{2jk},\epsilon_{3jk}$ y anulando los términos
+con índices repetidos) se recupera la fórmula usual del producto cruz:
+\[
+C^1 = A^2B^3-A^3B^2, \qquad C^2 = A^3B^1-A^1B^3, \qquad C^3 =
+A^1B^2-A^2B^1.
+\]
+\end{ejemplo}
+
+\begin{proposicionc}
+El vector $\vec C=\vec A\times\vec B$ es perpendicular a $\vec A$ y a
+$\vec B$.
+\end{proposicionc}
+
+\begin{proof}
+Calculemos $\vec C\cdot\vec A = C^iA_i = \epsilon^{ijk}A_jB_kA_i =
+\epsilon^{ijk}A_iA_jB_k$. Definiendo el tensor simétrico
+$T^{ij}=A^iA^j=A^jA^i=T^{ji}$,
+\[
+\vec C\cdot\vec A = \epsilon^{ijk}T^{ij}B_k .
+\]
+Por ser $T^{ij}$ simétrico y $\epsilon^{ijk}$ antisimétrico en $(i,j)$,
+esta contracción se anula (Proposición sobre $A^{ij}B_{ij}=0$ para $A$
+simétrico y $B$ antisimétrico):
+\[
+\epsilon^{ijk}T^{ij}B_k = -\epsilon^{jik}T^{ij}B_k = -\epsilon^{ijk}
+T^{ji}B_k = -\epsilon^{ijk}T^{ij}B_k \;\Rightarrow\; \vec C\cdot\vec A =
+0 .
+\]
+La misma conclusión se obtiene para $\vec C\cdot\vec B=0$. \qedhere
+\end{proof}
+
+Se sigue que $\vec A\times\vec B$ es perpendicular al plano que
+contienen $\vec A$ y $\vec B$, y por lo tanto todo vector contenido en
+dicho plano es perpendicular a $\vec A\times\vec B$: en efecto, todo
+vector $\vec D$ del plano generado por $\vec A$ y $\vec B$ se escribe
+\[
+\vec D = \frac{D}{\sin(\theta_1+\theta_2)}\left(\sin\theta_2\, \hat A +
+\sin\theta_1\, \hat B\right),
+\]
+con $D=\|\vec D\|$, $\hat A=\vec A/A$, $\hat B=\vec B/B$, de donde
+$\vec D\cdot\vec C = 0$ directamente.
+
+\begin{proposicionc}
+Si $\vec A,\vec B,\vec C$ están contenidos en un plano, entonces
+$\epsilon_{ijk}A^iB^jC^k=0$. Si son no coplanares, el volumen que forman
+es
+\[
+V = \epsilon_{ijk}A^iB^jC^k .
+\]
+\end{proposicionc}
+
+\begin{proposicionc}
+La norma de $\vec C=\vec A\times\vec B$ es
+\[
+\|\vec C\| = \|\vec A\|\,\|\vec B\|\,\sin\theta ,
+\]
+donde $\theta$ es el ángulo entre $\vec A$ y $\vec B$.
+\end{proposicionc}
+
+\begin{proof}
+\begin{align*}
+\|\vec C\|^2 &= C^iC_i = \epsilon^{ijk}A_jB_k\,\epsilon_{inm}A^nB^m \\
+&= \left(\delta^j_n\delta^k_m - \delta^j_m\delta^k_n\right) A_jB_kA^nB^m
+\\
+&= A_jA^jB_kB^k - A_jB^jA^kB_k \\
+&= \|\vec A\|^2\|\vec B\|^2 - (\vec A\cdot\vec B)^2,
+\end{align*}
+usando la identidad $\epsilon^{ijk}\epsilon_{inm} =
+\delta^j_n\delta^k_m-\delta^j_m\delta^k_n$. Como $\vec A\cdot\vec B =
+\|\vec A\|\|\vec B\|\cos\theta$,
+\[
+\|\vec C\|^2 = \|\vec A\|^2\|\vec B\|^2(1-\cos^2\theta) = \|\vec
+A\|^2\|\vec B\|^2\sin^2\theta \;\Rightarrow\; \|\vec C\| = \|\vec
+A\|\,\|\vec B\|\,\sin\theta . \qedhere
+\]
+\end{proof}
+
+\section{Derivada covariante}
+
+Sea $\vec A$ un vector escrito en la base coordenada $Ox^i$. Calculemos
+su derivada parcial $\partial_i := \partial/\partial x^i$:
+\[
+\partial_i \vec A = \partial_i(A^j\vec e_j) = (\partial_iA^j)\vec e_j +
+A^j(\partial_i\vec e_j) = (\partial_iA^j)\vec e_j + A^j\Gamma^k_{ij}\vec
+e_k = \left(\partial_iA^j + \Gamma^j_{ik}A^k\right)\vec e_j ,
+\]
+donde se usó la definición de los símbolos de Christoffel y se
+renombraron índices mudos.
+
+\begin{definicion}[Derivada covariante de un vector]
+Sea $A^i$ un tensor de orden $(1,0)$. Se define su \textbf{derivada
+covariante} como
+\[
+\nabla_i A^j := \partial_i A^j + \Gamma^j_{ik}A^k .
+\]
+\end{definicion}
+
+Con esta definición, $\partial_i\vec A = \nabla_iA^j\,\vec e_j$: la
+derivada covariante $\nabla_iA^j$ reemplaza, en notación tensorial, a la
+derivada parcial $\partial_iA^j$.
+
+\begin{proposicionc}
+Si $A^i$ es un tensor de orden $(1,0)$, entonces $\nabla_iA^j$ es un
+tensor de orden $(1,1)$.
+\end{proposicionc}
+
+Análogamente, para un vector dual $\vec f\in V^*(n,K)$,
+\[
+\partial_i\vec f = \partial_i(f_jE^j) = (\partial_if_j)E^j +
+f_j\partial_iE^j = (\partial_if_j)E^j - f_k\Gamma^k_{ij}E^j =
+\left(\partial_if_j - \Gamma^k_{ij}f_k\right)E^j ,
+\]
+donde se usó $\partial_iE^j = -\Gamma^j_{ik}E^k$ (consecuencia de derivar
+$E^i(e_j)=\delta^i_j$).
+
+\begin{definicion}[Derivada covariante de un covector]
+Sea $A_i$ un tensor de orden $(0,1)$. Se define
+\[
+\nabla_iA_j := \partial_iA_j - \Gamma^k_{ij}A_k .
+\]
+\end{definicion}
+
+\begin{proposicionc}
+Si $A_i$ es un tensor de orden $(0,1)$, entonces $\nabla_iA_j$ es un
+tensor de orden $(0,2)$.
+\end{proposicionc}
+
+\begin{observacion}
+Resumiendo: $\nabla_iA^j = \partial_iA^j+\Gamma^j_{ik}A^k$ (el índice
+arriba aparece con $+\Gamma$); $\nabla_iA_j =
+\partial_iA_j-\Gamma^k_{ij}A_k$ (el índice abajo aparece con $-\Gamma$).
+\end{observacion}
+
+Para un tensor mixto $A\in V(n,\mathbb{R})\otimes V^*(n,\mathbb{R})$, un
+cálculo análogo (derivando $A=A^j_{\ k}\,\vec e_j\otimes E^k$ y usando
+las leyes de derivación de ambas bases) da
+\[
+\partial_iA = \left(\partial_iA^j_{\ k} + \Gamma^j_{il}A^l_{\ k} -
+\Gamma^l_{ik}A^j_{\ l}\right)\vec e_j\otimes E^k .
+\]
+
+\begin{definicion}[Derivada covariante de un tensor $(1,1)$]
+Sea $A^i_{\ j}$ un tensor de orden $(1,1)$. Se define
+\[
+\nabla_iA^j_{\ k} = \partial_iA^j_{\ k} + \Gamma^j_{il}A^l_{\ k} -
+\Gamma^l_{ik}A^j_{\ l} .
+\]
+\end{definicion}
+
+\begin{proposicionc}
+Si $A^i_{\ j}$ es un tensor de orden $(1,1)$, entonces $\nabla_iA^j_{\
+k}$ es un tensor de orden $(1,2)$.
+\end{proposicionc}
+
+La generalización a tensores de orden $(p,q)$ arbitrario es directa:
+
+\begin{definicion}[Derivada covariante general]
+Sea $A^{i_1\dots i_p}_{\quad\ j_1\dots j_q}$ un tensor de orden $(p,q)$.
+Se define su derivada covariante como
+\[
+\nabla_i A^{j_1\dots j_p}_{\quad\ k_1\dots k_q} = \partial_i A^{j_1\dots
+j_p}_{\quad\ k_1\dots k_q} + \Gamma^{j_1}_{il}A^{lj_2\dots j_p}_{\quad\
+\ k_1\dots k_q} + \dots + \Gamma^{j_p}_{il}A^{j_1\dots j_{p-1}l}_{\quad\
+\quad\ \, k_1\dots k_q} - \Gamma^l_{ik_1}A^{j_1\dots j_p}_{\quad\
+lk_2\dots k_q} - \dots - \Gamma^l_{ik_q}A^{j_1\dots j_p}_{\quad\
+k_1\dots k_{q-1}l} .
+\]
+\end{definicion}
+
+\begin{proposicionc}
+Si $A^{i_1\dots i_p}_{\quad\ j_1\dots j_q}$ es un tensor de orden $(p,q)$,
+entonces $\nabla_iA^{j_1\dots j_p}_{\quad\ k_1\dots k_q}$ es un tensor
+de orden $(p,q+1)$.
+\end{proposicionc}
+
+\begin{proposicionc}[Compatibilidad de la métrica]
+La métrica satisface
+\[
+\nabla_i g_{jk} = 0 .
+\]
+\end{proposicionc}
+
+\section{El operador rotacional}
+
+Trabajando en coordenadas cartesianas y usando notación de índices, el
+operador rotacional se define como
+\begin{align*}
+\vec B = \vec\nabla\times\vec A &= E^i\partial_i\times(A^j\vec e_j) \\
+&= \delta^{ik}\vec e_k \times \big[(\partial_iA^j)\vec e_j + A^j
+\cancel{\partial_i\vec e_j}\big] \\
+&= \vec e_k\times(\partial_iA^j)\vec e_j
+= \partial_iA^j\,\vec e_i\times\vec e_j = \partial_iA^j\epsilon_{ijk}\vec
+e_k ,
+\end{align*}
+donde el término $\partial_i\vec e_j$ se anula por trabajar en
+coordenadas cartesianas ($\Gamma^k_{ij}=0$). Renombrando índices,
+$\partial_jA^k\epsilon_{kij}\vec e_i = \epsilon_{ijk}\partial_jA^k\,\vec
+e_i$, de donde, comparando con $\vec B = B^i\vec e_i$:
+
+\begin{proposicionc}
+En coordenadas cartesianas, el rotacional de $\vec A$ se escribe en
+notación de índices como
+\[
+B^i = \epsilon^{ijk}\partial_jA^k .
+\]
+\end{proposicionc}
+
+\section{Notación tensorial}
+
+A partir de aquí adoptamos la \textbf{notación tensorial}: se usan los
+tensores directamente, obviando los vectores base. La correspondencia es
+
+\begin{center}
+\begin{tabular}{ccc}
+Notación vectorial & & Notación tensorial \\ \hline
+$\vec x(x^i)$ & $\longrightarrow$ & $x^i$ \\
+$\vec A(x^i)$ & $\longrightarrow$ & $A^i(x^j)$ \\
+$\vec A\cdot\vec B$ & $\longrightarrow$ & $g_{ij}A^iB^j$ \\
+$\vec\nabla$ & $\longrightarrow$ & $\partial/\partial x^i =: \partial_i$
+\\
+$\partial_iA^{j_1\dots j_p}_{\quad\ k_1\dots k_q}$ & $\longrightarrow$ &
+$\nabla_iA^{j_1\dots j_p}_{\quad\ k_1\dots k_q}$
+\end{tabular}
+\end{center}
+
+\begin{observacion}
+En coordenadas cartesianas se recupera el caso particular
+\[
+\{\vec e_i\}_{i=1}^3 = \{\ihat,\jhat,\khat\}, \qquad g_{ij}=\delta_{ij},
+\qquad \Gamma^k_{ij}=0, \qquad \nabla_i = \partial_i .
+\]
+\end{observacion}
+
+\section{Invariancia de la acción}
+
+Un sistema físico de $f$ grados de libertad tiene asociado un principio
+de acción
+\[
+S = \int_{t_i}^{t_f} L\big(q^i,\dot q^i,t\big)\, dt ,
+\]
+del cual se deducen las ecuaciones de movimiento usando el operador
+variacional,
+\[
+\frac{\delta L}{\delta q^i} = \frac{\partial L}{\partial q^i} -
+\frac{d}{dt}\left(\frac{\partial L}{\partial \dot q^i}\right).
+\]
+El fundamento del principio de acción es que $S$ es un número real: se
+mapea una trayectoria en el espacio de configuración a un número real.
+Las ecuaciones de movimiento se obtienen exigiendo que $S$ tenga un
+extremo sobre la curva que describe el movimiento físico del sistema.
+
+Al cambiar de coordenadas, $q'^i=q'^i(q^j)$, el Lagrangiano cambiaría, en
+principio, su forma funcional:
+\[
+S' = \int_{t_i}^{t_f} L'\big(q'^i,\dot q'^i,t\big)\, dt .
+\]
+Sin embargo, la curva que extremiza la acción no cambia su forma física;
+solo cambian las ecuaciones (por el cambio de coordenadas) que la
+describen. Por lo tanto, el valor numérico de la acción no cambia,
+$S=S'$:
+\[
+\int_{t_i}^{t_f} L\big(q^i,\dot q^i,t\big)\, dt = \int_{t_i}^{t_f}
+L'\big(q'^i,\dot q'^i,t\big)\, dt \quad\Longrightarrow\quad
+L'\big(q'^i,\dot q'^i,t\big) = L\big(q^i,\dot q^i,t\big),
+\]
+que es la definición del nuevo Lagrangiano $L'$: el Lagrangiano es un
+\textbf{escalar} bajo transformaciones de coordenadas.
+
+\begin{ejemplo}
+Consideremos el problema de fuerzas centrales conservativas, con
+Lagrangiano en coordenadas cartesianas
+\[
+L(x,y,\dot x,\dot y) = \frac{1}{2}m(\dot x^2+\dot y^2) -
+U\!\left(\sqrt{x^2+y^2}\right).
+\]
+Cambiando a coordenadas cilíndricas (con $z=0$), $x=r\cos\varphi$,
+$y=r\sin\varphi$, se obtiene
+\[
+L'(r,\varphi,\dot r,\dot\varphi) = \frac{1}{2}m\left[\left(\frac{d}{dt}
+(r\cos\varphi)\right)^2 + \left(\frac{d}{dt}(r\sin\varphi)\right)^2
+\right] - U(r) = \frac{1}{2}m\left(\dot r^2 + r^2\dot\varphi^2\right) -
+U(r).
+\]
+\end{ejemplo}
+
+En una transformación de coordenadas no solo cambia la función
+Lagrangiana, sino también la forma funcional de las ecuaciones de
+movimiento.
+
+\begin{proposicionc}
+Bajo una transformación de coordenadas $q'^i=q'^i(q^j)$, las ecuaciones
+de movimiento cambian como
+\[
+\frac{\delta L'}{\delta q'^i} = \frac{\partial q^j}{\partial q'^i}\,
+\frac{\delta L}{\delta q^j} .
+\]
+Es decir, las ecuaciones de movimiento $\delta L/\delta q^i$ forman un
+tensor de orden $(0,1)$.
+\end{proposicionc}
+
