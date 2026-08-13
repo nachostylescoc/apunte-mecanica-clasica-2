@@ -1,0 +1,610 @@
+\chapter{Frontera}
+
+\section{Espacios topológicos}
+
+\begin{definicion}[Espacio topológico]
+Sea $X$ un conjunto y sea $T = \{U_i \mid i \in I\}$, donde $I$ es un
+conjunto de índices, una colección de subconjuntos de $X$, es decir
+$U_i \subset X$. El par $(X,T)$ se dice un \textbf{espacio topológico} si
+$T$ satisface los siguientes axiomas:
+\begin{enumerate}[label=\roman*)]
+\item $\varnothing, X \in T$.
+\item La unión arbitraria de elementos de $T$ es un elemento de $T$:
+\[
+\bigcup_{i\in I} U_i \in T .
+\]
+\item La intersección finita de elementos de $T$ es un elemento de $T$:
+\[
+\bigcap_{\text{finita}} U_i \in T .
+\]
+\end{enumerate}
+Los elementos $U_i$ de $T$ se llaman \textbf{conjuntos abiertos}.
+\end{definicion}
+
+\begin{observacion}
+El conjunto $T$ es un conjunto de conjuntos: los elementos de $T$ son, a su
+vez, conjuntos (los subconjuntos abiertos de $X$).
+\end{observacion}
+
+\begin{ejemplo}
+Sea $X = \{a,b,c,d,e\}$.
+\begin{itemize}
+\item $T_1 = \{\varnothing, X, \{a\}, \{c,d\}, \{a,c,d\}, \{b,c,d,e\}\}$
+\textbf{es} una topología sobre $X$.
+\item $T_2 = \{\varnothing, X, \{a\}, \{c,d\}, \{a,c,d\}, \{a,b,c,d\}\}$
+\textbf{es} una topología sobre $X$.
+\item $T_3 = \{\varnothing, X, \{a\}, \{e\}, \{a,e\}, \{a,c,e\},
+\{b,c,d,e\}\}$ \textbf{no es} una topología sobre $X$, puesto que
+\[
+\{a,c,e\} \cap \{b,c,d,e\} = \{c,e\} \notin T_3 .
+\]
+\end{itemize}
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea $X = \mathbb{R}$.
+\begin{itemize}
+\item $T_1$, compuesta por $\mathbb{R}$, $\varnothing$ y todos los
+intervalos $(-n,n)$ con $n\in\mathbb{N}$, es una topología sobre
+$\mathbb{R}$.
+\item $T_2$, compuesta por $\mathbb{R}$, $\varnothing$ y todos los
+intervalos $[-n,n]$ con $n\in\mathbb{N}$, es una topología sobre
+$\mathbb{R}$.
+\item $T_3$, compuesta por $\mathbb{R}$, $\varnothing$ y todos los
+intervalos $[n,\infty)$ con $n\in\mathbb{N}$, es una topología sobre
+$\mathbb{R}$.
+\item $T_4$, compuesta por $\mathbb{R}$, $\varnothing$ y todos los
+intervalos $(a,b)$, $\forall a,b\in\mathbb{R}$ con $a<b$, junto con todas sus
+uniones arbitrarias e intersecciones finitas, es una topología sobre
+$\mathbb{R}$ llamada \textbf{topología usual} o \textbf{canónica}.
+\end{itemize}
+\end{ejemplo}
+
+\begin{definicion}[Topología discreta y trivial]
+Si $X$ es un conjunto y $T$ es la colección de \emph{todos} los
+subconjuntos de $X$, entonces $T$ es una topología de $X$ llamada
+\textbf{topología discreta}. Si $T = \{\varnothing, X\}$, entonces $T$ es
+una topología de $X$ llamada \textbf{topología trivial}.
+\end{definicion}
+
+\section{Espacios de Hausdorff}
+
+\begin{definicion}[Separabilidad / Hausdorff]
+Un espacio topológico $(X,T)$ se dice \textbf{separable} o de
+\textbf{Hausdorff} si para $x_1,x_2\in X$, con $x_1\neq x_2$, existen dos
+abiertos $x_1\in U_1$ y $x_2\in U_2$ tales que
+\[
+U_1 \cap U_2 = \varnothing .
+\]
+\end{definicion}
+
+\begin{ejemplo}
+Sea $X=\mathbb{R}^2$ y consideremos dos topologías:
+\begin{enumerate}[label=\alph*)]
+\item $T_1$, compuesta por $\mathbb{R}^2$, $\varnothing$ y todos los
+conjuntos
+\[
+D_r := \{(x,y)\in\mathbb{R}^2 \mid x^2+y^2 < r^2\}, \qquad r>0,
+\]
+es una topología de $X=\mathbb{R}^2$ (discos centrados en el origen).
+
+\item $T_2$, compuesta por $\mathbb{R}^2$, $\varnothing$ y todos los
+conjuntos
+\[
+D_r(a,b) := \{(x,y)\in\mathbb{R}^2 \mid (x-a)^2+(y-b)^2 < r^2\}, \qquad r>0,\
+(a,b)\in\mathbb{R}^2,
+\]
+junto con todas sus uniones arbitrarias e intersecciones finitas, es la
+\textbf{topología usual} de $X=\mathbb{R}^2$ (discos centrados en cualquier
+punto).
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \begin{scope}
+    \draw[-Stealth] (0,0) -- (3.3,0) node[right] {$x$};
+    \draw[-Stealth] (0,0) -- (0,3.3) node[above] {$y$};
+    \draw[colordef] (0,0) circle (1.4);
+    \fill (0,0) circle (1pt);
+    \node at (0,-0.35) {\footnotesize$(0,0)$};
+    \node at (1.6,-0.4) {\footnotesize$T_1$: discos en el origen};
+  \end{scope}
+  \begin{scope}[xshift=6.5cm]
+    \draw[-Stealth] (0,0) -- (3.3,0) node[right] {$x$};
+    \draw[-Stealth] (0,0) -- (0,3.3) node[above] {$y$};
+    \draw[colorej] (1,1.7) circle (0.9);
+    \fill (1,1.7) circle (1pt) node[above right] {\footnotesize$(a,b)$};
+    \node at (1.6,-0.4) {\footnotesize$T_2$: discos en $(a,b)$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Veamos cuál de los dos espacios topológicos, $(\mathbb{R}^2,T_1)$ o
+$(\mathbb{R}^2,T_2)$, es de Hausdorff.
+
+\medskip
+\noindent\textbf{Caso $(\mathbb{R}^2,T_1)$:} sean $x_1=(1,0)$,
+$x_2=(0,2)\in\mathbb{R}^2$, y escojamos los abiertos
+\[
+D_{1.1} = \{(x,y)\in\mathbb{R}^2 \mid x^2+y^2 < (1.1)^2\}, \qquad
+D_{2.1} = \{(x,y)\in\mathbb{R}^2 \mid x^2+y^2 < (2.1)^2\},
+\]
+con $x_1\in D_{1.1}$ y $x_2\in D_{2.1}$. Como $D_{1.1}\subset D_{2.1}$,
+se tiene $D_{1.1}\cap D_{2.1} = D_{1.1} \neq \varnothing$. Como cualquier
+par de abiertos centrados en el origen que contengan a $x_1$ y $x_2$ se
+intersectan de la misma forma, se concluye que $(\mathbb{R}^2,T_1)$
+\textbf{no} es un espacio de Hausdorff.
+
+\medskip
+\noindent\textbf{Caso $(\mathbb{R}^2,T_2)$:} con los mismos puntos,
+escojamos
+\[
+D_1(1,0) = \{(x,y)\in\mathbb{R}^2 \mid (x-1)^2+y^2<1\}, \qquad
+D_1(0,2) = \{(x,y)\in\mathbb{R}^2 \mid x^2+(y-2)^2<1\},
+\]
+con $x_1\in D_1(1,0)$ y $x_2\in D_1(0,2)$. Se verifica que
+$D_1(1,0)\cap D_1(0,2) = \varnothing$, por lo tanto $(\mathbb{R}^2,T_2)$
+\textbf{sí} es un espacio de Hausdorff.
+\end{ejemplo}
+
+\section{Entornos}
+
+Antes de continuar necesitaremos una definición elemental de teoría de
+conjuntos.
+
+\begin{definicion}
+Sean los conjuntos $A$ y $B$. Se define el conjunto $A-B$ como
+\[
+A - B = \{ x \mid x\in A \wedge x\notin B \}.
+\]
+\end{definicion}
+
+\begin{definicion}[Entorno]
+Sea $X$ un espacio topológico y sea $S\subseteq X$. Si $x\in S$, se dice
+que $V_x \subset X$ es un \textbf{entorno} del punto $x$ si contiene un
+conjunto abierto $U_x$ que a su vez contiene a $x$:
+\[
+x \in U_x \subseteq V_x .
+\]
+\end{definicion}
+
+\begin{ejemplo}
+Sea $S=[0,1]\subset\mathbb{R}$ con la topología usual. Entonces
+$[0,1)$ es un entorno de $x=1/2$, pues contiene al abierto $(1/4,3/4)$.
+También $(1/4,3/4)$ es en sí mismo un entorno de $x=1/2$ (y además es
+abierto).
+
+Sea $X=\mathbb{R}^2$ con la topología usual. Un entorno del punto
+$x=(0,1)$ es
+\[
+V_x = \{(x,y)\in\mathbb{R}^2 \mid -1\le x\le 1 \wedge -2\le y\le 2\},
+\]
+puesto que contiene al abierto
+\[
+U_x = \{(x,y)\in\mathbb{R}^2 \mid x^2+(y-1)^2 < 1\}.
+\]
+\end{ejemplo}
+
+\begin{observacion}
+El entorno $V_x$ no necesariamente es un conjunto abierto. Si $V_x$ es
+abierto se le llama \textbf{entorno abierto}. Algunos autores exigen que
+los entornos sean siempre abiertos, por lo que conviene prestar atención a
+la convención de cada texto.
+\end{observacion}
+
+\section{Un teorema auxiliar: la propiedad de Arquímedes}
+
+\begin{proposicionc}[Arquímedes]
+Sean dos puntos $x,y\in\mathbb{R}$ con $x<y$. Siempre existe al menos un
+punto $z\in\mathbb{R}$ tal que $x<z<y$.
+\end{proposicionc}
+
+Damos una demostración artesanal, no rigurosa pero ilustrativa. Sean $x<y$;
+un punto entre ambos es el punto medio $z = \tfrac{x+y}{2}$. En efecto,
+\[
+x<y \;\big/+x \;\Rightarrow\; 2x<x+y \;\Rightarrow\; x<\frac{x+y}{2},
+\]
+\[
+x<y \;\big/+y \;\Rightarrow\; x+y<2y \;\Rightarrow\; \frac{x+y}{2}<y,
+\]
+por lo tanto
+\[
+x < \frac{x+y}{2} < y .
+\]
+Este argumento se puede iterar: el punto medio entre $x$ y $\tfrac{x+y}{2}$
+es
+\[
+\frac{x+\tfrac{x+y}{2}}{2} = \frac{3x+y}{4}, \qquad\text{y se cumple}\qquad
+x < \frac{3x+y}{4} < \frac{x+y}{2},
+\]
+generando una sucesión de puntos intermedios cada vez más cercanos a $x$.
+
+\begin{definicion}
+Se define $\min\{x_1,x_2,\dots,x_n\}$ como la menor de las cantidades
+$x_1,x_2,\dots,x_n \in \mathbb{R}$.
+\end{definicion}
+
+\begin{ejemplo}
+$\min\{1,3\} = 1$. \qquad $\min\{1,-3\} = -3$.
+\end{ejemplo}
+
+\section{Puntos de acumulación}
+
+\begin{definicion}[Punto de acumulación]
+Sea $(X,T)$ un espacio topológico y $S$ un subconjunto de $X$. Diremos que
+$x\in X$ es un \textbf{punto de acumulación} (o \textbf{punto límite}) de
+$S$ si y solo si para cualquier abierto $U_x$ que sea entorno de $x$ se
+cumple
+\[
+S \cap (U_x - \{x\}) \neq \varnothing .
+\]
+\end{definicion}
+
+\begin{ejemplo}
+Sea $S=[0,1]\subset\mathbb{R}$ con la topología usual.
+
+\emph{Puntos interiores.} Sea $x\in S$ con $0<x<1$, y sea el entorno abierto
+$U_x = (x-\epsilon,x+\epsilon)$ con
+\[
+0 < \epsilon < \min\left\{ \frac{x}{2}, \frac{1-x}{2}\right\}
+\]
+(por la propiedad de Arquímedes). Entonces
+\[
+S\cap(U_x-\{x\}) = [0,1]\cap\big((x-\epsilon,x)\cup(x,x+\epsilon)\big)
+= (x-\epsilon,x)\cup(x,x+\epsilon) \neq \varnothing,
+\]
+por lo tanto, todos los puntos $0<x<1$ de $S$ son puntos de acumulación de
+$S$.
+
+\emph{El punto $x=0$.} Tomando el abierto $(-\epsilon,\epsilon)$ con
+$\epsilon$ pequeño (por ejemplo $\epsilon = 10^{-5}$):
+\[
+S\cap(U_x-\{0\}) = [0,1]\cap\big((-\epsilon,0)\cup(0,\epsilon)\big) =
+(0,\epsilon) \neq \varnothing,
+\]
+de modo que $x=0$ es punto de acumulación de $S$. Análogamente, $x=1$ es
+punto de acumulación de $S$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \draw[thick] (0,0) -- (4,0);
+  \draw[fill=black] (0,0) circle (2pt) node[below] {\footnotesize$0$};
+  \draw[fill=black] (2.6,0) circle (2pt) node[below] {\footnotesize$1$};
+  \draw (-0.4,0) node[left] {\footnotesize$($};
+  \draw[decorate, decoration={brace, amplitude=4pt}] (-0.15,0.25) -- (0.55,0.25);
+  \node at (0.2,0.6) {\footnotesize$\epsilon$};
+\end{tikzpicture}
+\end{center}
+
+\emph{Puntos fuera de $S$.} Sea $x=1+\epsilon \notin S$, con $\epsilon>0$
+muy pequeño. Consideremos el abierto
+\[
+U_x = \left(1+\frac{\epsilon}{2},\; 1+\frac{3\epsilon}{2}\right),
+\]
+centrado en $x=1+\epsilon$. Se concluye que
+\[
+S\cap(U_x - \{1+\epsilon\}) = [0,1]\cap
+\left(\left(1+\tfrac{\epsilon}{2},1+\epsilon\right)\cup
+\left(1+\epsilon,1+\tfrac{3\epsilon}{2}\right)\right) = \varnothing,
+\]
+por lo que $x=1+\epsilon$ \textbf{no} es punto de acumulación de $S$. Lo
+mismo ocurre para $x=-\epsilon<0$. En general, los puntos $x<0$ y $x>1$ no
+son puntos de acumulación de $S$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea ahora $S=(0,1)\subset\mathbb{R}$ con la topología usual. Cada punto
+interior $0<x<1$ es punto de acumulación (mismo argumento que antes). El
+punto $x=0$ también es punto de acumulación, pues para el abierto
+$(-\epsilon,\epsilon)$,
+\[
+S\cap(U_x-\{0\}) = (0,1)\cap\big((-\epsilon,0)\cup(0,\epsilon)\big) =
+(0,\epsilon)\neq\varnothing.
+\]
+Lo mismo ocurre para $x=1$. Es decir, $x=0$ y $x=1$ son puntos de
+acumulación de $S$ \textbf{aunque no pertenecen a $S$}. Los puntos $x<0$ y
+$x>1$ no son puntos de acumulación.
+\end{ejemplo}
+
+\begin{observacion}
+Los conjuntos $S_1=[0,1]$ y $S_2=(0,1)$ poseen los \emph{mismos} puntos de
+acumulación, aun cuando $S_2 \subsetneq S_1$.
+\end{observacion}
+
+\begin{ejemplo}
+Sea $S=\{(x,y)\in\mathbb{R}^2 \mid 0\le x\le 1 \wedge 0\le y\le 1\}
+\subset\mathbb{R}^2$, con la topología usual de $\mathbb{R}^2$. El conjunto
+$S$ se puede escribir como
+\[
+S = [0,1]\times[0,1] = I\times I = I^2,
+\]
+una región cuadrada en $\mathbb{R}^2$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.6]
+  \draw[-Stealth] (0,0) -- (1.4,0) node[right] {$x$};
+  \draw[-Stealth] (0,0) -- (0,1.4) node[above] {$y$};
+  \draw[fill=colordef!15,draw=colordef] (0,0) rectangle (1,1);
+  \node at (0,-0.13) {\footnotesize$0$};
+  \node at (1,-0.13) {\footnotesize$1$};
+  \node at (-0.13,1) {\footnotesize$1$};
+\end{tikzpicture}
+\end{center}
+
+\emph{Puntos interiores.} Sea $x=(a,b)\in S$ con $0<a<1$ y $0<b<1$; es un
+punto de acumulación de $S$. Basta tomar el entorno abierto
+\[
+U_x = \{(x,y)\in\mathbb{R}^2 \mid (x-a)^2+(y-b)^2<r^2\}, \qquad
+r < \min\{1-a,\,a,\,1-b,\,b\},
+\]
+de modo que $U_x - \{(a,b)\} \subset S$, y por lo tanto
+$S\cap(U_x-\{(a,b)\}) \neq \varnothing$.
+
+\emph{Puntos del borde.} Sea $x=(a,0)$ con $0\le a\le 1$. Tomando el abierto
+\[
+U_x = \{(x,y)\in\mathbb{R}^2 \mid (x-a)^2+y^2<r^2\}, \qquad r<\min\{a,1-a\},
+\]
+se tiene $S\cap(U_x-\{(a,0)\}) \neq \varnothing$, de modo que todo el
+segmento
+\[
+L_1 = \{(a,0)\in\mathbb{R}^2 \mid 0\le a\le 1\}
+\]
+está formado por puntos de acumulación de $S$. Del mismo modo son puntos
+de acumulación de $S$ los segmentos
+\[
+L_2 = \{(1,b)\in\mathbb{R}^2 \mid 0\le b\le 1\}, \quad
+L_3 = \{(a,1)\in\mathbb{R}^2 \mid 0\le a\le 1\}, \quad
+L_4 = \{(0,b)\in\mathbb{R}^2 \mid 0\le b\le 1\}.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1.6]
+  \draw[-Stealth] (0,0) -- (1.4,0) node[right] {$x$};
+  \draw[-Stealth] (0,0) -- (0,1.4) node[above] {$y$};
+  \draw[fill=colordef!10,draw=none] (0,0) rectangle (1,1);
+  \draw[colorej,ultra thick] (0,0) -- (1,0) node[midway,below] {\footnotesize$L_1$};
+  \draw[colorej,ultra thick] (1,0) -- (1,1) node[midway,right] {\footnotesize$L_2$};
+  \draw[colorej,ultra thick] (0,1) -- (1,1) node[midway,above] {\footnotesize$L_3$};
+  \draw[colorej,ultra thick] (0,0) -- (0,1) node[midway,left] {\footnotesize$L_4$};
+\end{tikzpicture}
+\end{center}
+\end{ejemplo}
+
+\section{Interior de un conjunto}
+
+\begin{definicion}[Interior]
+Sea $S\subseteq X$. Se define el \textbf{conjunto interior} de $S$,
+denotado $\operatorname{int}(S)$ o $\mathring{S}$, como la unión de todos
+los abiertos contenidos en $S$.
+\end{definicion}
+
+\begin{ejemplo}
+Sea $S=[0,1]\subset\mathbb{R}$ con la topología usual. El conjunto
+$\{x\in\mathbb{R} \mid 0<x<1\}$ es el interior de $S$:
+\[
+\mathring{S} = \{x\in\mathbb{R}\mid 0<x<1\}.
+\]
+En efecto, sea $x$ con $0<x<1$ y sea el abierto
+$U_x=(x-\epsilon,x+\epsilon)$ con $\epsilon<\min\{x,1-x\}$, tal que
+$S\cap U_x = U_x$, luego $U_x\subset S$.
+
+Sin embargo, el punto $x=0$ está contenido solo en abiertos que \emph{no}
+están enteramente contenidos en $S$: tomando $U_x=(-\epsilon,\epsilon)$,
+\[
+S\cap U_x = (0,\epsilon),
+\]
+que si bien es abierto, no contiene al punto $x=0$; por lo tanto
+$0\notin\mathring{S}$. Lo mismo ocurre con $x=1\in S$, así que
+$1\notin\mathring{S}$.
+
+Notar que para $S=(0,1)$ se tiene igualmente $\mathring{S}=(0,1)=S$.
+\end{ejemplo}
+
+\begin{proposicionc}
+Sea $S\subseteq X$, entonces $\mathring{S}\subseteq S$.
+\end{proposicionc}
+
+\section{Conjuntos compactos}
+
+\begin{definicion}[Compacidad]
+Un conjunto $S\subseteq X$ se dice \textbf{compacto} si contiene a todos
+sus puntos de acumulación.
+\end{definicion}
+
+\begin{ejemplo}
+\begin{itemize}
+\item $S=[0,1]$ es compacto, pues contiene a todos sus puntos de
+acumulación.
+\item $S=(0,1)$ \textbf{no} es compacto: no contiene a los puntos de
+acumulación $x=0$ y $x=1$.
+\item $S=[0,1)$ \textbf{no} es compacto: no contiene al punto de
+acumulación $x=1$.
+\item $S=\mathbb{R}$ \textbf{no} es compacto: no contiene a los puntos de
+acumulación $x=-\infty$ y $x=+\infty$.
+\end{itemize}
+\end{ejemplo}
+
+\section{Clausura de un conjunto}
+
+\begin{definicion}[Clausura]
+Sea $S\subseteq X$. Se llama \textbf{clausura} o \textbf{cierre} de $S$ al
+conjunto de todos los puntos de acumulación de $S$, y se denota
+$\overline{S}$.
+\end{definicion}
+
+\begin{ejemplo}
+\begin{itemize}
+\item $S=[0,1]\subset\mathbb{R}$: $\overline{S}=S$.
+\item $S=(0,1)$: $\overline{S} = S\cup\{0\}\cup\{1\} = [0,1]$.
+\item $S=[0,1)$: $\overline{S} = S\cup\{1\} = [0,1]$.
+\item $S=[a,b]$, con $a<b$: $\overline{S}=S$.
+\item $S=(a,b]$, con $a<b$: $\overline{S} = \{a\}\cup S$.
+\item $S=\mathbb{R}$: $\overline{\mathbb{R}} = \mathbb{R}\cup(\{-\infty\}
+\cup\{\infty\}) = [-\infty,\infty] = \{x \mid -\infty\le x\le\infty\}$.
+\end{itemize}
+\end{ejemplo}
+
+\begin{proposicionc}
+Sea $X$ un espacio topológico y $S\subset X$, entonces $S\subseteq
+\overline{S}$.
+\end{proposicionc}
+
+\section{Frontera de un conjunto}
+
+\begin{definicion}[Frontera]
+Sea $X$ un espacio topológico y $S\subseteq X$. Se define el conjunto
+\textbf{frontera} de $S$, denotado $\partial S$, como
+\[
+\partial S = \overline{S} \cap \overline{(X-S)} .
+\]
+La frontera también se denomina \textbf{borde}.
+\end{definicion}
+
+\begin{ejemplo}
+Sea $S=[0,1]\subset\mathbb{R}$ con la topología usual. La clausura de $S$
+es $\overline{S}=[0,1]=S$. El conjunto $\mathbb{R}-S$ es
+\[
+\mathbb{R}-S = (-\infty,0)\cup(1,+\infty),
+\]
+cuya clausura es
+\[
+\overline{(\mathbb{R}-S)} = (\mathbb{R}-S)\cup\{-\infty\}\cup\{0\}\cup
+\{1\}\cup\{+\infty\} = [-\infty,0]\cup[1,+\infty].
+\]
+Entonces la frontera es
+\[
+\partial S = \overline{S}\cap\overline{(\mathbb{R}-S)} = [0,1]\cap
+\big([-\infty,0]\cup[1,+\infty]\big) = \{0\}\cup\{1\}.
+\]
+\end{ejemplo}
+
+\begin{ejemplo}
+En general, sea $S=[a,b]$ con $a<b$. Análogamente al ejemplo anterior,
+\[
+\mathbb{R}-S = (-\infty,a)\cup(b,+\infty), \qquad
+\overline{(\mathbb{R}-S)} = [-\infty,a]\cup[b,+\infty],
+\]
+por lo que
+\[
+\partial S = [a,b]\cap\big([-\infty,a]\cup[b,+\infty]\big) = \{a\}\cup\{b\}.
+\]
+\end{ejemplo}
+
+\begin{ejemplo}
+\begin{itemize}
+\item $S=(0,1)$: $\partial S = \{0\}\cup\{1\}$.
+\item $S=[0,1)$: $\partial S = \{0\}\cup\{1\}$.
+\item $S=X=\mathbb{R}$: $\partial S = \{-\infty\}\cup\{+\infty\}$.
+\end{itemize}
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea la circunferencia $S_1 = \{(x,y)\in\mathbb{R}^2\mid x^2+y^2=1\}$;
+entonces $\partial S_1 = \varnothing$. Sea la esfera
+$S_2 = \{(x,y,z)\in\mathbb{R}^3\mid x^2+y^2+z^2=1\}$; entonces
+$\partial S_2 = \varnothing$. En general, para la $n$-esfera
+\[
+S^n = \{(x_1,\dots,x_{n+1})\in\mathbb{R}^{n+1} \mid x_1^2+\dots+x_{n+1}^2
+=1\},
+\]
+se tiene $\partial S^n = \varnothing$.
+\end{ejemplo}
+
+\begin{definicion}[Conjunto sin frontera]
+Un conjunto $S\subseteq X$, donde $X$ es un espacio topológico, se dice
+\textbf{sin frontera} o \textbf{sin borde} si $\partial S = \varnothing$.
+\end{definicion}
+
+\begin{proposicionc}
+Sea $X$ un espacio topológico continuo y sea $S\subseteq X$. Si $S$ es un
+conjunto continuo (sin frontera), entonces
+\[
+\partial^2 S = \partial(\partial S) = \varnothing .
+\]
+\end{proposicionc}
+
+\begin{proposicionc}
+Sea $X$ un espacio topológico y sean $S_1,S_2\subseteq X$. Entonces
+\[
+\partial(S_1\cup S_2) = \partial S_1 \cup \partial S_2, \qquad
+\partial(S_1\times S_2) = (\partial S_1 \times S_2) \cup
+(S_1\times \partial S_2).
+\]
+\end{proposicionc}
+
+\section{La frontera de un rectángulo}
+
+\begin{ejemplo}
+\label{ej:frontera-rectangulo}
+Sea $S = I_1\times I_2 = [a,b]\times[c,d]$ con $a<b$ y $c<d$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+  \draw[-Stealth] (0,0) -- (5,0) node[right] {$x$};
+  \draw[-Stealth] (0,0) -- (0,4) node[above] {$y$};
+  \draw[fill=colordef!15,draw=colordef] (1,0.8) rectangle (3.6,2.9);
+  \node at (1,-0.3) {\footnotesize$a$};
+  \node at (3.6,-0.3) {\footnotesize$b$};
+  \node at (-0.3,0.8) {\footnotesize$c$};
+  \node at (-0.3,2.9) {\footnotesize$d$};
+\end{tikzpicture}
+\end{center}
+
+La frontera de $S$ es $\partial S = L_1\cup L_2\cup L_3\cup L_4$:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+  \draw[-Stealth] (0,0) -- (5,0) node[right] {$x$};
+  \draw[-Stealth] (0,0) -- (0,4) node[above] {$y$};
+  \draw[colordef!25,fill=colordef!8] (1,0.8) rectangle (3.6,2.9);
+  \draw[colorej,ultra thick] (1,0.8) -- (3.6,0.8) node[midway,below] {\footnotesize$L_1$};
+  \draw[colorej,ultra thick] (3.6,0.8) -- (3.6,2.9) node[midway,right] {\footnotesize$L_2$};
+  \draw[colorej,ultra thick] (1,2.9) -- (3.6,2.9) node[midway,above] {\footnotesize$L_3$};
+  \draw[colorej,ultra thick] (1,0.8) -- (1,2.9) node[midway,left] {\footnotesize$L_4$};
+  \node at (1,-0.3) {\footnotesize$a$};
+  \node at (3.6,-0.3) {\footnotesize$b$};
+  \node at (-0.3,0.8) {\footnotesize$c$};
+  \node at (-0.3,2.9) {\footnotesize$d$};
+\end{tikzpicture}
+\end{center}
+
+donde
+\[
+\begin{aligned}
+L_1 &= \{(x,c)\in\mathbb{R}^2 \mid a<x<b\}
+= \{(x,y)\in\mathbb{R}^2 \mid a<x<b \wedge y=c\} = [a,b]\times\{c\} =
+I_1\times\{c\}, \\[2pt]
+L_2 &= \{(b,y)\in\mathbb{R}^2 \mid c<y<d\}
+= \{(x,y)\in\mathbb{R}^2 \mid x=b \wedge c<y<d\} = \{b\}\times[c,d] =
+\{b\}\times I_2, \\[2pt]
+L_3 &= \{(x,d)\in\mathbb{R}^2 \mid a<x<b\}
+= \{(x,y)\in\mathbb{R}^2 \mid a<x<b \wedge y=d\} = [a,b]\times\{d\} =
+I_1\times\{d\}, \\[2pt]
+L_4 &= \{(a,y)\in\mathbb{R}^2 \mid c<y<d\}
+= \{(x,y)\in\mathbb{R}^2 \mid x=a \wedge c<y<d\} = \{a\}\times[c,d] =
+\{a\}\times I_2 .
+\end{aligned}
+\]
+
+Por lo tanto,
+\[
+\begin{aligned}
+\partial S &= I_1\times\{c\} \;\cup\; \{b\}\times I_2 \;\cup\; I_1\times\{d\}
+\;\cup\; \{a\}\times I_2 \\
+&= I_1\times(\{c\}\cup\{d\}) \;\cup\; (\{a\}\cup\{b\})\times I_2 \\
+&= (I_1\times \partial I_2) \;\cup\; (\partial I_1 \times I_2) \\
+&= \partial(I_1\times I_2) .
+\end{aligned}
+\]
+\end{ejemplo}
+
+\begin{observacion}
+El resultado del Ejemplo~\ref{ej:frontera-rectangulo},
+\[
+\partial(I_1\times I_2) = (\partial I_1\times I_2) \cup (I_1\times
+\partial I_2),
+\]
+es particularmente importante: será usado más adelante para el formalismo
+lagrangiano de objetos extendidos, donde la frontera de un dominio producto
+determina las condiciones de borde del sistema físico.
+\end{observacion}

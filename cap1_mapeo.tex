@@ -1,0 +1,259 @@
+\chapter{Mapeos}
+
+\section{Definición y ejemplos básicos}
+
+\begin{definicion}[Mapeo]
+Sean $X$ e $Y$ dos conjuntos. Un \textbf{mapeo} $f$ es una regla por la que se
+asigna un $y \in Y$ a cada valor $x \in X$. El mapeo se escribe
+\[
+f : X \to Y .
+\]
+\end{definicion}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \draw (0,0) ellipse (1.1 and 1.6);
+  \draw (3.5,0) ellipse (1.1 and 1.6);
+  \node at (0,1.9) {$X$};
+  \node at (3.5,1.9) {$Y$};
+  \fill (0,0.3) circle (1.5pt) node[left=2pt] {$x$};
+  \fill (3.5,0.3) circle (1.5pt) node[right=2pt] {$y$};
+  \draw[-Stealth, thick] (0.3,0.3) .. controls (1.7,1.1) and (1.9,1.1) .. (3.2,0.35);
+  \node at (1.75,0.9) {$f$};
+\end{tikzpicture}
+\end{center}
+
+Cuando $f$ está definido por alguna fórmula explícita, podemos escribir la
+correspondencia elemento a elemento como
+\[
+x \mapsto f(x),
+\]
+de modo que el mapeo completo se escribe
+\[
+\begin{aligned}
+f : X &\longrightarrow Y \\
+x &\longmapsto f(x).
+\end{aligned}
+\]
+
+\begin{ejemplo}
+Sean los conjuntos $X = \{a,b,c\}$ e $Y = \{2,3\}$. Definimos el mapeo
+\[
+f(a) = 2, \qquad f(b) = 2, \qquad f(c) = 3 .
+\]
+En este mapeo no hay una fórmula explícita de la aplicación; además, hay dos
+elementos de $X$ que corresponden al mismo elemento de $Y$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea el mapeo
+\[
+\begin{aligned}
+f : \mathbb{R} &\to \mathbb{R}\\
+x &\mapsto x^2 .
+\end{aligned}
+\]
+Es decir, la función le asocia a cada número real su cuadrado,
+$f(x) = x^2$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea el mapeo
+\[
+\begin{aligned}
+f : \mathbb{R}^2 &\to \mathbb{R} \\
+(x,y) &\mapsto x + 2y .
+\end{aligned}
+\]
+Este mapeo lleva un punto de $\mathbb{R}^2$ a un punto de $\mathbb{R}$, es
+decir, se mapea de dos dimensiones a una dimensión. Un ejemplo físico de este
+tipo de mapeo es la temperatura (un número en $\mathbb{R}$) de una lámina
+delgada (un objeto bidimensional).
+\end{ejemplo}
+
+\section{Imagen inversa, dominio y rango}
+
+\begin{definicion}[Imagen inversa]
+Un subconjunto de $X$ cuyos elementos se asignan a $y \in Y$ bajo $f$ se
+denomina \textbf{imagen inversa} de $y$, y se denota por
+\[
+f^{-1}(y) = \{x \in X \mid f(x) = y\}.
+\]
+\end{definicion}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \draw (0,0) ellipse (1.2 and 1.7);
+  \draw (3.6,0) ellipse (1.1 and 1.6);
+  \node at (0,2) {$X$};
+  \node at (3.6,1.9) {$Y$};
+  \draw[fill=colordef!15] (-0.3,-0.3) circle (0.5);
+  \node at (-0.3,-0.3) {\footnotesize$f^{-1}(y)$};
+  \fill (3.6,0.3) circle (1.5pt) node[right=2pt] {$y$};
+  \draw[-Stealth, thick] (0.2,-0.1) .. controls (1.7,0.9) and (2,0.9) .. (3.3,0.35);
+  \node at (1.7,1) {$f$};
+\end{tikzpicture}
+\end{center}
+
+\begin{ejemplo}
+Sea el mapeo
+\[
+\begin{aligned}
+f : \mathbb{R} &\to \mathbb{R} \\
+x &\mapsto x^2 .
+\end{aligned}
+\]
+La imagen inversa de $y=1$ es $f^{-1}(1) = \{-1,1\}$. La imagen inversa de
+$y=3$ es $f^{-1}(3) = \{-\sqrt{3},\sqrt{3}\}$. La imagen inversa de $y=-2$ es
+$f^{-1}(-2) = \varnothing$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Sea el mapeo
+\[
+\begin{aligned}
+f : \mathbb{R} &\to \mathbb{R} \\
+x &\mapsto \sin x .
+\end{aligned}
+\]
+La imagen inversa de $y=1$ es
+\[
+f^{-1}(1) = \left\{ (4n+1)\frac{\pi}{2} \; \middle| \; n \in \mathbb{Z} \right\}.
+\]
+La imagen inversa de $y=-1.5$ es $f^{-1}(-1.5) = \varnothing$.
+\end{ejemplo}
+
+\begin{definicion}[Dominio, rango e imagen]
+El conjunto $X$ se denomina \textbf{dominio} del mapeo, mientras que $Y$ se
+denomina \textbf{rango} del mapeo. Un mapeo no se puede definir sin
+especificar el dominio y el rango.
+
+La \textbf{imagen} del mapeo es
+\[
+f(X) = \{ y \in Y \mid y = f(x) \text{ para algún } x \in X \} \subset Y .
+\]
+La imagen $f(X)$ también se denota por $\operatorname{im} f$.
+\end{definicion}
+
+\begin{ejemplo}
+\begin{enumerate}[label=\alph*)]
+\item Sea el mapeo $f : \mathbb{R} \to \mathbb{R}$, $x \mapsto f(x) = e^x$. En
+este ejemplo tanto el dominio como el rango son $\mathbb{R}$. La imagen del
+mapeo es $\operatorname{im} f = f(\mathbb{R}) = \mathbb{R}^+ \subset
+\mathbb{R}$. El valor $f(x) = -1$ no tiene imagen inversa, es decir
+$f^{-1}(-1) = \varnothing$. Si cambiamos el dominio y el rango de
+$\mathbb{R}$ al plano complejo $\mathbb{C}$, entonces
+$f^{-1}(-1) = \{(2n+1)\pi i \mid n \in \mathbb{Z}\}$.
+
+\item Sea el mapeo $f : \mathbb{R} \to \mathbb{R}$, $x \mapsto f(x) =
+\sin(x)$. El dominio y el rango son $\mathbb{R}$. La imagen del mapeo es
+$f(\mathbb{R}) = [-1,1]$. La imagen inversa de $0$ es
+$f^{-1}(0) = \{ n\pi \mid n \in \mathbb{Z}\}$. Si cambiamos el dominio y el
+rango a $\mathbb{C}$, entonces $f(\mathbb{C}) = \mathbb{C}$.
+\end{enumerate}
+\end{ejemplo}
+
+\section{Inyectividad, sobreyectividad y biyectividad}
+
+\begin{definicion}
+Si un mapeo satisface alguna condición adicional, entonces recibe un nombre
+especial:
+\begin{enumerate}[label=\alph*)]
+\item Un mapeo $f : X \to Y$ se dice \textbf{inyectivo} (o uno a uno) si
+$x \neq x' $ implica $f(x) \neq f(x')$.
+\item Un mapeo $f : X \to Y$ se dice \textbf{sobreyectivo} (o sobre) si para
+cada $y \in Y$ existe al menos un elemento $x \in X$ tal que $f(x) = y$.
+\item Un mapeo $f : X \to Y$ se dice \textbf{biyectivo} si es tanto inyectivo
+como sobreyectivo.
+\end{enumerate}
+\end{definicion}
+
+\begin{ejemplo}
+Un mapeo definido por $f : x \mapsto ax$, con $a \in \mathbb{R} - \{0\}$, es
+biyectivo. El mapeo definido por $f : x \mapsto x^2$ no es inyectivo ni
+sobreyectivo. El mapeo dado por $f : x \mapsto e^x$ es inyectivo pero no
+sobreyectivo.
+\end{ejemplo}
+
+\section{Mapeo constante, restricción y composición}
+
+\begin{definicion}
+Un \textbf{mapeo constante} $c : X \to Y$ está definido por $c(x) = y_0$,
+donde $y_0$ es un elemento fijo de $Y$ y $x$ es un elemento arbitrario de
+$X$.
+
+Dado un mapeo $f : X \to Y$, podemos considerar su \textbf{restricción} a
+$A \subset X$, denotada por
+\[
+f|_A : A \to Y .
+\]
+
+Dados dos mapeos $f : X \to Y$ y $g : Y \to Z$, el \textbf{mapeo compuesto}
+de $f$ y $g$ es el mapa $g \circ f : X \to Z$ definido por
+$g \circ f (x) = g(f(x))$.
+\end{definicion}
+
+Diagramáticamente, la composición de dos funciones se representa como
+\[
+X \xrightarrow{\ f\ } Y \xrightarrow{\ g\ } Z, \qquad
+x \mapsto f(x) \mapsto g(f(x)).
+\]
+
+\section{Mapeo inclusión e identidad}
+
+\begin{definicion}
+Si $A \subset X$, un \textbf{mapeo inclusión} $i : A \to X$ está definido
+por $i(a) = a$ para cualquier $a \in A$. Un mapeo inclusión a menudo se
+escribe como $i : A \hookrightarrow X$.
+
+El \textbf{mapeo identidad} $\operatorname{id}_X : X \to X$ es un caso
+especial de mapeo inclusión, para el que $A = X$.
+\end{definicion}
+
+\section{Mapeo inverso}
+
+\begin{proposicionc}
+Si $f : X \to Y$, definido por $f : x \mapsto f(x)$, es biyectivo, entonces
+existe un mapeo inverso $f^{-1} : Y \to X$ tal que $f^{-1} : f(x) \mapsto x$,
+que también es biyectivo. Los mapeos $f$ y $f^{-1}$ satisfacen
+\[
+f \circ f^{-1} = \operatorname{id}_Y, \qquad f^{-1} \circ f =
+\operatorname{id}_X .
+\]
+\end{proposicionc}
+
+\begin{observacion}
+Si graficamos los mapeos $f$ y $f^{-1}$, estos son simétricos con respecto a
+la recta $y=x$, es decir, los puntos de $f$ y $f^{-1}$ son equidistantes con
+respecto al mapeo identidad $y=x$. Si $(a, b=f(a))$ es un punto en la gráfica
+de $f$, entonces el punto $(b=f(a), a)$ debe ser un punto en la gráfica de la
+función inversa $f^{-1}$.
+\end{observacion}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[-Stealth] (-0.3,0) -- (4.3,0) node[right] {$x$};
+  \draw[-Stealth] (0,-0.3) -- (0,4.3) node[above] {$y$};
+  \draw[dashed] (0,0) -- (4,4) node[above right] {\footnotesize $y=x$};
+  \draw[thick,colordef] plot[domain=0.3:4,samples=40] (\x, {0.5*\x*\x/4+0.4});
+  \node[colordef] at (3.6,3.9) {\footnotesize$f$};
+  \draw[thick,colorej] plot[domain=0.4:4.2,samples=40] ({0.5*\x*\x/4+0.4},\x);
+  \node[colorej] at (3.9,3.3) {\footnotesize$f^{-1}$};
+\end{tikzpicture}
+\end{center}
+
+Existe una definición alternativa de inversa:
+
+\begin{definicion}
+Si $f : X \to Y$ y $g : Y \to X$ satisfacen $f \circ g = \operatorname{id}_Y$
+y $g \circ f = \operatorname{id}_X$, entonces $f$ y $g$ son biyecciones. El
+mapeo $g$ se dice que es la \textbf{inversa derecha} de $f$, y el mapeo $f$
+se dice que es la \textbf{inversa izquierda} de $g$.
+\end{definicion}
+
+\begin{proposicionc}
+Si $f : X \to Y$ y $g : Y \to X$ satisfacen $g \circ f = \operatorname{id}_X$,
+entonces $f$ es inyectiva y $g$ es sobreyectiva. Si además se cumple
+$f \circ g = \operatorname{id}_Y$, se obtiene que $f$ y $g$ son ambas
+biyecciones.
+\end{proposicionc}

@@ -1,0 +1,122 @@
+\documentclass[10pt,letterpaper, openany]{book}
+
+% ---------- Idioma y codificación ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+% ---------- Matemáticas ----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% ---------- Geometría de página ----------
+\usepackage[margin=2cm]{geometry}
+
+% ---------- Cajas de color para definiciones/teoremas ----------
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% ---------- Gráficos ----------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.markings,decorations.pathreplacing,patterns}
+
+% ---------- Otros ----------
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    citecolor=blue!50!black,
+    urlcolor=blue!50!black
+}
+\usepackage{xcolor}
+
+% ================= Entornos tipo teorema =================
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{proposicion}[teorema]{Proposición}
+\newtheorem{axioma}[teorema]{Axioma}
+\newtheorem{corolario}[teorema]{Corolario}
+
+\theoremstyle{definition}
+\newtheorem{definicionthm}[teorema]{Definición}
+\newtheorem{ejemplothm}[teorema]{Ejemplo}
+\newtheorem{observacionthm}[teorema]{Observación}
+
+% Colores
+\definecolor{colordef}{RGB}{31,81,144}
+\definecolor{colorej}{RGB}{46,125,50}
+\definecolor{colorprop}{RGB}{136,14,79}
+\definecolor{colorobs}{RGB}{110,110,110}
+\definecolor{colorax}{RGB}{191,54,12}
+
+% Cajas estilo tcolorbox que envuelven los teoremas de amsthm
+\newtcolorbox{defbox}{
+  breakable, enhanced, colback=colordef!5, colframe=colordef,
+  fonttitle=\bfseries, boxrule=0.6pt, arc=1.5mm,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{ejbox}{
+  breakable, enhanced, colback=colorej!5, colframe=colorej,
+  fonttitle=\bfseries, boxrule=0.6pt, arc=1.5mm,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{propbox}{
+  breakable, enhanced, colback=colorprop!5, colframe=colorprop,
+  fonttitle=\bfseries, boxrule=0.6pt, arc=1.5mm,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{obsbox}{
+  breakable, enhanced, colback=colorobs!5, colframe=colorobs,
+  fonttitle=\bfseries, boxrule=0.6pt, arc=1.5mm,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+\newtcolorbox{axbox}{
+  breakable, enhanced, colback=colorax!5, colframe=colorax,
+  fonttitle=\bfseries, boxrule=0.6pt, arc=1.5mm,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+}
+
+% Entornos "amigables" que combinan amsthm + tcolorbox
+\newenvironment{definicion}[1][]{%
+  \begin{defbox}\begin{definicionthm}[#1]}{\end{definicionthm}\end{defbox}}
+\newenvironment{ejemplo}[1][]{%
+  \begin{ejbox}\begin{ejemplothm}[#1]}{\end{ejemplothm}\end{ejbox}}
+\newenvironment{proposicionc}[1][]{%
+  \begin{propbox}\begin{proposicion}[#1]}{\end{proposicion}\end{propbox}}
+\newenvironment{teoremac}[1][]{%
+  \begin{propbox}\begin{teorema}[#1]}{\end{teorema}\end{propbox}}
+\newenvironment{observacion}[1][]{%
+  \begin{obsbox}\begin{observacionthm}[#1]}{\end{observacionthm}\end{obsbox}}
+\newenvironment{axiomac}[1][]{%
+  \begin{axbox}\begin{axioma}[#1]}{\end{axioma}\end{axbox}}
+  % en el preámbulo, junto a los demás entornos
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+\newcommand{\ihat}{\hat{\imath}}
+\newcommand{\jhat}{\hat{\jmath}}
+\newcommand{\khat}{\hat{k}}
+
+% ---------- Datos del documento ----------
+\pagestyle{plain}
+\setlength{\parindent}{0pt}
+
+\title{\textbf{\Huge Mecánica Clásica II}}
+\author{}
+\date{}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+
+\input{cap1_mapeo}
+\input{cap2_producto_cartesiano}
+\input{cap3_frontera}
+\input{cap4_transformacion_coordenadas}
+
+\end{document}

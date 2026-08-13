@@ -1,0 +1,432 @@
+\chapter{Producto Cartesiano}
+
+\section{Definición y ejemplos}
+
+El producto cartesiano entre dos conjuntos es una operación que produce un
+nuevo conjunto cuyos elementos son todos los pares ordenados que pueden
+formarse, tal que el primer elemento pertenece al primer conjunto y el
+segundo elemento pertenece al segundo conjunto.
+
+\begin{definicion}[Par ordenado]
+Un par ordenado se compone de dos elementos $x$ e $y$, y se escribe
+$(x,y)$, donde $x$ es el primer elemento e $y$ es el segundo elemento. Se
+concluye que dos pares ordenados $(x,y)$ y $(z,w)$ son iguales si $x=z$ e
+$y=w$.
+\end{definicion}
+
+\begin{definicion}[Producto cartesiano]
+El \textbf{producto cartesiano} de dos conjuntos $A$ y $B$ es el conjunto,
+denotado por $A \times B$, de todos los pares ordenados de la forma
+\[
+A \times B = \{ (a,b) \mid a \in A \wedge b \in B \}.
+\]
+\end{definicion}
+
+\begin{ejemplo}
+Sean los conjuntos $A = \{1,2,3,4\}$ y $B = \{2,4\}$. El producto cartesiano
+$A \times B$ se obtiene colocando al conjunto $A$ como la abscisa y al
+conjunto $B$ como la ordenada de un sistema coordenado bidimensional.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \foreach \x in {1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+  \foreach \y in {2,4} \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
+  \draw[-Stealth] (0,0) -- (5,0) node[right] {\footnotesize$A$};
+  \draw[-Stealth] (0,0) -- (0,5) node[above] {\footnotesize$B$};
+  \foreach \x in {1,2,3,4}{
+    \foreach \y in {2,4}{
+      \fill[colordef] (\x,\y) circle (2pt);
+    }
+  }
+  \node at (4.6,4.6) {\footnotesize $A\times B$};
+\end{tikzpicture}
+\end{center}
+
+lo que resulta en
+\[
+A \times B = \{(1,2),(1,4),(2,2),(2,4),(3,2),(3,4),(4,2),(4,4)\}.
+\]
+
+Ahora efectuamos el producto cartesiano $B \times A$, colocando esta vez a
+$B$ como abscisa y a $A$ como ordenada:
+\[
+B \times A = \{(2,1),(2,2),(2,3),(2,4),(4,1),(4,2),(4,3),(4,4)\}.
+\]
+Es claro que $A \times B \neq B \times A$, por lo tanto el producto
+cartesiano, en general, \textbf{no conmuta}.
+\end{ejemplo}
+
+\section{Cardinalidad del producto cartesiano}
+
+Una pregunta natural es: ¿cuántos elementos posee el conjunto $A \times B$?
+En otras palabras, ¿cuál es la cardinalidad de $A \times B$? Sea
+$\#(A\times B)$ el número de elementos que contiene $A \times B$.
+
+Sea $A$ un conjunto con $N_A$ elementos, $\#(A) = N_A$, y sea $B$ un
+conjunto con $N_B$ elementos, $\#(B) = N_B$. Para encontrar la cardinalidad
+de $A \times B$ contamos los elementos que contiene, asumiendo que cada
+elemento aparece una sola vez. Tomando el primer elemento de $A$ y formando
+todos los pares ordenados posibles con los elementos de $B$, se obtienen
+$N_B$ pares ordenados. Tomando el segundo elemento de $A$ se obtienen otros
+$N_B$ pares ordenados, y así sucesivamente hasta agotar los $N_A$ elementos
+de $A$. Por lo tanto,
+\[
+\#(A \times B) = \underbrace{N_B + N_B + \dots + N_B}_{N_A} = N_A \cdot N_B .
+\]
+
+\begin{proposicionc}
+\[
+\#(A \times B) = N_A \cdot N_B = \#(A)\cdot\#(B).
+\]
+\end{proposicionc}
+
+\begin{ejemplo}
+Para los conjuntos $A=\{1,2,3,4\}$ y $B=\{2,4\}$ se tiene $\#(A) = 4$ y
+$\#(B) = 2$, luego $\#(A\times B) = 4\cdot 2 = 8$.
+\end{ejemplo}
+
+\begin{proposicionc}
+En general $A \times B \neq B \times A$. Sin embargo, ambos conjuntos
+poseen el mismo número de elementos:
+\[
+\#(A \times B) = N_A \cdot N_B = N_B \cdot N_A = \#(B \times A).
+\]
+\end{proposicionc}
+
+\subsection{Casos particulares}
+
+Un caso extremo aparece cuando uno de los conjuntos es el conjunto vacío,
+$\varnothing$, con $\#(\varnothing) = 0$, por lo que
+\[
+\#(A \times \varnothing) = N_A \cdot 0 = 0.
+\]
+El conjunto vacío actúa como el ``cero'' del producto cartesiano. Sin
+embargo, si $A$ es un conjunto continuo, entonces $\#(A) = \infty$, y
+\[
+\#(A \times \varnothing) = \infty \cdot 0 = \; ?
+\]
+el producto no está determinado por conteo directo. Geométricamente, el
+conjunto $A \times \varnothing$ se visualiza como un rectángulo de base $A$
+y altura $\varnothing$, es decir, una altura sin elementos; por ello es
+razonable que el rectángulo no contenga elementos.
+
+\begin{definicion}
+El producto cartesiano de un conjunto $A$ con el conjunto vacío es vacío:
+\[
+A \times \varnothing = \varnothing .
+\]
+\end{definicion}
+
+Si uno de los conjuntos posee un solo elemento, por ejemplo $\#(A) = 1$,
+entonces
+\[
+\#(A\times B) = 1\cdot N_B = N_B = \#(B),
+\]
+por lo tanto, un conjunto con un solo elemento actúa como la \textbf{identidad}
+del producto cartesiano.
+
+\begin{axiomac}
+Sean $A$ y $B$ dos conjuntos, entonces existe un único conjunto
+$A \times B$.
+\end{axiomac}
+
+\begin{proposicionc}
+Sean $A \neq \varnothing$ y $B \neq \varnothing$, tales que
+$A \neq B \Rightarrow A \times B \neq B \times A$.
+\end{proposicionc}
+
+\begin{proposicionc}
+Sean $A \neq \varnothing$ y $B \neq \varnothing$. Si $A = B \Leftrightarrow
+A \times B = B \times A$.
+\end{proposicionc}
+
+\begin{proposicionc}
+Si $A$, $B$ y $C$ son conjuntos, entonces
+\[
+(A - B) \times C = (A \times C) - (B \times C).
+\]
+\end{proposicionc}
+
+\begin{proposicionc}
+Si $A \subseteq A'$ y $B \subseteq B'$, entonces $A \times B \subseteq A'
+\times B'$.
+\end{proposicionc}
+
+\section{Producto cartesiano de conjuntos continuos}
+
+Los casos interesantes aparecen cuando los conjuntos son continuos, de modo
+que $\#(A \times B) = \infty$. El producto cartesiano entre conjuntos
+continuos genera espacios geométricos interesantes.
+
+\begin{ejemplo}
+Sean los intervalos cerrados $A = [1,3]$ y $B = [2,4]$, subconjuntos de
+$\mathbb{R}$. El producto cartesiano $A \times B$ es
+\[
+A \times B = \{ (x,y) \in \mathbb{R}^2 \mid 1 \le x \le 3 \wedge 2 \le y \le 4 \},
+\]
+que corresponde a un cuadrado compacto en $\mathbb{R}^2$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[-Stealth] (0,0) -- (5,0) node[right] {$x$};
+  \draw[-Stealth] (0,0) -- (0,5) node[above] {$y$};
+  \draw[fill=colordef!25,draw=colordef] (1,2) rectangle (3,4);
+  \foreach \v/\l in {1/1,3/3} \draw (\v,0.08) -- (\v,-0.08) node[below] {$\l$};
+  \foreach \v/\l in {2/2,4/4} \draw (0.08,\v) -- (-0.08,\v) node[left] {$\l$};
+  \node at (2,3) {\footnotesize$A \times B$};
+\end{tikzpicture}
+\end{center}
+
+Si en cambio se toma $A=[1,3[$ (semiabierto), el conjunto $A$ no contiene a
+$x=3$, y esto se refleja en que $A \times B$ no es compacto: el lado
+$\{3\} \times [2,4]$ queda excluido de $A \times B$.
+\end{ejemplo}
+
+\begin{ejemplo}
+Consideremos el producto cartesiano entre un intervalo $A = [a,b] \subset
+\mathbb{R}$ y un punto $B = \{c\} \subset \mathbb{R}$:
+\[
+A \times B = \{(x,y)\in\mathbb{R}^2 \mid a \le x \le b \wedge y = c\}
+= \{(x,c)\in \mathbb{R}^2 \mid a\le x\le b\},
+\]
+que es un segmento de recta horizontal a la altura $y=c$. Análogamente,
+$B\times A = \{(c,y)\in\mathbb{R}^2 \mid a\le y \le b\}$ es un segmento
+vertical. En general, el producto cartesiano entre un segmento de
+$\mathbb{R}$ y un punto genera un segmento de recta en $\mathbb{R}^2$.
+\end{ejemplo}
+
+\begin{observacion}
+El producto cartesiano entre dos subconjuntos de $\mathbb{R}$ siempre genera
+una región rectangular en $\mathbb{R}^2$; por lo tanto, una región de
+$\mathbb{R}^2$ que no sea un rectángulo (por ejemplo, el disco unitario
+$D = \{(x,y)\in\mathbb{R}^2 \mid x^2+y^2 \le 1\}$) no puede escribirse en la
+forma $A \times B$.
+\end{observacion}
+
+\section{Producto cartesiano de conjuntos unidimensionales curvos}
+
+El producto cartesiano entre subconjuntos unidimensionales curvos también
+da origen a conjuntos en dimensiones mayores. Sea la circunferencia unitaria
+\[
+S^1 = \{(x,y)\in\mathbb{R}^2 \mid x^2+y^2=1\}
+\]
+y sea $I = [0,1]$ (usaremos la notación $I$ para un intervalo cerrado de
+$\mathbb{R}$ de aquí en adelante).
+
+\begin{ejemplo}
+Para encontrar $S^1 \times I$ colocamos $S^1$ como base, horizontalmente en
+el plano $Oxy$ de un sistema tridimensional, y en cada punto de $S^1$
+colocamos el segmento $I$ en la dirección $z$:
+\[
+S^1 \times I = \{(x,y,z)\in\mathbb{R}^3 \mid x^2+y^2=1 \wedge 0\le z\le 1\}.
+\]
+El resultado es el manto de un cilindro, sin las tapas.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[colordef, thick] (0,0) ellipse (1.4 and 0.5);
+  \draw[colordef, thick] (-1.4,0) -- (-1.4,2.2);
+  \draw[colordef, thick] (1.4,0) -- (1.4,2.2);
+  \draw[colordef, thick] (0,2.2) ellipse (1.4 and 0.5);
+  \node at (2.2,1.1) {\footnotesize$S^1\times I$};
+\end{tikzpicture}
+\end{center}
+
+También se puede calcular $I \times S^1$, obteniendo
+\[
+I \times S^1 = \{(x,y,z)\in\mathbb{R}^3 \mid 0\le x\le 1 \wedge y^2+z^2=1\},
+\]
+nuevamente el manto de un cilindro, pero rotado $90^\circ$ respecto a
+$S^1\times I$.
+\end{ejemplo}
+
+\begin{ejemplo}[El toro]
+El producto cartesiano entre dos circunferencias $S^1$ genera el llamado
+\textbf{toro}, denotado
+\[
+T^2 = S^1 \times S^1 .
+\]
+Se construye colocando una circunferencia $S^1$ (por ejemplo horizontal) y,
+en cada punto de ella, otra circunferencia $S^1$, generando la superficie
+de una cámara de bicicleta. Equivalentemente, se puede colocar primero
+$S^1$ en forma vertical y en cada punto ubicar otra circunferencia $S^1$;
+el resultado es también un toro.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \draw[colordef, thick] (0,0) ellipse (2.2 and 1.1);
+  \draw[colordef, thick] (0,0) ellipse (1.1 and 0.55);
+  \draw[colordef, thick] (-2.2,0) .. controls (-2.2,0.55) and (-1.1,0.55) .. (-1.1,0);
+  \draw[colordef, thick, dashed] (-2.2,0) .. controls (-2.2,-0.55) and (-1.1,-0.55) .. (-1.1,0);
+  \draw[colordef, thick] (2.2,0) .. controls (2.2,0.55) and (1.1,0.55) .. (1.1,0);
+  \draw[colordef, thick, dashed] (2.2,0) .. controls (2.2,-0.55) and (1.1,-0.55) .. (1.1,0);
+  \node at (0,-1.5) {\footnotesize$T^2 = S^1\times S^1$};
+\end{tikzpicture}
+\end{center}
+\end{ejemplo}
+
+\section{Producto cartesiano en dimensiones mayores}
+
+El producto cartesiano $A\times B$ estudiado hasta ahora se ha realizado con
+conjuntos unidimensionales, generando conjuntos bidimensionales. Sin
+embargo, también se pueden realizar productos cartesianos entre conjuntos de
+mayor dimensión.
+
+\begin{ejemplo}
+Sea $A \subset \mathbb{R}^2$ y sea $I=[a,b]\subset\mathbb{R}$. El producto
+cartesiano $A \times I$ es
+\[
+A \times I = \{(x,y,z)\in\mathbb{R}^3 \mid (x,y)\in A \wedge a\le z\le b\},
+\]
+que genera un cilindro macizo en $\mathbb{R}^3$, es decir, un volumen.
+\end{ejemplo}
+
+\begin{observacion}
+En el producto $A \times B$, si uno (o ambos) de los conjuntos no es
+compacto, entonces $A\times B$ tampoco es compacto.
+\end{observacion}
+
+\section{Integración y producto cartesiano}
+
+Dada una función $F(x,y)$ definida en $D \subset \mathbb{R}^2$, el cálculo de
+la integral de $F$ sobre $D$ está dado por
+\[
+I = \int_D F(x,y)\, d^2x, \qquad d^2x = dx\,dy,
+\]
+donde $D$ se denomina \textbf{región de integración}.
+
+Una región general $D$ se puede escribir en la forma
+\[
+D := \{(x,y)\in\mathbb{R}^2 \mid x_i \le x \le x_f \wedge f_1(x) \le y \le
+f_2(x)\},
+\]
+de modo que la integral doble se escribe
+\[
+I = \int_D F(x,y)\, d^2x = \int_{x_i}^{x_f} \int_{f_1(x)}^{f_2(x)}
+F(x,y)\, dy\, dx .
+\]
+La integral se evalúa en dos iteraciones: primero se evalúa la integral
+interna (en $y$) y luego la integral externa (en $x$). El proceso no es en
+general conmutativo:
+\[
+\int_{x_i}^{x_f}\int_{f_1(x)}^{f_2(x)} F(x,y)\,dy\,dx \neq
+\int_{f_1(x)}^{f_2(x)}\int_{x_i}^{x_f} F(x,y)\,dx\,dy .
+\]
+Para que el proceso sea conmutativo debemos despejar $y$ en función de $x$ y
+reescribir la región $D$ como
+\[
+D := \{(x,y)\in\mathbb{R}^2 \mid y_i\le y\le y_f \wedge g_1(y)\le x\le
+g_2(y)\},
+\]
+de modo que
+\[
+I = \int_D F(x,y)\, d^2x = \int_{y_i}^{y_f}\int_{g_1(y)}^{g_2(y)} F(x,y)\,
+dx\, dy .
+\]
+Ambas formas de la integral deben coincidir:
+\[
+\int_{x_i}^{x_f}\int_{f_1(x)}^{f_2(x)} F(x,y)\,dy\,dx
+= \int_{y_i}^{y_f}\int_{g_1(y)}^{g_2(y)} F(x,y)\, dx\, dy .
+\]
+
+\begin{ejemplo}[Área del disco compacto]
+Sea el disco compacto $D = \{(x,y)\in\mathbb{R}^2 \mid x^2+y^2\le r^2\}$.
+Calculemos su área,
+\[
+A = \int_D dx\,dy .
+\]
+Reescribiendo $D$ en la forma
+\[
+D = \{(x,y)\in\mathbb{R}^2 \mid -r\le x\le r \wedge -\sqrt{r^2-x^2}\le y \le
+\sqrt{r^2-x^2}\},
+\]
+la integral queda
+\[
+A = \int_{-r}^{r} \int_{-\sqrt{r^2-x^2}}^{\sqrt{r^2-x^2}} dy\,dx
+= \int_{-r}^{r} y \Big|_{-\sqrt{r^2-x^2}}^{\sqrt{r^2-x^2}} dx
+= 2\int_{-r}^{r} \sqrt{r^2-x^2}\, dx .
+\]
+Con el cambio de variable $x(\alpha) = r\sin\alpha$,
+\[
+A = 2r^2 \int_{-\pi/2}^{\pi/2} \cos^2\alpha\, d\alpha
+= r^2 \left(\alpha + \tfrac12\sin(2\alpha)\right)\Big|_{-\pi/2}^{\pi/2}
+\;\Longrightarrow\; A = \pi r^2 .
+\]
+\end{ejemplo}
+
+\subsection{El caso rectangular \texorpdfstring{$D=I_1\times I_2$}{D=I1xI2}}
+
+El caso de mayor interés es cuando $D = I_1\times I_2$ es un rectángulo en
+$\mathbb{R}^2$,
+\[
+D = I_1\times I_2 = \{(x,y)\in\mathbb{R}^2 \mid x_i\le x\le x_f \wedge
+y_i\le y\le y_f\},
+\]
+de modo que la integral $I$ toma la forma
+\[
+I = \int_D F(x,y)\, d^2x = \int_{I_1\times I_2} F(x,y)\, d^2x
+= \int_{I_1}\int_{I_2} F(x,y)\, dy\, dx
+= \int_{x_i}^{x_f}\int_{y_i}^{y_f} F(x,y)\,dy\,dx .
+\]
+En este caso particular sí se cumple
+\[
+\int_{I_1\times I_2} F(x,y)\, d^2x = \int_{I_1}\int_{I_2} F(x,y)\,dy\,dx
+= \int_{I_2}\int_{I_1} F(x,y)\,dy\,dx = \int_{I_2\times I_1} F(x,y)\, d^2x ,
+\]
+aun cuando, en general, $I_1\times I_2 \neq I_2\times I_1$ como conjuntos
+ordenados.
+
+\begin{observacion}
+La integración sobre una región $D=I_1\times I_2$ es distinta de una
+integración sobre una región $D = D_1 \cup D_2$, puesto que
+\[
+I = \int_{I_1\times I_2} F(x,y)\, d^2x = \int_{I_1}\int_{I_2} F(x,y)\,dy\,dx,
+\]
+\[
+I' = \int_{D_1\cup D_2} F(x,y)\, d^2x = \int_{D_1} F(x,y)\,d^2x +
+\int_{D_2} F(x,y)\, d^2x,
+\]
+donde $I_i\subset\mathbb{R}$ y $D_i\subset\mathbb{R}^2$, con $i=1,2$.
+\end{observacion}
+
+\subsection{Integrales de una derivada parcial y el borde del rectángulo}
+
+Consideremos el caso $F(x,y) = \dfrac{\partial g(x,y)}{\partial y}$. Entonces
+\[
+I = \int_D F(x,y)\, d^2x = \int_{I_1\times I_2} F(x,y)\,dy\,dx
+= \int_{x_i}^{x_f}\int_{y_i}^{y_f} \frac{\partial g(x,y)}{\partial y}\,
+dy\, dx
+= \int_{x_i}^{x_f} g(x,y)\Big|_{y=y_i}^{y=y_f} dx,
+\]
+es decir,
+\[
+I = \int_{x_i}^{x_f} g(x,y_f)\, dx - \int_{x_i}^{x_f} g(x,y_i)\, dx .
+\]
+
+La primera integral está realizada sobre la región $I_1\times\{y_f\}$, que
+es uno de los bordes del rectángulo $M = I_1\times I_2$. La segunda integral
+está realizada sobre $I_1\times\{y_i\}$, el borde opuesto.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[-Stealth] (0,0) -- (5,0) node[right] {$x$};
+  \draw[-Stealth] (0,0) -- (0,4) node[above] {$y$};
+  \draw[fill=colordef!12,draw=colordef] (0.8,0.8) rectangle (3.8,2.8);
+  \draw[colorej, ultra thick] (0.8,2.8) -- (3.8,2.8);
+  \draw[colorej, ultra thick] (0.8,0.8) -- (3.8,0.8);
+  \node at (2.3,3.3) {\footnotesize$I_1\times\{y_f\}$};
+  \node at (2.3,0.3) {\footnotesize$I_1\times\{y_i\}$};
+  \node at (2.3,1.8) {\footnotesize$M$};
+\end{tikzpicture}
+\end{center}
+
+Ambas integrales se pueden reescribir en la forma
+\[
+I = \int_{x_i}^{x_f} g(x,y_f)\,dx - \int_{x_i}^{x_f} g(x,y_i)\,dx
+= \int_{I_1} g(x,y_f)\,dx - \int_{I_1} g(x,y_i)\,dx
+= \int_{I_1\times\{y_f\}} g(x,y)\,dx - \int_{I_1\times\{y_i\}} g(x,y)\,dx,
+\]
+donde los puntos $\{y_i\}$ e $\{y_f\}$ actúan aquí como una ``integral
+interior''. Esta observación anticipa la relación entre integrales de
+derivadas y la frontera de la región de integración, que se desarrolla en el
+capítulo siguiente.

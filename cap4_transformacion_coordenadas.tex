@@ -1,0 +1,711 @@
+\chapter{Transformación de Coordenadas}
+
+\section{Motivación}
+
+Al estudiar un sistema mecánico, la elección del sistema de coordenadas no
+es única: un mismo punto del espacio se puede describir en coordenadas
+cartesianas, cilíndricas, esféricas, o en cualquier otro sistema
+conveniente para el problema. Un problema con simetría esférica (como una
+fuerza central) resulta mucho más simple en coordenadas esféricas que en
+cartesianas. El objetivo de este capítulo es formalizar qué significa
+``cambiar de coordenadas'' y cómo transforman, bajo dicho cambio, los
+distintos objetos geométricos asociados a un vector: sus componentes, la
+base coordenada, la base dual y la métrica.
+
+\section{Coordinatización del espacio}
+
+\begin{definicion}[Coordinatización]
+Sea $M$ el espacio físico (por ejemplo $\mathbb{R}^3$). Una
+\textbf{coordinatización} de $M$ es un mapeo biyectivo
+\[
+x : M \longrightarrow \mathbb{R}^3, \qquad p \longmapsto x(p) =
+(x^1,x^2,x^3),
+\]
+que asigna a cada punto $p \in M$ una terna ordenada de números reales,
+llamados las \textbf{coordenadas} de $p$.
+\end{definicion}
+
+\begin{ejemplo}
+Las coordenadas cartesianas, cilíndricas y esféricas son tres
+coordinatizaciones distintas de un mismo punto $p \in \mathbb{R}^3$:
+\[
+x_{\text{cart}}(p) = (x,y,z), \qquad
+x_{\text{cil}}(p) = (\rho,\varphi,z), \qquad
+x_{\text{esf}}(p) = (r,\varphi,\theta).
+\]
+\end{ejemplo}
+
+\section{Transformación de coordenadas}
+
+\begin{definicion}[Transformación de coordenadas]
+Sean $x^i$ y $x'^i$ ($i=1,2,3$) dos coordinatizaciones distintas de un
+mismo punto $p$. Una \textbf{transformación de coordenadas} es un par de
+mapeos biyectivos e inversos entre sí,
+\[
+x'^i = x'^i(x^j), \qquad x^i = x^i(x'^j),
+\]
+que relacionan ambas coordinatizaciones.
+\end{definicion}
+
+\begin{ejemplo}[Cartesianas a esféricas]
+La transformación de coordenadas cartesianas $(x,y,z)$ a esféricas
+$(r,\varphi,\theta)$ está dada por
+\[
+x = r\sin\theta\cos\varphi, \qquad y = r\sin\theta\sin\varphi, \qquad
+z = r\cos\theta,
+\]
+con transformación inversa
+\[
+r = \sqrt{x^2+y^2+z^2}, \qquad
+\varphi = \arctan\!\left(\frac{y}{x}\right), \qquad
+\theta = \arccos\!\left(\frac{z}{\sqrt{x^2+y^2+z^2}}\right).
+\]
+\end{ejemplo}
+
+\subsection{El jacobiano de la transformación}
+
+\begin{definicion}[Matriz jacobiana]
+Dada una transformación de coordenadas $x'^i=x'^i(x^j)$, se define la
+\textbf{matriz jacobiana} de la transformación como la matriz de
+$3\times 3$
+\[
+J = \left[ \frac{\partial x'^i}{\partial x^j} \right]_{i,j=1,2,3} =
+\begin{pmatrix}
+\dfrac{\partial x'^1}{\partial x^1} & \dfrac{\partial x'^1}{\partial x^2} &
+\dfrac{\partial x'^1}{\partial x^3} \\[8pt]
+\dfrac{\partial x'^2}{\partial x^1} & \dfrac{\partial x'^2}{\partial x^2} &
+\dfrac{\partial x'^2}{\partial x^3} \\[8pt]
+\dfrac{\partial x'^3}{\partial x^1} & \dfrac{\partial x'^3}{\partial x^2} &
+\dfrac{\partial x'^3}{\partial x^3}
+\end{pmatrix},
+\]
+y el \textbf{jacobiano} de la transformación es su determinante,
+$J = \det\!\left[\partial x'^i/\partial x^j\right]$.
+\end{definicion}
+
+\begin{observacion}
+Para que la transformación sea invertible en un entorno de un punto se
+requiere $J\neq 0$ en dicho punto (teorema de la función inversa). Los puntos donde $J=0$ son puntos singulares de la coordinatización; por
+ejemplo, el origen $r=0$ en coordenadas esféricas, o el eje $z$
+($\rho=0$) en coordenadas cilíndricas.
+\end{observacion}
+
+\begin{ejemplo}
+Para la transformación de cartesianas a esféricas, el jacobiano es
+\[
+J = \det\!\left[\frac{\partial x'^i}{\partial x^j}\right] = r^2\sin\theta .
+\]
+El jacobiano se anula en $r=0$ y en $\theta=0,\pi$ (el eje $z$), que son
+precisamente los puntos donde la coordinatización esférica es singular:
+en el origen $\varphi$ y $\theta$ no están definidos, y sobre el eje $z$,
+$\varphi$ no está definido.
+\end{ejemplo}
+
+\section{Vectores base}
+
+\begin{definicion}[Base coordenada]
+Dada una coordinatización $x^i$ de $\mathbb{R}^3$, la \textbf{base
+coordenada} asociada es el conjunto de vectores
+\[
+\vec{e}_i = \frac{\partial \vec{r}}{\partial x^i}, \qquad i=1,2,3,
+\]
+donde $\vec{r}=\vec r(x^1,x^2,x^3)$ es el vector posición.
+\end{definicion}
+
+\begin{proposicionc}
+Bajo una transformación de coordenadas $x^i = x^i(x'^j)$, la base
+coordenada $\{\vec e_i\}_{i=1}^3$ transforma como
+\[
+\vec{e}\,'_i = \sum_{j=1}^{3} \frac{\partial x^j}{\partial x'^i}\, \vec e_j
+.
+\]
+\end{proposicionc}
+
+\begin{proof}
+Por regla de la cadena,
+\[
+\vec e\,'_i = \frac{\partial \vec r}{\partial x'^i} =
+\sum_{j=1}^{3} \frac{\partial x^j}{\partial x'^i}
+\frac{\partial \vec r}{\partial x^j} =
+\sum_{j=1}^{3} \frac{\partial x^j}{\partial x'^i}\, \vec e_j . \qedhere
+\]
+\end{proof}
+
+De manera análoga, contrayendo la expresión anterior con
+$\sum_i \partial x'^k/\partial x^i$ y usando
+$\sum_i (\partial x'^k/\partial x^i)(\partial x^i/\partial x'^j) =
+\delta^k_j$, se obtiene la relación inversa:
+
+\begin{proposicionc}
+Bajo la transformación inversa $x'^i=x'^i(x^j)$,
+\[
+\vec e_i = \sum_{j=1}^{3} \frac{\partial x'^j}{\partial x^i}\, \vec e\,'_j
+.
+\]
+\end{proposicionc}
+
+\begin{ejemplo}[Base esférica a partir de la cartesiana]
+Sea $\{\vec e_1,\vec e_2,\vec e_3\} = \{\ihat,\jhat,\khat\}$ la base
+cartesiana, y sea $\{\vec e\,'_1,\vec e\,'_2,\vec e\,'_3\} =
+\{\vec e_r,\vec e_\varphi,\vec e_\theta\}$ la base coordenada esférica.
+Usando $x^j=x^j(x'^i)=x^j(r,\varphi,\theta)$,
+\[
+\vec e\,'_1 = \vec e_r = \sum_{j=1}^3 \frac{\partial x^j}{\partial r}
+\vec e_j = \frac{\partial x}{\partial r}\ihat + \frac{\partial y}{\partial
+r}\jhat + \frac{\partial z}{\partial r}\khat ,
+\]
+lo que da
+\[
+\vec e_r = \sin\theta\cos\varphi\,\ihat + \sin\theta\sin\varphi\,\jhat +
+\cos\theta\,\khat .
+\]
+Análogamente, derivando respecto de $\varphi$ y de $\theta$,
+\[
+\vec e_\varphi = r\sin\theta\,(-\sin\varphi\,\ihat + \cos\varphi\,\jhat),
+\qquad
+\vec e_\theta = r\big(\cos\varphi\cos\theta\,\ihat +
+\sin\varphi\cos\theta\,\jhat - \sin\theta\,\khat\big).
+\]
+
+\medskip
+Notar que $\vec e_r$ es unitario, pero $\vec e_\varphi$ y $\vec e_\theta$
+no lo son: $\|\vec e_\varphi\| = r\sin\theta$ y $\|\vec e_\theta\|=r$. La
+base coordenada $\{\vec e_r,\vec e_\varphi,\vec e_\theta\}$ es ortogonal
+pero \textbf{no ortonormal}; ésta es la base ``natural'' asociada a las
+coordenadas esféricas, distinta de la base ortonormal
+$\{\hat r,\hat\varphi,\hat\theta\}$ usada habitualmente en física
+elemental.
+
+\medskip
+Realizando el cálculo inverso, $x^i=x^i(x'^j)$, se obtienen los vectores
+cartesianos en términos de la base esférica:
+\[
+\ihat = \frac{x}{\sqrt{x^2+y^2+z^2}}\,\vec e_r - \frac{y}{x^2+y^2}\,
+\vec e_\varphi + \frac{xz}{\sqrt{x^2+y^2}\,(x^2+y^2+z^2)}\, \vec e_\theta ,
+\]
+y expresiones análogas para $\jhat$ y $\khat$; reescritas en coordenadas
+esféricas por estética,
+\[
+\ihat = \cos\varphi\sin\theta\,\vec e_r - \frac{\sin\varphi}{r\sin\theta}\,
+\vec e_\varphi + \frac{\cos\varphi\cos\theta}{r}\,\vec e_\theta, \quad
+\jhat = \sin\varphi\sin\theta\,\vec e_r + \frac{\cos\varphi}{r\sin\theta}\,
+\vec e_\varphi + \frac{\sin\varphi\cos\theta}{r}\,\vec e_\theta,
+\]
+\[
+\khat = \cos\theta\,\vec e_r - \frac{\sin\theta}{r}\,\vec e_\theta .
+\]
+\end{ejemplo}
+
+\section{Componentes de un vector: tensores contravariantes}
+
+\begin{proposicionc}
+\label{prop:transf-componentes}
+Sea $\vec A$ un vector con componentes $A^i$ en la base $\{\vec e_i\}$.
+Bajo la transformación de coordenadas $x^i=x^i(x'^j)$, las componentes de
+$\vec A$ transforman como
+\[
+A'^i = \sum_{j=1}^{3} \frac{\partial x'^i}{\partial x^j}\, A^j .
+\]
+\end{proposicionc}
+
+\begin{proof}
+Como $\vec A$ no depende del sistema coordenado, $\vec A\big|_{O'} =
+\vec A\big|_O$, es decir
+\[
+\sum_{i=1}^3 A'^i \vec e\,'_i = \sum_{j=1}^3 A^j \vec e_j =
+\sum_{j=1}^3 A^j \sum_{i=1}^3 \frac{\partial x'^i}{\partial x^j}\vec e\,'_i
+= \sum_{i=1}^3 \left(\sum_{j=1}^3 \frac{\partial x'^i}{\partial x^j}
+A^j\right) \vec e\,'_i .
+\]
+Como la base $\{\vec e\,'_i\}$ es linealmente independiente, se concluye
+\[
+A'^i = \sum_{j=1}^3 \frac{\partial x'^i}{\partial x^j} A^j . \qedhere
+\]
+\end{proof}
+
+Contrayendo con $\sum_i \partial x^k/\partial x'^i$ y usando la regla de
+la cadena se obtiene la relación inversa:
+
+\begin{proposicionc}
+\[
+A^k = \sum_{i=1}^{3} \frac{\partial x^k}{\partial x'^i}\, A'^i .
+\]
+\end{proposicionc}
+
+\begin{ejemplo}
+Sea $\vec A = A_x\ihat + A_y\jhat + A_z\khat = A_r\vec e_r +
+A_\varphi\vec e_\varphi + A_\theta\vec e_\theta$. Usando la
+Proposición~\ref{prop:transf-componentes} con la transformación a
+esféricas se obtiene, tras simplificar,
+\[
+A_r = \cos\varphi\sin\theta\,A_x + \sin\varphi\sin\theta\,A_y +
+\cos\theta\,A_z = \vec e_r\cdot\vec A ,
+\]
+\[
+A_\varphi = -\frac{\sin\varphi}{r\sin\theta}A_x +
+\frac{\cos\varphi}{r\sin\theta}A_y = \frac{1}{r^2\sin^2\theta}\,
+\vec e_\varphi\cdot\vec A , \qquad
+A_\theta = \frac{\cos\varphi\cos\theta}{r}A_x +
+\frac{\sin\varphi\cos\theta}{r}A_y - \frac{\sin\theta}{r}A_z =
+\frac{1}{r^2}\,\vec e_\theta\cdot\vec A .
+\]
+Notar que $A_\varphi$ y $A_\theta$ \textbf{no} son simplemente
+$\vec e_\varphi\cdot\vec A$ ni $\vec e_\theta\cdot\vec A$, sino que llevan
+un factor de normalización: esto ocurre porque $\{\vec e_r,\vec
+e_\varphi,\vec e_\theta\}$ no es una base ortonormal (véase la sección
+sobre la base dual, más adelante).
+
+La transformación inversa da
+\[
+A_x = \frac{x}{\sqrt{x^2+y^2+z^2}}A_r - y A_\varphi +
+\frac{xz}{\sqrt{x^2+y^2}}A_\theta, \qquad
+A_y = \frac{y}{\sqrt{x^2+y^2+z^2}}A_r + x A_\varphi +
+\frac{yz}{\sqrt{x^2+y^2}}A_\theta,
+\]
+\[
+A_z = \frac{z}{\sqrt{x^2+y^2+z^2}}A_r - \sqrt{x^2+y^2}\,A_\theta .
+\]
+\end{ejemplo}
+
+\begin{observacion}
+De la discusión anterior se concluye que:
+\begin{itemize}
+\item Las cantidades con el índice \textbf{arriba} transforman con la
+matriz $\partial x'^i/\partial x^j$.
+\item Las cantidades con el índice \textbf{abajo} transforman con la
+matriz $\partial x^i/\partial x'^j$.
+\end{itemize}
+En la construcción de un vector $\vec A = \sum_i A^i \vec e_i$ se
+necesitan las cantidades $\{\vec e_i\}$ (índice abajo) y $\{A^i\}$
+(índice arriba): se contrae un índice arriba con uno abajo. Esta es la
+razón estructural por la que los vectores no dependen del sistema
+coordenado: las dos leyes de transformación (una y su inversa) se
+cancelan exactamente.
+\end{observacion}
+
+\begin{definicion}[Índices contraídos]
+Un índice arriba y un índice abajo se dicen \textbf{contraídos} si están
+bajo una suma sobre dicho índice.
+\end{definicion}
+
+\begin{definicion}[Tensor contravariante de orden uno]
+La cantidad $T^i$ se dice un \textbf{tensor contravariante de orden uno},
+o \textbf{tensor de orden $(1,0)$}, si bajo una transformación de
+coordenadas $x^i=x^i(x'^j)$ transforma como
+\[
+T'^i = \sum_{j=1}^{3} \frac{\partial x'^i}{\partial x^j}\, T^j .
+\]
+\end{definicion}
+
+Las componentes $A^i$ de un vector arbitrario $\vec A$ son, por lo tanto,
+un tensor de orden $(1,0)$.
+
+\section{Vectores duales y tensores covariantes}
+
+\begin{definicion}[Base dual]
+La \textbf{base dual} $\{\vec E^i\}_{i=1}^3$ asociada a la base
+coordenada $\{\vec e_i\}_{i=1}^3$ es el conjunto de (co)vectores definido
+por la relación invariante
+\[
+E^i(\vec e_j) = \delta^i_j ,
+\]
+que se cumple en cualquier sistema de coordenadas:
+$E^i(e_j)\big|_O = E^i(e_j)\big|_{O'} = \delta^i_j$.
+\end{definicion}
+
+\begin{observacion}
+Los vectores duales pertenecen al espacio dual $V^*(n,K)$; un vector dual
+arbitrario se escribe $\vec f = \sum_i f_i \vec E^i$, con componentes con
+el índice abajo. Como $\vec f$ tampoco depende del sistema coordenado
+($\vec f\big|_{O'}=\vec f\big|_O$), la base dual debe poseer su propia
+ley de transformación, distinta de la de la base coordenada, ya que
+$\vec E^i$ lleva el índice arriba.
+\end{observacion}
+
+\begin{proposicionc}
+\label{prop:transf-base-dual}
+Bajo la transformación de coordenadas $x^i=x^i(x'^j)$, la base dual
+transforma como
+\[
+E'^i = \sum_{j=1}^{3} \frac{\partial x'^i}{\partial x^j}\, E^j .
+\]
+\end{proposicionc}
+
+\begin{proof}
+Partimos de la relación invariante $E^i(e_j)\big|_{O'} = \delta^i_j$ y
+usamos la ley de transformación de $\vec e_j$ (transformación inversa
+$x^j=x^j(x'^k)$):
+\[
+E'^i(e'_j) = \left(\sum_{k=1}^3 \frac{\partial x'^i}{\partial x^k} E^k
+\right)\!\left(\sum_{l=1}^3 \frac{\partial x^l}{\partial x'^j} e_l\right)
+= \sum_{k=1}^3\sum_{l=1}^3 \frac{\partial x'^i}{\partial x^k}
+\frac{\partial x^l}{\partial x'^j}\, E^k(e_l)
+= \sum_{k=1}^3 \frac{\partial x'^i}{\partial x^k}\frac{\partial
+x^k}{\partial x'^j} = \delta^i_j , \qedhere
+\]
+lo cual confirma que la ley propuesta es consistente con la definición
+invariante de la base dual.
+\end{proof}
+
+Contrayendo con $\sum_i \partial x^k/\partial x'^i$ se obtiene la
+transformación inversa:
+\[
+E^k = \sum_{i=1}^{3} \frac{\partial x^k}{\partial x'^i}\, E'^i .
+\]
+
+\begin{proposicionc}
+\label{prop:transf-componentes-dual}
+La componente $f_i$ de un vector dual $\vec f$ transforma, bajo
+$x'^i=x'^i(x^j)$, como
+\[
+f'_i = \sum_{j=1}^{3} \frac{\partial x^j}{\partial x'^i}\, f_j .
+\]
+\end{proposicionc}
+
+\begin{proof}
+Como $\vec f\big|_O = \vec f\big|_{O'}$,
+\[
+\sum_{j=1}^3 f_j E^j = \sum_{i=1}^3 f'_i E'^i = \sum_{i=1}^3 f'_i
+\sum_{j=1}^3 \frac{\partial x^j}{\partial x'^i} E^j ,
+\]
+y por independencia lineal de $\{\vec E^j\}$,
+\[
+f'_i = \sum_{j=1}^3 \frac{\partial x^j}{\partial x'^i} f_j . \qedhere
+\]
+\end{proof}
+
+\begin{definicion}[Tensor covariante de orden uno]
+La cantidad $T_i$ se dice un \textbf{tensor covariante de orden uno}, o
+\textbf{tensor de orden $(0,1)$}, si bajo la transformación de
+coordenadas $x^i=x^i(x'^j)$ transforma como
+\[
+T'_i = \sum_{j=1}^{3} \frac{\partial x^j}{\partial x'^i}\, T_j .
+\]
+\end{definicion}
+
+\begin{observacion}
+El término \textbf{covarianza} (invariancia de forma) de un vector
+significa que el vector no cambia de forma bajo una transformación de
+coordenadas: no cambia su dirección, sentido ni magnitud. Sin embargo,
+bajo un cambio de coordenadas cambian las bases coordenadas, por lo que
+el valor numérico de sus componentes sí cambia.
+\end{observacion}
+
+\section{La métrica}
+
+\begin{definicion}[Métrica]
+La \textbf{métrica} asociada a una base coordenada $\{\vec e_i\}_{i=1}^3$
+es
+\[
+g_{ij} = \vec e_i \cdot \vec e_j .
+\]
+\end{definicion}
+
+\begin{ejemplo}
+En coordenadas cartesianas, $g_{ij}=\delta_{ij}$ (la \textbf{métrica de
+Euclides}). En coordenadas esféricas,
+\[
+g_{ij} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & r^2\sin^2\theta & 0 \\ 0 & 0 &
+r^2 \end{pmatrix},
+\]
+consistente con $\|\vec e_r\|^2=1$, $\|\vec e_\varphi\|^2 = r^2\sin^2
+\theta$, $\|\vec e_\theta\|^2=r^2$ obtenidas anteriormente.
+\end{ejemplo}
+
+\begin{proposicionc}
+\label{prop:transf-metrica}
+La métrica $g_{ij}(x^k)$ bajo una transformación de coordenadas
+$x^i=x^i(x'^j)$ transforma como
+\[
+g'_{ij} = \sum_{k=1}^{3}\sum_{l=1}^{3} \frac{\partial x^k}{\partial x'^i}
+\frac{\partial x^l}{\partial x'^j}\, g_{kl} .
+\]
+\end{proposicionc}
+
+\begin{proof}
+Usando la ley de transformación de la base coordenada,
+\[
+g'_{ij} = \vec e\,'_i \cdot \vec e\,'_j = \left(\sum_{k=1}^3
+\frac{\partial x^k}{\partial x'^i}\vec e_k\right)\!\cdot\!\left(
+\sum_{l=1}^3 \frac{\partial x^l}{\partial x'^j}\vec e_l\right)
+= \sum_{k=1}^3\sum_{l=1}^3 \frac{\partial x^k}{\partial x'^i}
+\frac{\partial x^l}{\partial x'^j}\, \vec e_k\cdot\vec e_l =
+\sum_{k=1}^3\sum_{l=1}^3 \frac{\partial x^k}{\partial x'^i}\frac{\partial
+x^l}{\partial x'^j} g_{kl} . \qedhere
+\]
+\end{proof}
+
+\begin{definicion}[Tensor covariante de orden dos]
+La cantidad $T_{ij}$ se dice un tensor covariante de orden $2$, o tensor
+de orden $(0,2)$, si transforma como
+\[
+T'_{ij} = \sum_{k=1}^{3}\sum_{l=1}^{3} \frac{\partial x^k}{\partial
+x'^i}\frac{\partial x^l}{\partial x'^j}\, T_{kl} .
+\]
+\end{definicion}
+
+Por lo tanto, la métrica $g_{ij}$ es un tensor de orden $(0,2)$.
+
+\begin{ejemplo}
+Recuperemos la métrica esférica a partir de la métrica cartesiana
+$g_{ij}=\delta_{ij}$ usando la Proposición~\ref{prop:transf-metrica}:
+\[
+g'_{ij} = \sum_{k=1}^3 \frac{\partial x^k}{\partial x'^i}\frac{\partial
+x^k}{\partial x'^j} = \frac{\partial x}{\partial x'^i}\frac{\partial
+x}{\partial x'^j} + \frac{\partial y}{\partial x'^i}\frac{\partial
+y}{\partial x'^j} + \frac{\partial z}{\partial x'^i}\frac{\partial
+z}{\partial x'^j} .
+\]
+Sustituyendo $x=r\sin\theta\cos\varphi$, etc., se recupera
+\[
+g'_{ij} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & r^2\sin^2\theta & 0 \\ 0 & 0 &
+r^2 \end{pmatrix}.
+\]
+\end{ejemplo}
+
+\subsection{El elemento de línea}
+
+\begin{proposicionc}
+El elemento de línea $ds$, definido por $ds^2 = \sum_{i,j} g_{ij}\,
+dx^i\,dx^j$, es un invariante bajo transformaciones de coordenadas:
+$ds' = ds$.
+\end{proposicionc}
+
+\begin{proof}
+En el sistema $O'x'^i$,
+\[
+ds'^2 = \sum_{i=1}^3\sum_{j=1}^3 g'_{ij}\, dx'^i\, dx'^j .
+\]
+Bajo $x'^i=x'^i(x^j)$, el diferencial $dx'^i$ transforma como
+$dx'^i = \sum_j (\partial x'^i/\partial x^j)\, dx^j$, es decir, $dx^i$ es
+un tensor de orden $(1,0)$. Sustituyendo esto y la ley de transformación
+de $g'_{ij}$ (Proposición~\ref{prop:transf-metrica}),
+\[
+ds'^2 = \sum_{i,j,k,l} \frac{\partial x^k}{\partial x'^i}\frac{\partial
+x^l}{\partial x'^j}\, g_{kl} \sum_{n} \frac{\partial x'^i}{\partial x^n}
+dx^n \sum_{m}\frac{\partial x'^j}{\partial x^m} dx^m
+= \sum_{k,l,n,m} \left(\sum_i \frac{\partial x^k}{\partial x'^i}
+\frac{\partial x'^i}{\partial x^n}\right)\!\!\left(\sum_j \frac{\partial
+x^l}{\partial x'^j}\frac{\partial x'^j}{\partial x^m}\right) g_{kl}\,
+dx^n dx^m .
+\]
+Ambos paréntesis son deltas de Kronecker, $\delta^k_n$ y $\delta^l_m$, de
+modo que
+\[
+ds'^2 = \sum_{k,l} g_{kl}\, dx^k dx^l = ds^2 \quad\Longrightarrow\quad
+ds' = ds . \qedhere
+\]
+\end{proof}
+
+\begin{observacion}
+El elemento de línea no es un vector sino un \emph{escalar}: un número
+(con dimensión) cuyo valor no cambia bajo un cambio de coordenadas. En
+particular, el largo de una trayectoria tiene el mismo valor en todos los
+sistemas coordenados.
+\end{observacion}
+
+\section{Invariantes: producto escalar, magnitud y ángulo}
+
+\begin{proposicionc}
+El producto escalar $\vec A\cdot\vec B = \sum_{i,j} g_{ij} A^i B^j$ entre
+dos vectores cualesquiera es invariante bajo transformación de
+coordenadas.
+\end{proposicionc}
+
+\begin{proof}
+Análogo a la demostración de la invariancia del elemento de línea,
+reemplazando $dx^i$ por $A^i$ y $dx^j$ por $B^j$ (ambos tensores de orden
+$(1,0)$):
+\[
+\vec A\cdot\vec B\big|_{O'} = \sum_{i,j} g'_{ij} A'^i B'^j = \sum_{n,m}
+g_{nm} A^n B^m = \vec A\cdot\vec B\big|_O . \qedhere
+\]
+\end{proof}
+
+El producto escalar es un número real, no un vector; por lo tanto su
+valor numérico no cambia bajo una transformación de coordenadas. De este
+resultado se derivan dos corolarios inmediatos.
+
+\begin{corolario}
+La magnitud $\|\vec A\| = \sqrt{\vec A\cdot\vec A}$ de un vector es
+invariante bajo transformaciones de coordenadas.
+\end{corolario}
+
+\begin{proof}
+Tomando $\vec B=\vec A$ en la proposición anterior,
+$\vec A\cdot\vec A\big|_{O'} = \vec A\cdot\vec A\big|_O$, es decir
+$\|\vec A\|^2\big|_{O'} = \|\vec A\|^2\big|_O$, luego
+$\|\vec A\|\big|_{O'} = \|\vec A\|\big|_O$. \qedhere
+\end{proof}
+
+\begin{corolario}
+El ángulo entre dos vectores es invariante bajo transformación de
+coordenadas.
+\end{corolario}
+
+\begin{proof}
+El ángulo $\theta$ entre $\vec A$ y $\vec B$ está dado por
+$\cos\theta = (\vec A\cdot\vec B)/(\|\vec A\|\|\vec B\|)$. Como el
+numerador y ambos factores del denominador son invariantes,
+$\cos\theta\big|_{O'} = \cos\theta\big|_O$, y por lo tanto
+$\theta\big|_{O'} = \theta\big|_O$. \qedhere
+\end{proof}
+
+\begin{observacion}[Definición formal vía el espacio dual]
+Formalmente, el producto escalar entre un vector dual $\vec f = \sum_i
+f_i \vec E^i \in V^*(n,K)$ y un vector $\vec v = \sum_i v^i \vec e_i \in
+V(n,K)$ se define como el emparejamiento natural
+\[
+f(v) = \sum_{i=1}^{3} f_i\, v^i .
+\]
+\end{observacion}
+
+\begin{proposicionc}
+El emparejamiento $f(v) = \sum_i f_i v^i$ es invariante bajo la
+transformación de coordenadas $x'^i=x'^i(x^j)$.
+\end{proposicionc}
+
+\begin{proof}
+Las cantidades $v^i$ y $f_i$ son tensores de orden $(1,0)$ y $(0,1)$
+respectivamente, es decir $v'^i = \sum_j (\partial x'^i/\partial x^j)
+v^j$ y $f'_i = \sum_j (\partial x^j/\partial x'^i) f_j$. Entonces
+\[
+f'(v') = \sum_{i=1}^3 f'_i v'^i = \sum_{i,j,k}\frac{\partial
+x^j}{\partial x'^i} f_j\, \frac{\partial x'^i}{\partial x^k} v^k =
+\sum_{j,k}\left(\sum_i \frac{\partial x^j}{\partial x'^i}\frac{\partial
+x'^i}{\partial x^k}\right) f_j v^k = \sum_{j,k} \delta^j_k\, f_j v^k =
+\sum_{j} f_j v^j = f(v). \qedhere
+\]
+\end{proof}
+
+\newpage
+\section{La métrica inversa}
+
+\begin{proposicionc}
+La métrica inversa $g^{ij}$ está dada en términos de la base dual
+$\{\vec E^i\}_{i=1}^3$ por
+\[
+g^{ij} = \vec E^i \cdot \vec E^j .
+\]
+\end{proposicionc}
+
+\begin{proof}
+La base dual se relaciona con la base coordenada a través de la métrica
+inversa, $\vec E^i = \sum_j g^{ij} \vec e_j$, de modo que se cumpla la
+definición $E^i(e_j) = \vec E^i\cdot\vec e_j = \sum_k g^{ik}\vec
+e_k\cdot\vec e_j = \sum_k g^{ik} g_{kj} = \delta^i_j$. Entonces
+\[
+\vec E^i\cdot\vec E^j = \sum_{k} g^{ik}\vec e_k \cdot \sum_{l} g^{jl}\vec
+e_l = \sum_{k,l} g^{ik} g^{jl}\, g_{kl} = \sum_k g^{ik}\left(\sum_l
+g^{jl}g_{kl}\right) = \sum_k g^{ik}\, \delta^j_k = g^{ij} . \qedhere
+\]
+\end{proof}
+
+\begin{ejemplo}
+En coordenadas esféricas, usando $\vec E^1=\vec e_r$, $\vec E^2 = \vec
+e_\varphi/(r^2\sin^2\theta)$, $\vec E^3 = \vec e_\theta/r^2$ (obtenidos de
+$\vec E^i = \sum_j g^{ij}\vec e_j$ con $g^{ij}=\text{diag}(1,\,
+1/(r^2\sin^2\theta),\,1/r^2)$), se verifica directamente
+\[
+g^{11} = \vec E^1\cdot\vec E^1 = \vec e_r\cdot\vec e_r = 1, \qquad
+g^{22} = \vec E^2\cdot\vec E^2 = \frac{\vec e_\varphi\cdot\vec
+e_\varphi}{r^4\sin^4\theta} = \frac{1}{r^2\sin^2\theta}, \qquad
+g^{33} = \vec E^3\cdot\vec E^3 = \frac{\vec e_\theta\cdot\vec
+e_\theta}{r^4} = \frac{1}{r^2},
+\]
+y los términos cruzados $g^{12}=g^{13}=g^{23}=0$ por ortogonalidad de la
+base esférica. Es decir,
+\[
+g^{ij} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \dfrac{1}{r^2\sin^2\theta} & 0
+\\ 0 & 0 & \dfrac{1}{r^2} \end{pmatrix},
+\]
+el resultado conocido.
+\end{ejemplo}
+
+\begin{proposicionc}
+\label{prop:transf-metrica-inversa}
+La métrica inversa $g^{ij}$ bajo una transformación de coordenadas
+$x'^i=x'^i(x^j)$ transforma como
+\[
+g'^{ij} = \sum_{k=1}^{3}\sum_{l=1}^{3} \frac{\partial x'^i}{\partial
+x^k}\frac{\partial x'^j}{\partial x^l}\, g^{kl} .
+\]
+\end{proposicionc}
+
+\begin{proof}
+Escribiendo $g'^{ij} = \vec E'^i\cdot\vec E'^j$ y usando la ley de
+transformación de la base dual (Proposición~\ref{prop:transf-base-dual}),
+\[
+g'^{ij} = \left(\sum_k \frac{\partial x'^i}{\partial x^k}\vec
+E^k\right)\!\cdot\!\left(\sum_l \frac{\partial x'^j}{\partial x^l}\vec
+E^l\right) = \sum_{k,l} \frac{\partial x'^i}{\partial x^k}\frac{\partial
+x'^j}{\partial x^l}\, \vec E^k\cdot\vec E^l = \sum_{k,l} \frac{\partial
+x'^i}{\partial x^k}\frac{\partial x'^j}{\partial x^l}\, g^{kl} .
+\qedhere
+\]
+\end{proof}
+
+\begin{ejemplo}
+Verifiquemos la componente $g'^{11}$ de la métrica esférica a partir de
+$g^{kl}=\delta^{kl}$ (cartesiana) usando la
+Proposición~\ref{prop:transf-metrica-inversa}:
+\[
+g'^{11} = \left(\frac{\partial r}{\partial x}\right)^2 +
+\left(\frac{\partial r}{\partial y}\right)^2 + \left(\frac{\partial
+r}{\partial z}\right)^2 = \frac{x^2}{r^2} + \frac{y^2}{r^2} +
+\frac{z^2}{r^2} = 1 ,
+\]
+consistente con el resultado directo. Repitiendo el cálculo para las
+demás componentes se recupera $g^{ij} =
+\text{diag}(1,\,1/(r^2\sin^2\theta),\,1/r^2)$.
+\end{ejemplo}
+
+\begin{definicion}[Tensor contravariante de orden dos]
+La cantidad $T^{ij}$ se dice un tensor contravariante de orden $2$, o
+tensor de orden $(2,0)$, si bajo $x'^i=x'^i(x^j)$ transforma como
+\[
+T'^{ij} = \sum_{k=1}^{3}\sum_{l=1}^{3} \frac{\partial x'^i}{\partial
+x^k}\frac{\partial x'^j}{\partial x^l}\, T^{kl} .
+\]
+\end{definicion}
+
+Por lo tanto, la métrica inversa $g^{ij}$ es un tensor de orden $(2,0)$.
+
+\section{Los tres símbolos delta}
+
+Conviene distinguir con cuidado tres cantidades que, a primera vista,
+parecen representar todas a la matriz identidad: $\delta_{ij}$,
+$\delta^{ij}$ y $\delta^i_j$.
+
+\begin{proposicionc}
+De las tres cantidades $\delta_{ij}$, $\delta^{ij}$ y $\delta^i_j$, solo
+$\delta^i_j$ es invariante bajo transformaciones de coordenadas.
+\end{proposicionc}
+
+\begin{proof}
+Como $\delta^k_l$ es un tensor de orden $(1,1)$ (transforma con un
+índice arriba y uno abajo, cada uno con su matriz correspondiente),
+\[
+\delta'^i_j = \sum_{k=1}^3\sum_{l=1}^3 \frac{\partial x'^i}{\partial
+x^k}\frac{\partial x^l}{\partial x'^j}\, \delta^k_l = \sum_{k=1}^3
+\frac{\partial x'^i}{\partial x^k}\frac{\partial x^k}{\partial x'^j} =
+\frac{\partial x'^i}{\partial x'^j} = \delta^i_j . \qedhere
+\]
+\end{proof}
+
+En cambio, $\delta_{ij}$ y $\delta^{ij}$ transforman como tensores de
+orden $(0,2)$ y $(2,0)$ respectivamente, y por lo tanto \textbf{no} son
+invariantes: cambian su forma funcional bajo un cambio de coordenadas
+(por ejemplo, al pasar a esféricas dejan de ser la matriz identidad).
+
+\begin{observacion}
+En resumen:
+\begin{itemize}
+\item $\delta^i_j$ es la matriz identidad (invariante, tensor de orden
+$(1,1)$).
+\item $\delta_{ij}$ es la métrica asociada a las coordenadas cartesianas,
+llamada \textbf{métrica de Euclides} (tensor de orden $(0,2)$).
+\item $\delta^{ij}$ es la métrica inversa de la métrica de Euclides
+(tensor de orden $(2,0)$).
+\end{itemize}
+\end{observacion}
