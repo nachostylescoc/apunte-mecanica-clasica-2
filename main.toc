@@ -35,7 +35,7 @@
 \contentsline {section}{\numberline {4.4}Vectores base}{20}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Componentes de un vector: tensores contravariantes}{21}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Vectores duales y tensores covariantes}{22}{section.4.6}%
-\contentsline {section}{\numberline {4.7}La métrica}{24}{section.4.7}%
+\contentsline {section}{\numberline {4.7}La métrica}{23}{section.4.7}%
 \contentsline {subsection}{\numberline {4.7.1}El elemento de línea}{24}{subsection.4.7.1}%
 \contentsline {section}{\numberline {4.8}Invariantes: producto escalar, magnitud y ángulo}{25}{section.4.8}%
 \contentsline {section}{\numberline {4.9}La métrica inversa}{26}{section.4.9}%

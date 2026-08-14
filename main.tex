@@ -94,7 +94,7 @@
 \newenvironment{axiomac}[1][]{%
   \begin{axbox}\begin{axioma}[#1]}{\end{axioma}\end{axbox}}
   % en el preámbulo, junto a los demás entornos
-\renewcommand{\vec}[1]{\overrightarrow{#1}}
+%\renewcommand{\vec}[1]{\overrightarrow{#1}}
 \newcommand{\ihat}{\hat{\imath}}
 \newcommand{\jhat}{\hat{\jmath}}
 \newcommand{\khat}{\hat{k}}
@@ -111,7 +111,13 @@
 
 \frontmatter
 \maketitle
+
 \tableofcontents
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
 
 \mainmatter
 
