@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1786665167.27779 "c:/Users/nacho/Documents/latex/apunte clasica 2/main.tex" "main.pdf" "main" 1786665172.80396 0
+["pdflatex"] 1786906879.16956 "c:/Users/nacho/Documents/latex/apunte clasica 2/mecanica clasica 2.tex" "mecanica clasica 2.pdf" "mecanica clasica 2" 1786906884.79132 0
   "C:/Users/nacho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1771550038.97696 96176 40a8022d15c5925d7081b1ad66e03248 ""
   "C:/Users/nacho/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1759682965.01501 25420 74920fb2c5d959a9536ce69e2e748355 ""
   "C:/Users/nacho/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1757367298.98988 31952 a037d81c87e73de6eef67799e450916f ""
@@ -239,19 +239,19 @@
   "C:/Users/nacho/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/nacho/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/nacho/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/nacho/Documents/latex/apunte clasica 2/main.tex" 1786665159.46708 3785 127076f5e3fdeee352e1fca80bdaaf54 ""
+  "c:/Users/nacho/Documents/latex/apunte clasica 2/mecanica clasica 2.tex" 1786906869.30886 3785 127076f5e3fdeee352e1fca80bdaaf54 ""
   "cap1_mapeo.tex" 1786566683 8419 1cdb09ace72182616ca112d6fe734fc0 ""
   "cap2_producto_cartesiano.tex" 1786566747 15270 b2864f6b932f72dba6739317e7977125 ""
   "cap3_frontera.tex" 1786566834 20613 956704d3dd3f184c988ba91efadf807b ""
   "cap4_transformacion_coordenadas.tex" 1786587071.18519 25320 fdc7182776acc78de9bb92a03493f303 ""
   "cap5_analisis_tensorial.tex" 1786659853.96234 37924 c82b5e8ff4acb8468f2c01d3b4aea48f ""
-  "main.aux" 1786665172.308 9100 c00b07475e76d20f68188cbe663387aa "pdflatex"
-  "main.out" 1786665172.33671 12394 785b0d8195d6d24dc5f837b507763cec "pdflatex"
-  "main.toc" 1786665172.35898 5521 f9b83c5356e0549e8decbbae9fd9f3d1 "pdflatex"
+  "mecanica clasica 2.aux" 1786906884.30186 9100 c00b07475e76d20f68188cbe663387aa "pdflatex"
+  "mecanica clasica 2.out" 1786906884.33297 12394 785b0d8195d6d24dc5f837b507763cec "pdflatex"
+  "mecanica clasica 2.toc" 1786906884.3512 5521 f9b83c5356e0549e8decbbae9fd9f3d1 "pdflatex"
   (generated)
-  "main.aux"
-  "main.log"
-  "main.out"
-  "main.pdf"
-  "main.toc"
+  "mecanica clasica 2.aux"
+  "mecanica clasica 2.log"
+  "mecanica clasica 2.out"
+  "mecanica clasica 2.pdf"
+  "mecanica clasica 2.toc"
   (rewritten before read)

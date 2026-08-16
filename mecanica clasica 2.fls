@@ -1,7 +1,7 @@
 PWD C:\Users\nacho\Documents\latex\apunte clasica 2
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\nacho\Documents\latex\apunte clasica 2\main.tex
-OUTPUT main.log
+INPUT c:\Users\nacho\Documents\latex\apunte clasica 2\mecanica clasica 2.tex
+OUTPUT mecanica clasica 2.log
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\base\bk10.clo
@@ -236,7 +236,7 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryfadings.code.tex
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfadings.code.tex
-OUTPUT main.pdf
+OUTPUT mecanica clasica 2.pdf
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbposter.code.tex
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
@@ -305,10 +305,10 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uni
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\main.aux
-INPUT .\main.aux
-INPUT main.aux
-OUTPUT main.aux
+INPUT .\mecanica clasica 2.aux
+INPUT .\mecanica clasica 2.aux
+INPUT mecanica clasica 2.aux
+OUTPUT mecanica clasica 2.aux
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -317,13 +317,13 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\main.out
-INPUT .\main.out
-INPUT main.out
-INPUT main.out
-INPUT .\main.out
-INPUT .\main.out
-OUTPUT main.out
+INPUT .\mecanica clasica 2.out
+INPUT .\mecanica clasica 2.out
+INPUT mecanica clasica 2.out
+INPUT mecanica clasica 2.out
+INPUT .\mecanica clasica 2.out
+INPUT .\mecanica clasica 2.out
+OUTPUT mecanica clasica 2.out
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm1728.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1728.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx2488.tfm
@@ -354,9 +354,9 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm2488.tfm
-INPUT .\main.toc
-INPUT .\main.toc
-INPUT main.toc
+INPUT .\mecanica clasica 2.toc
+INPUT .\mecanica clasica 2.toc
+INPUT mecanica clasica 2.toc
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1000.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
@@ -367,7 +367,7 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc1000.tfm
-OUTPUT main.toc
+OUTPUT mecanica clasica 2.toc
 INPUT .\cap1_mapeo.tex
 INPUT .\cap1_mapeo.tex
 INPUT .\cap1_mapeo.tex
@@ -400,9 +400,9 @@ INPUT cap4_transformacion_coordenadas.tex
 INPUT .\cap5_analisis_tensorial.tex
 INPUT .\cap5_analisis_tensorial.tex
 INPUT cap5_analisis_tensorial.tex
-INPUT main.aux
-INPUT .\main.out
-INPUT .\main.out
+INPUT mecanica clasica 2.aux
+INPUT .\mecanica clasica 2.out
+INPUT .\mecanica clasica 2.out
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk
