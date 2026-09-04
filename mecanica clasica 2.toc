@@ -59,3 +59,20 @@
 \contentsline {section}{\numberline {5.9}El operador rotacional}{38}{section.5.9}%
 \contentsline {section}{\numberline {5.10}Notación tensorial}{39}{section.5.10}%
 \contentsline {section}{\numberline {5.11}Invariancia de la acción}{39}{section.5.11}%
+\contentsline {chapter}{\numberline {6}Objetos Extendidos}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introducción}{41}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}La cuerda vibrante}{41}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Generalización a la membrana vibrante}{42}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Campos versus coordenadas}{43}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}El problema de Cauchy}{43}{subsection.6.1.4}%
+\contentsline {section}{\numberline {6.2}Cadena unidimensional}{44}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Cadena continua}{44}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}El límite de la función Lagrangiana}{46}{subsection.6.3.1}%
+\contentsline {section}{\numberline {6.4}Formulación Lagrangiana para sistemas continuos}{46}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Generalización a la membrana y a tres dimensiones}{47}{subsection.6.4.1}%
+\contentsline {section}{\numberline {6.5}Ondas planas}{48}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Definición de onda plana}{49}{subsection.6.5.1}%
+\contentsline {section}{\numberline {6.6}Notación compacta: la métrica de Minkowski}{49}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Ecuación de campo en notación compacta}{51}{subsection.6.6.1}%
+\contentsline {section}{\numberline {6.7}Condiciones de borde}{52}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Conclusiones}{53}{section.6.8}%

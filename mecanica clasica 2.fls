@@ -303,6 +303,8 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\reru
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\mathrsfs.sty
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\mathrsfs.sty
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT .\mecanica clasica 2.aux
@@ -352,6 +354,12 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm2488.tfm
 INPUT .\mecanica clasica 2.toc
@@ -366,6 +374,9 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs7.tfm
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc1000.tfm
 OUTPUT mecanica clasica 2.toc
 INPUT .\cap1_mapeo.tex
@@ -400,9 +411,19 @@ INPUT cap4_transformacion_coordenadas.tex
 INPUT .\cap5_analisis_tensorial.tex
 INPUT .\cap5_analisis_tensorial.tex
 INPUT cap5_analisis_tensorial.tex
+INPUT .\cap6_objetos_extendidos.tex
+INPUT .\cap6_objetos_extendidos.tex
+INPUT cap6_objetos_extendidos.tex
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0700.tfm
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti0500.tfm
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbi1000.tfm
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx0700.tfm
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx0500.tfm
 INPUT mecanica clasica 2.aux
 INPUT .\mecanica clasica 2.out
 INPUT .\mecanica clasica 2.out
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1000.pk
+INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1000.pk
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk
@@ -463,3 +484,5 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\l
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\rsfs\rsfs10.pfb
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\rsfs\rsfs10.pfb
