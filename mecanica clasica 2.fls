@@ -419,6 +419,9 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti050
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbi1000.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx0700.tfm
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx0500.tfm
+INPUT .\cap7_relatividad_especial.tex
+INPUT .\cap7_relatividad_especial.tex
+INPUT cap7_relatividad_especial.tex
 INPUT mecanica clasica 2.aux
 INPUT .\mecanica clasica 2.out
 INPUT .\mecanica clasica 2.out
@@ -446,6 +449,8 @@ INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 INPUT C:\Users\nacho\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex8.pfb
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex8.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
