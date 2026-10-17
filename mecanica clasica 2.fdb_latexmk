@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1788995518.52891 "c:/Users/nacho/Documents/latex/apunte clasica 2/mecanica clasica 2.tex" "mecanica clasica 2.pdf" "mecanica clasica 2" 1788995527.24415 0
+["pdflatex"] 1792258199.16515 "c:/Users/nacho/Documents/latex/apunte clasica 2/mecanica clasica 2.tex" "mecanica clasica 2.pdf" "mecanica clasica 2" 1792258205.59899 0
   "C:/Users/nacho/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1788484514.48938 96176 40a8022d15c5925d7081b1ad66e03248 ""
   "C:/Users/nacho/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbi1000.pk" 1788484525.94426 34112 d2b6a456eb651684007ea802b308b2a1 ""
   "C:/Users/nacho/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1759682965.01501 25420 74920fb2c5d959a9536ce69e2e748355 ""
@@ -252,17 +252,17 @@
   "C:/Users/nacho/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/nacho/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/nacho/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/nacho/Documents/latex/apunte clasica 2/mecanica clasica 2.tex" 1788995517.18987 3881 c8ac03f2635dfaa4eabd700431471f1a ""
+  "c:/Users/nacho/Documents/latex/apunte clasica 2/mecanica clasica 2.tex" 1792258187.40724 3881 c8ac03f2635dfaa4eabd700431471f1a ""
   "cap1_mapeo.tex" 1786566683 8419 1cdb09ace72182616ca112d6fe734fc0 ""
   "cap2_producto_cartesiano.tex" 1786566747 15270 b2864f6b932f72dba6739317e7977125 ""
   "cap3_frontera.tex" 1786566834 20613 956704d3dd3f184c988ba91efadf807b ""
   "cap4_transformacion_coordenadas.tex" 1786587071.18519 25320 fdc7182776acc78de9bb92a03493f303 ""
   "cap5_analisis_tensorial.tex" 1786659853.96234 37924 c82b5e8ff4acb8468f2c01d3b4aea48f ""
   "cap6_objetos_extendidos.tex" 1788485247.11729 41905 a3f1fd25f79521db9d26475e03fad752 ""
-  "cap7_relatividad_especial.tex" 1788994808.92186 67100 8366b2d646e8d0b1b68d1c4a3614ed4c ""
-  "mecanica clasica 2.aux" 1788995526.56952 15024 9ca1e03043edd63036669f383a3460f7 "pdflatex"
-  "mecanica clasica 2.out" 1788995526.63389 21297 6094f09dd8a0876efeacf145e4269452 "pdflatex"
-  "mecanica clasica 2.toc" 1788995526.66437 9571 5d5c4eca76263c1bbbaddaf2579a9ed2 "pdflatex"
+  "cap7_relatividad_especial.tex" 1792258150.83331 85549 54b0ce65b2a423d185fc3e7266c36692 ""
+  "mecanica clasica 2.aux" 1792258205.11071 15520 6086dfe72a97620c570aec8099f78efd "pdflatex"
+  "mecanica clasica 2.out" 1792258205.15276 22362 a51c2564866dafd215e907e19a88883b "pdflatex"
+  "mecanica clasica 2.toc" 1792258205.17738 9944 1eb5220f03661f04e924fadbeac0f876 "pdflatex"
   (generated)
   "mecanica clasica 2.aux"
   "mecanica clasica 2.log"

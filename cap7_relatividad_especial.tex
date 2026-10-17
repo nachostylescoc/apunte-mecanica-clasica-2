@@ -726,7 +726,11 @@ En la teoría de Newton, el principio de relatividad establece: todos
 los sistemas de referencia inerciales son equivalentes hasta donde los
 experimentos mecánicos lo avalan (\textbf{principio de relatividad de
 Galileo}); la mecánica es invariante de forma bajo transformaciones de
-Galileo. Esto puede reformularse así: no existe ningún experimento
+Galileo,
+\[
+\vec x = \vec x\,' + \vec V t . \tag{1}
+\]
+Esto puede reformularse así: no existe ningún experimento
 mecánico que permita determinar si un cuerpo está en reposo o en
 movimiento uniforme y rectilíneo.
 
@@ -743,8 +747,9 @@ mecánicos:
 Todos los sistemas de referencia inerciales son equivalentes. Es decir,
 la equivalencia entre los S.R.I. $K$ y $K'$ significa que las leyes de
 la naturaleza se cumplen de la misma manera en $K$ como en $K'$. En
-particular, no existe ningún experimento que permita determinar si un
-cuerpo está en reposo o en movimiento uniforme y rectilíneo.
+particular, no existe ningún experimento físico que permita determinar si
+un cuerpo está en reposo o en movimiento uniforme y rectilíneo. El
+principio de Einstein generaliza el de Galileo.
 \end{definicion}
 
 \begin{definicion}[Postulado II: Constancia de la velocidad de la luz]
@@ -752,23 +757,13 @@ La velocidad de la luz es la misma en todos los sistemas de referencia
 inerciales.
 \end{definicion}
 
-\begin{observacion}
-La mecánica de Newton afirma que si dos autos se desplazan, uno a
-$100\ \text{km/h}$ y otro a $150\ \text{km/h}$, el segundo supera al
-primero en $50\ \text{km/h}$. Por composición clásica de velocidades, la
-luz del faro del segundo auto superaría la velocidad de la luz del
-primero; pero el segundo postulado de Einstein dice que la velocidad de
-la luz es constante en todos los sistemas inerciales y las velocidades
-no se superponen. Por lo tanto, no la alcanzará --lo que entra en
-contradicción con la mecánica newtoniana.
-\end{observacion}
-
 La constancia de la velocidad de la luz implica una nueva redefinición
 de S.R.I.:
 
 \begin{definicion}[Sistema de referencia inercial]
 Un sistema de referencia inercial es aquel respecto del cual la luz se
-propaga en el vacío en línea recta en cualquier dirección.
+propaga en el vacío en línea recta en cualquier dirección
+(isotropía).
 \end{definicion}
 
 Si un sistema de referencia $K'$ gira o se mueve con movimiento
@@ -777,17 +772,522 @@ la luz no se propaga en línea recta en todas las direcciones: con
 respecto de $K$ la luz recorre una línea recta, pero con respecto de
 $K'$ la luz recorre una curva. Si se acepta que el principio de
 relatividad es válido para toda la física, entonces debemos abandonar
-el Boost de Galileo. Se deben encontrar nuevas ecuaciones de
-transformación que satisfagan los dos postulados de Einstein.
+el Boost de Galileo (1). Se deben encontrar nuevas ecuaciones de
+transformación que satisfagan los dos postulados de Einstein: el
+principio de relatividad y la constancia de la rapidez de la luz.
+
+\subsection{El tiempo y el espacio en la visión newtoniana}
+
+Para entender mejor los postulados de Einstein volvamos a la mecánica
+newtoniana. En la visión newtoniana, el espacio y el tiempo existen por
+sí mismos: sus existencias no dependen de otra cosa. El espacio es un
+contenedor fijo, inmóvil e inmutable, el escenario donde ocurren los
+eventos. El tiempo avanza uniformemente e imperturbable y es absoluto;
+por lo tanto, también lo es el intervalo de tiempo: todos los
+observadores miden el mismo intervalo de tiempo que dura un determinado
+suceso. Si un observador $O$ mide la duración de un evento como
+$\Delta t|_O$, todos los demás observadores miden el mismo valor,
+\[
+\Delta t|_O = \Delta t|_{O'} = \Delta t|_{O''} = \dots
+\]
+Pero no estarán de acuerdo en la distancia espacial involucrada en el
+evento (el espacio no es un concepto absoluto), puesto que el
+movimiento es relativo.
+
+\begin{ejemplo}[La moneda en el tren]
+Sea un tren que se mueve sobre una vía recta con rapidez constante $V$.
+Un observador $O'$ se encuentra dentro del tren, en reposo respecto del
+tren, y lanza una moneda hacia arriba, que sube y luego cae en su mano:
+para $O'$ el movimiento es un lanzamiento vertical, con un tiempo de
+vuelo $\Delta t'$ y una distancia recorrida $\Delta S'$ (dos veces la
+altura alcanzada).
+
+Junto a la vía hay un observador $O$, en reposo respecto de la vía, que
+puede ver dentro del tren. El observador $O$ ve que la moneda describe
+una trayectoria parabólica que dura $\Delta t$ y tiene longitud
+$\Delta S$. Comparando las medidas de $O$ y $O'$, según la mecánica
+clásica,
+\[
+\Delta t = \Delta t', \qquad \Delta S > \Delta S'. \tag{2}
+\]
+\end{ejemplo}
+
+Se concluye, en la visión newtoniana, que \textbf{el tiempo es absoluto}
+y \textbf{el espacio es relativo}. Si incluimos la afirmación de que la
+luz tiene una rapidez finita $c$, los resultados (2) no se contradicen.
+
+\subsection{Consecuencias del segundo postulado}
+
+\begin{ejemplo}[El láser en el vagón]
+Sea un vagón de tren de largo $l$ que se mueve sobre una vía recta con
+rapidez constante $V$. En la parte trasera del vagón hay un observador
+$O'$ con un puntero láser, y en la parte delantera hay un detector que
+suena cuando detecta el haz del láser. En el andén hay un observador $O$
+en reposo respecto de la vía, con acceso a la información dentro del
+vagón. Cuando el tren pasa por el andén y los observadores están en la
+misma posición, $O'$ enciende el puntero láser, de modo que después de
+un tiempo el detector dentro del tren suena.
+
+El observador dentro del tren mide la rapidez de la luz como
+\[
+V_L|_{O'} = c, \tag{3}
+\]
+puesto que $O'$ está en reposo respecto del tren. Por otro lado, según
+la mecánica clásica, la rapidez de la luz medida por $O$, en el andén,
+es
+\[
+V_L|_{O} = V+c, \tag{4}
+\]
+de modo que
+\[
+V+c>c \;\Longrightarrow\; V_L|_O > V_L|_{O'}, \tag{5}
+\]
+es decir, $O$ mide una rapidez de la luz mayor que $O'$. Pero estas
+cantidades son velocidades, o sea distancia sobre intervalo de tiempo,
+\begin{align*}
+V_L|_O &= \frac{\Delta S}{\Delta t}, \tag{6}\\
+V_L|_{O'} &= \frac{\Delta S'}{\Delta t'}, \tag{7}
+\end{align*}
+y al introducirlas en (5) se encuentra
+\[
+\frac{\Delta S}{\Delta t} > \frac{\Delta S'}{\Delta t'}, \tag{8}
+\]
+pero como $\Delta t=\Delta t'$, resulta $\Delta S>\Delta S'$ (9). Esto es
+así porque $O'$ mide la distancia recorrida por la luz igual al largo
+del vagón, $\Delta S'=l$, pues está en reposo respecto del vagón; en
+cambio $O$ mide $\Delta S=l+d$, que es el largo del vagón más la
+distancia $d$ que avanza el vagón hasta la detección, y $l+d>l$.
+\end{ejemplo}
+
+\begin{ejemplo}[Dos coches]
+Sean dos coches que se desplazan, uno a $V_A$ y otro a $V_B$; el
+segundo (coche $B$) supera al primero si $V_B>V_A$. Entonces la luz del
+faro del segundo coche, de acuerdo con la mecánica clásica por
+superposición de velocidades, tendría la rapidez $V_{l/B}=V_B+c$, por lo
+que superaría la rapidez de la luz de los faros del primero,
+$V_{l/A}=V_A+c$, puesto que $V_B+c>V_A+c \Rightarrow V_{l/B}>V_{l/A}$.
+\end{ejemplo}
+
+El segundo postulado de Einstein establece que la rapidez de la luz es
+la misma para todos los observadores inerciales. Para el ejemplo del
+láser en el tren, las expresiones (3) y (4) implicarían entonces
+\[
+\left.\begin{aligned} V_L|_{O'} &= c \\ V_L|_{O} &= c \end{aligned}
+\right\} \tag{10}
+\]
+y la ecuación (8) toma la forma
+\[
+\frac{\Delta S}{\Delta t} = \frac{\Delta S'}{\Delta t'} . \tag{11}
+\]
+Si $\Delta t=\Delta t'$ implicaría $\Delta S=\Delta S'$, lo que
+empíricamente es una contradicción, puesto que el observador $O$ mide
+una distancia mayor que el observador $O'$.
+
+\begin{proposicionc}
+Si la rapidez de la luz es la misma para todos los S.R.I., entonces
+$\Delta t\neq\Delta t'$; más aún,
+\[
+\Delta t>\Delta t' . \tag{12}
+\]
+\end{proposicionc}
+
+\begin{proof}
+De $\Delta S>\Delta S'$ se tiene $\Delta S/\Delta S'>1$; multiplicando
+por $\Delta t'$, $\Delta S\,\Delta t'/\Delta S'>\Delta t'$, y usando (11)
+en la forma $\Delta S\,\Delta t'/\Delta S'=\Delta t$, se obtiene
+$\Delta t>\Delta t'$. \qedhere
+\end{proof}
+
+El observador $O$ concluye que el reloj del observador $O'$ se atrasa.
+El tiempo medido no es igual para cada observador: \textbf{el tiempo es
+relativo}, depende de la velocidad relativa entre los observadores. Se
+concluye, desde la visión de la relatividad especial, que
+\textbf{el tiempo es relativo} y \textbf{el espacio es relativo}. Una de
+las consecuencias más importantes del segundo postulado es la
+\textbf{relatividad de la simultaneidad}.
+
+\subsection{Relatividad de la simultaneidad}
+
+Para entender la relatividad de la simultaneidad imaginemos el
+siguiente experimento pensado (en alemán, \emph{Gedankenexperiment}, un
+recurso muy utilizado por Einstein). Supongamos que en el centro de un
+vagón de tren, que se mueve sobre una vía recta con rapidez constante
+$V$, situamos una bombilla de luz, y en los extremos del vagón
+colocamos dos detectores que suenan cuando detectan la luz. Imaginemos
+dos observadores: uno dentro del vagón junto a la bombilla (observador
+$O'$), y otro fuera del tren (observador $O$), apostado en el andén, que
+puede ver lo que ocurre dentro del vagón y que además tiene dos
+detectores en el andén, a una distancia de él igual a la de los
+detectores dentro del vagón, medidas cuando el tren está en reposo.
+
+Ahora el tren está en movimiento y, justo en el momento en que ambos
+observadores están alineados, es decir en la misma posición, la bombilla
+se enciende, creando una esfera luminosa que se extiende a la rapidez de
+la luz $c$. Dado que la rapidez de la luz es la misma para todos los
+observadores (postulado II), ambos observadores se ven inicialmente en
+el centro de la esfera luminosa.
+
+\begin{itemize}
+\item El observador en el interior del vagón, que se considera en reposo
+(postulado I), observa que la esfera luminosa llega al mismo tiempo a
+los dos detectores dentro del tren, por lo que ambos detectores suenan
+\emph{simultáneamente}.
+\item El observador en el andén discrepa: ve que la esfera luminosa se
+expande mientras el vagón avanza junto con el tren, por lo que el
+detector de la parte trasera del vagón llega antes a la esfera luminosa
+que el de la parte delantera, sonando primero; posteriormente la esfera
+alcanza al detector delantero, que suena después. Por otro lado, sus
+detectores (fijos en el andén) suenan simultáneamente.
+\end{itemize}
+
+El observador dentro del vagón, por el postulado I, razona a la
+inversa: observa que los clics de los detectores del andén no suenan
+simultáneamente, puesto que él considera que el observador del andén es
+el que se mueve en sentido opuesto. Resumiendo:
+
+\begin{enumerate}[label=\alph*)]
+\item El observador en el andén observa que los detectores del andén
+suenan simultáneamente, pero los detectores en el vagón no.
+\item El observador en el vagón observa que los detectores del vagón
+suenan simultáneamente, pero los detectores en el andén no.
+\end{enumerate}
+
+\begin{observacion}
+Aceptar que la rapidez de la luz es la misma para todos los
+observadores inerciales nos lleva a que el tiempo y la simultaneidad son
+relativos. Eventos simultáneos para un observador pueden no serlo para
+otro observador en movimiento relativo uniforme respecto del primero.
+\end{observacion}
+
+\subsection{Dilatación del tiempo: el reloj de luz}
+
+Vamos a encontrar la expresión que relaciona los intervalos temporales
+medidos por ambos observadores, recurriendo a un nuevo experimento
+pensado: el llamado \textbf{reloj de luz}, ideado por Einstein. Consiste
+en un rayo luminoso que se refleja entre dos espejos, con un detector en
+uno de ellos; puede imaginarse una bolita (fotón) rebotando entre ambos
+espejos. El fotón comienza en uno de los espejos, rebota en el otro y
+vuelve al espejo inicial, donde el detector suena y marca una
+oscilación.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[very thick] (-1,0) -- (1,0);
+  \draw[very thick] (-1,2.2) -- (1,2.2);
+  \fill[pattern=north east lines] (-1,-0.15) rectangle (1,0);
+  \fill[pattern=north east lines] (-1,2.2) rectangle (1,2.35);
+  \draw[-Stealth,thick,colorej] (-0.25,0.05) -- (-0.25,2.15);
+  \draw[-Stealth,thick,colorej] (0.25,2.15) -- (0.25,0.05);
+  \draw[Stealth-Stealth] (1.5,0) -- (1.5,2.2) node[midway,right] {$L_0$};
+  \node[below] at (0,-0.2) {\footnotesize detector};
+\end{tikzpicture}
+\end{center}
+
+El reloj de luz mide el tiempo de forma análoga a un péndulo simple para
+ángulos pequeños: cada oscilación del fotón entre los espejos marca un
+intervalo de tiempo dado por
+\[
+\Delta t = \frac{2L_0}{c}, \tag{13}
+\]
+donde $L_0$ es la distancia entre los espejos. Cada oscilación (clic del
+detector) es un tic-tac del reloj de luz.
+
+Sean dos observadores: uno montado en un vagón de tren (observador
+$O'$), que se mueve respecto del andén con rapidez constante $V$, y otro
+en reposo respecto del andén (observador $O$); cada observador tiene un
+reloj de luz. Antes de que $O'$ se monte en el tren, ambos observadores
+sincronizan sus relojes de luz, de modo que los tic-tac estén
+acompasados. Así, los observadores acuerdan que cada reloj mide el
+tiempo contando el número de tic-tac, y ambos medirían intervalos de
+tiempo idénticos entre dos sucesos si estuvieran en reposo relativo.
+
+Dado que $O'$ está junto con su reloj, se considera en reposo respecto
+del tren y observa al fotón rebotando en trayectorias verticales entre
+ambos espejos. Sea $\Delta t'$ el intervalo de tiempo entre dos rebotes
+del fotón (ida y vuelta) medido por $O'$, y $\Delta t$ el intervalo
+entre dos rebotes que mide el observador $O$ en el andén. Para $O'$ el
+fotón recorre la distancia $2L_0$ en su ida y vuelta, por lo que
+\[
+\Delta t' = \frac{2L_0}{c}, \tag{14}
+\]
+y, despejando,
+\[
+L_0 = \frac{c\,\Delta t'}{2} . \tag{15}
+\]
+
+El observador $O$, en cambio, observa que el tren avanza conforme el
+fotón rebota, por lo que su trayectoria no es vertical sino oblicua.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \begin{scope}
+    \draw[very thick] (-0.8,0) -- (0.8,0);
+    \draw[very thick] (-0.8,2) -- (0.8,2);
+    \draw[-Stealth,thick,colorej] (-0.2,0.05) -- (-0.2,1.95);
+    \draw[-Stealth,thick,colorej] (0.2,1.95) -- (0.2,0.05);
+    \draw[Stealth-Stealth] (1.2,0) -- (1.2,2) node[midway,right] {$L_0$};
+    \node at (0,-0.6) {\footnotesize (a) según $O'$};
+  \end{scope}
+  \begin{scope}[xshift=4.5cm]
+    \draw[dashed] (0,0) -- (3.6,0);
+    \draw[dashed] (0,2) -- (3.6,2);
+    \draw[thick,colorej,-Stealth] (0,0) -- (1.8,2) node[midway,left] {$d$};
+    \draw[thick,colorej,-Stealth] (1.8,2) -- (3.6,0) node[midway,right] {$d$};
+    \draw[dashed] (1.8,2) -- (1.8,0);
+    \node[right] at (1.8,1) {$L_0$};
+    \draw[Stealth-Stealth] (0,-0.3) -- (1.8,-0.3) node[midway,below] {\footnotesize$V\Delta t/2$};
+    \draw[Stealth-Stealth] (1.8,-0.3) -- (3.6,-0.3) node[midway,below] {\footnotesize$V\Delta t/2$};
+    \node at (1.8,-1.1) {\footnotesize (b) según $O$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+El observador $O$ observa que el fotón recorre la hipotenusa $d$ de un
+triángulo rectángulo, en subida y en bajada, de catetos $V\Delta t/2$ y
+$L_0$, con lo que mide el intervalo de tiempo
+\[
+\Delta t = \frac{2d}{c} \quad\Longrightarrow\quad d =
+\frac{c\,\Delta t}{2}, \tag{16, 17}
+\]
+y por el teorema de Pitágoras
+\[
+d = \sqrt{L_0^2+\left(\frac{V\Delta t}{2}\right)^2} . \tag{18}
+\]
+
+\begin{proposicionc}[Dilatación del tiempo]
+Introduciendo (15) y (17) en (18),
+\[
+\frac{c\,\Delta t}{2} = \sqrt{\left(\frac{c\,\Delta t'}{2}\right)^2 +
+\left(\frac{V\Delta t}{2}\right)^2}, \tag{19}
+\]
+y despejando $\Delta t$ se encuentra
+\[
+\Delta t = \frac{\Delta t'}{\sqrt{1-V^2/c^2}} . \tag{20}
+\]
+\end{proposicionc}
+
+\begin{proof}
+Elevando (19) al cuadrado y multiplicando por $4$,
+$c^2\Delta t^2=c^2\Delta t'^2+V^2\Delta t^2$, es decir
+$\Delta t^2(c^2-V^2)=c^2\Delta t'^2$, de donde
+$\Delta t=\Delta t'/\sqrt{1-V^2/c^2}$. \qedhere
+\end{proof}
+
+Se acostumbra definir la cantidad
+\[
+\gamma = \frac{1}{\sqrt{1-V^2/c^2}}, \tag{21}
+\]
+llamada \textbf{factor de Lorentz}, que es una función de la rapidez
+$V$. Así,
+\[
+\Delta t = \gamma\,\Delta t' . \tag{22}
+\]
+Dado que $V<c$, se tiene $\gamma>1$, y además $\gamma\to\infty$ cuando
+$V\to c$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[-Stealth] (0,0) -- (6.4,0) node[right] {$V/c$};
+  \draw[-Stealth] (0,0) -- (0,4.6) node[above] {$\gamma$};
+  \draw[dashed] (5,0) -- (5,4.4);
+  \node[below] at (5,0) {\footnotesize$1$};
+  \node[left] at (0,0.8) {\footnotesize$1$};
+  \draw[thick,colordef,domain=0:0.98,samples=80,smooth]
+    plot ({5*\x},{0.8/sqrt(1-\x*\x)});
+\end{tikzpicture}
+\end{center}
+
+Por lo tanto,
+\[
+\Delta t>\Delta t' . \tag{23}
+\]
+El observador $O$ concluye que el reloj de $O'$ se atrasa. Sin embargo,
+el observador $O$ considera que los relojes de $O'$ corren más lento,
+\emph{pero} el observador $O'$ considera que los relojes de $O$ son los
+que corren más lento: no solo los intervalos temporales se dilatan, sino
+que esta dilatación es \textbf{relativa}. Así se llega a la llamada
+\textbf{paradoja de los gemelos}.
+
+\begin{observacion}[Confirmaciones experimentales]
+Esta predicción de la relatividad especial ha sido confirmada
+experimentalmente en múltiples ocasiones a través de mediciones del
+efecto Doppler transversal (experimento sugerido por el mismo Einstein
+en 1907): como consecuencia de la dilatación temporal, la radiación
+emitida por un átomo en movimiento transversal a la dirección de
+observación presenta una variación relativa de la longitud de onda
+$\Delta\lambda/\lambda_0\approx\gamma-1$.
+\begin{itemize}
+\item La primera confirmación se debe a Ives y Stilwell (1938), usando
+átomos de hidrógeno ($v/c\approx0.005$, $\gamma-1\approx10^{-5}$).
+\item En 2003, Saathoff \emph{et al.} publicaron resultados de un test
+mejorado usando ``espectroscopía láser de iones rápidos''
+($v/c\approx0.064$, $\gamma-1\approx2\times10^{-3}$), y luego, en 2007,
+Reinhardt \emph{et al.} mejoraron la precisión usando relojes ópticos
+atómicos ($v/c\approx0.03$, $\gamma-1\approx4\times10^{-4}$).
+\item El ``récord'' lo tienen actualmente Chou \emph{et al.}, quienes
+verificaron la dilatación temporal con relojes atómicos (de átomos de
+aluminio) moviéndose a velocidades del orden de $10\ \text{m/s}$
+($v/c\approx3\times10^{-8}$, $\gamma-1\approx4\times10^{-16}$).
+\item Otros métodos consisten en medir la vida media de partículas
+($v/c\approx0.9994$, $\gamma\approx28$) y en comparar las medidas de
+relojes atómicos en movimiento relativo (``paradoja de los gemelos'').
+\item \emph{Experimento de Hafele--Keating}: en octubre de 1971 se
+subieron relojes atómicos ultra precisos a aviones comerciales que dieron
+la vuelta al mundo. Al comparar los relojes del avión con los que
+quedaron en la Tierra, se encontraron diferencias que concuerdan con las
+predicciones de la relatividad especial y general (el signo depende de
+la dirección del vuelo).
+\end{itemize}
+\end{observacion}
+
+\begin{ejemplo}[Muones atmosféricos]
+Los muones se producen en los rayos cósmicos a una altitud aproximada de
+diez kilómetros. Su rapidez es muy alta, aproximadamente $0.99c$, por lo
+que el factor de Lorentz es
+\[
+\gamma\approx7 . \tag{24}
+\]
+La vida media de un muón es aproximadamente $\Delta t'=2.2\ \mu\text{s}$,
+de modo que, para un observador en la Tierra, la dilatación del tiempo
+da
+\begin{align*}
+\Delta t &= 7\times2.2\times10^{-6}\ \text{s} \tag{25}\\
+&= 1.5\times10^{-5}\ \text{s}. \tag{26}
+\end{align*}
+El tiempo se ha dilatado.
+\end{ejemplo}
+
+\begin{ejemplo}
+Debido a que los números son muy pequeños, no se aprecia la dilatación
+del tiempo de una forma clara. Consideremos una persona que viaja a una
+rapidez de $0.99c$:
+\begin{enumerate}[label=\alph*)]
+\item si viaja $1$ año, para el observador $O$ pasarán $7$ años;
+\item si viaja $10$ años, para $O$ pasarán $70$ años;
+\item si viaja $20$ años, para $O$ pasarán $140$ años;
+\item si viaja $50$ años, para $O$ pasarán $350$ años.
+\end{enumerate}
+Un segundo ejemplo es la corrección temporal de los GPS, sin la cual se
+atrasarían $7\times10^{-6}\ \text{s}$ al día.
+\end{ejemplo}
+
+\subsection{Contracción de la longitud: la vara y el reloj de luz}
+
+Como se mencionó, las medidas espaciales son relativas en la teoría de
+Newton y también lo son en relatividad especial. Medir la longitud de un
+objeto consiste en marcar simultáneamente sus dos extremos; pero, a
+pesar de que la simultaneidad es relativa, un observador puede creer que
+los marca simultáneamente, mientras que otro que lo ve en movimiento
+junto con el objeto observa que no lo ha hecho. Para evitar el problema
+de la simultaneidad al medir la distancia entre dos puntos de una vara
+recta, Einstein ideó un experimento pensado en el que, en vez de medir
+distancia, se mide un intervalo de tiempo.
+
+Sea un observador $O$ en reposo respecto del andén y un observador $O'$
+que se mueve en un tren respecto del andén. Colocamos de forma
+horizontal una vara de longitud $L_0$ medida en reposo, y un reloj de
+luz de la misma longitud que la vara, de modo que los extremos de la
+vara coincidan con los espejos.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[very thick] (0,0) -- (5,0);
+  \draw[very thick] (0,-0.4) -- (0,0.4);
+  \draw[very thick] (5,-0.4) -- (5,0.4);
+  \draw[-Stealth,thick,colorej] (0.1,0.15) -- (4.9,0.15);
+  \draw[-Stealth,thick,colorej] (4.9,-0.15) -- (0.1,-0.15);
+  \draw[Stealth-Stealth] (0,-0.9) -- (5,-0.9) node[midway,below] {$L_0$};
+\end{tikzpicture}
+\end{center}
+
+Montamos todo el sistema en un tren que se mueve con rapidez constante
+$V$. El observador $O'$, que se considera en reposo, mide que la luz
+tarda en hacer una ida y vuelta
+\[
+\Delta t' = \frac{2L_0}{c} . \tag{27}
+\]
+Por otro lado, el observador $O$ observa que, mientras el haz de luz
+avanza, también lo hace la vara, por lo que el espejo donde debe rebotar
+avanza, y el tiempo de ida es mayor que el de vuelta. Si $\Delta t$ es
+el tiempo medido en la ida y vuelta por $O$ (con $L$ la longitud de la
+vara que mide $O$), escribimos
+\[
+\Delta t = \Delta t_1+\Delta t_2, \tag{28}
+\]
+con el subíndice $1$ para la ida y $2$ para la vuelta. La luz de ida
+debe recorrer una distancia $d=L+V\Delta t_1$ y, por otro lado, también
+recorre $d=c\Delta t_1$, de donde
+\[
+\Delta t_1 = \frac{L}{c-V} . \tag{29}
+\]
+A la vuelta recorre una distancia $d'=L-V\Delta t_2$, y también
+$d'=c\Delta t_2$, de modo que
+\[
+\Delta t_2 = \frac{L}{c+V} . \tag{30}
+\]
+El tiempo total medido por $O$ es entonces
+\[
+\Delta t = \frac{L}{c-V}+\frac{L}{c+V} = \frac{2L}{c}\,
+\frac{1}{1-V^2/c^2} = \frac{2L}{c}\,\gamma^2 . \tag{31}
+\]
+
+\begin{proposicionc}[Contracción de la longitud]
+La longitud de la vara medida por $O$, $L$, y su longitud propia $L_0$
+están relacionadas por
+\[
+L = L_0\sqrt{1-\beta^2}, \qquad \beta=\frac{V}{c}, \tag{33}
+\]
+y por lo tanto $L<L_0$.
+\end{proposicionc}
+
+\begin{proof}
+Usando (27) y (31), el cociente de los intervalos es
+\[
+\frac{\Delta t}{\Delta t'} = \frac{\frac{2L}{c}\gamma^2}{\frac{2L_0}{c}}
+= \frac{L}{L_0}\,\gamma^2 . \tag{32}
+\]
+Por la dilatación del tiempo (22), $\Delta t/\Delta t'=\gamma$; por lo
+tanto $\gamma=(L/L_0)\gamma^2$, de donde $L=L_0/\gamma=L_0\sqrt{1-\beta^2}$.
+\qedhere
+\end{proof}
+
+Es claro que $L<L_0$: el observador $O$ mide una longitud menor que la
+que mide el observador $O'$. Esto significa que la longitud de un cuerpo
+en la dirección de su movimiento con velocidad constante $V$ es reducida
+por un factor $\sqrt{1-\beta^2}$, y esto se llama \textbf{contracción de
+la longitud}. No hay efecto de contracción en las direcciones
+transversales a la dirección del movimiento. La cantidad $L_0$ se llama
+\textbf{longitud propia}.
+
+\begin{observacion}[Evidencias experimentales de la contracción]
+Las evidencias experimentales de la contracción de la longitud más
+citadas son:
+\begin{itemize}
+\item \emph{El flujo de muones atmosféricos.} Los muones son partículas
+subatómicas inestables (se desintegran) que se forman en la alta
+atmósfera. Su vida media ($2.2\ \mu\text{s}$) es tan corta que deberían
+desintegrarse antes de llegar al suelo, pero llegan a la superficie
+gracias a la relatividad especial: para un observador en la Tierra el
+tiempo del muón se dilata (vive más); y para el propio muón la distancia
+entre la atmósfera y la superficie terrestre se contrae drásticamente,
+permitiéndole atravesar esa distancia.
+\item \emph{Experimentos en aceleradores de partículas.} En los
+sincrotrones, iones pesados y protones viajan a velocidades ultra
+relativistas. Los físicos observaron que los campos eléctricos de estas
+partículas se deforman y achatan en la dirección del movimiento,
+adoptando una geometría aplanada coherente con el factor de contracción
+de Lorentz $\gamma$.
+\end{itemize}
+\end{observacion}
 
 \subsection{El Boost de Lorentz}
 
 El Boost de Lorentz puede obtenerse a partir de: el principio de
-homogeneidad e isotropía del espacio, el postulado de relatividad, y el
-principio de la constancia de la rapidez de la luz.
+homogeneidad e isotropía del espacio, los postulados de la relatividad
+especial, y el principio de la constancia de la rapidez de la luz.
 
-Sean $K$ y $K'$ dos S.R.I. tales que $K$ se mueve a lo largo del eje
-$x'$ con respecto de $K'$ con rapidez $V$. (Usaremos letras mayúsculas
+Sean $K$ y $K'$ dos S.R.I. tales que $K$ se mueve con rapidez
+constante $V$ a lo largo del eje $x'$ con respecto de $K'$. (Usaremos letras mayúsculas
 para la velocidad relativa entre S.R.I., y minúsculas para la velocidad
 de un cuerpo respecto de algún S.R.I.)
 
@@ -797,7 +1297,7 @@ tiempo es relativo y debe ser una coordenada, por lo que el Boost de
 Lorentz, análogo al de Galileo, debe tener la forma general
 \[
 t' = \gamma(V)t + \alpha(V)x, \qquad x' = \beta(V)t+\lambda(V)x, \qquad
-y'=y, \qquad z'=z, \tag{1}
+y'=y, \qquad z'=z, \tag{34}
 \]
 donde los coeficientes $\gamma(V),\alpha(V),\beta(V),\lambda(V)$ deben
 depender de $V$ y $c$, tales que cuando $c\to\infty$ se recupere el
@@ -805,20 +1305,20 @@ Boost de Galileo. El sistema debe ser equivalente si $K$ está en reposo
 y $K'$ se mueve con rapidez $-V$, esto es
 \[
 t = \gamma(-V)t'+\alpha(-V)x', \qquad x=\beta(-V)t'+\lambda(-V)x',
-\qquad y=y', \qquad z=z'. \tag{2}
+\qquad y=y', \qquad z=z'. \tag{35}
 \]
-Las expresiones (1) y (2) son inversas.
+Las expresiones (34) y (35) son inversas.
 
 \begin{proposicionc}[Composición relativista de velocidades, forma preliminar]
 Sea una partícula que se mueve a lo largo del eje $x$ de $K$ y $x'$ de
-$K'$, con velocidad $v=dx/dt$ en $K$ y $v'=dx'/dt'$ en $K'$. Usando (1),
+$K'$, con velocidad $v=dx/dt$ en $K$ y $v'=dx'/dt'$ en $K'$. Usando (34),
 \[
-v' = \frac{\beta+\lambda v}{\gamma+\alpha v} . \tag{3}
+v' = \frac{\beta+\lambda v}{\gamma+\alpha v} . \tag{36}
 \]
 \end{proposicionc}
 
 \begin{proof}
-De (1), $dt'=\gamma\,dt+\alpha\,dx$, $dx'=\beta\,dt+\lambda\,dx$, de
+De (34), $dt'=\gamma\,dt+\alpha\,dx$, $dx'=\beta\,dt+\lambda\,dx$, de
 donde $v'=dx'/dt' = (\beta\,dt+\lambda\,dx)/(\gamma\,dt+\alpha\,dx) =
 (\beta+\lambda v)/(\gamma+\alpha v)$, dividiendo numerador y
 denominador por $dt$. \qedhere
@@ -833,8 +1333,8 @@ $\beta(V) = \lambda(V)\,V$, y $\lambda(V)=\gamma(V)$.
 \begin{proof}
 Si la partícula está en reposo respecto de $K'$, $v'=0$, entonces
 respecto de $K$ se mueve con rapidez $-V$; sustituyendo $v=-V$, $v'=0$
-en (3), $0=(\beta-\lambda V)/(\gamma-\alpha V) \Rightarrow
-\beta=\lambda V$. Sustituyendo esto en (1)-(3), $x'=\lambda(Vt+x)$ y
+en (36), $0=(\beta-\lambda V)/(\gamma-\alpha V) \Rightarrow
+\beta=\lambda V$. Sustituyendo esto en (34)-(36), $x'=\lambda(Vt+x)$ y
 $v'=\lambda(V+v)/(\gamma+\alpha v)$. Si en cambio la partícula se mueve
 junto con $K$, $v=0$, respecto de $K'$ se mueve con velocidad $v'=V$;
 sustituyendo, $V=\lambda V/\gamma \Rightarrow \lambda=\gamma$.
@@ -879,14 +1379,14 @@ t' = \gamma(V)\left[\gamma(-V)\left(t'-\frac{V}{c^2}x'\right) +
 \]
 de donde
 \[
-1 = \gamma(V)\gamma(-V)\left(1-\frac{V^2}{c^2}\right). \tag{4}
+1 = \gamma(V)\gamma(-V)\left(1-\frac{V^2}{c^2}\right). \tag{37}
 \]
 La equivalencia de los sistemas $K$ y $K'$, junto con el principio de
 isotropía del espacio, nos dice que $\gamma$ no puede depender del
 signo de la velocidad --si dependiera, un reloj fijo en $K'$
 ($\Delta x'=0$) mostraría $\Delta t=\gamma(-V)T'$ respecto de $K$, y si
 $\gamma(-V)$ fuese negativo, $K$ observaría que el tiempo retrocede.
-Isotropía implica entonces $\gamma=\gamma(V^2)$, y sustituyendo en (4)
+Isotropía implica entonces $\gamma=\gamma(V^2)$, y sustituyendo en (37)
 se obtiene $\gamma(V^2) = 1/\sqrt{1-V^2/c^2}$. \qedhere
 \end{proof}
 
@@ -910,86 +1410,10 @@ naturaleza es la rapidez de la luz. Las transformaciones de Lorentz
 implican que todos los sistemas inerciales están relacionados por
 transformaciones de Lorentz con velocidad constante $V<c$.
 
-\subsection{Contracción de longitud}
-
-Consideremos una regla fija en $K$ con extremos $x_1$ y $x_2$. En $K'$,
-sus extremos tienen coordenadas $x_1'$ y $x_2'$, relacionadas por
-\[
-x_1' = \frac{Vt_1+x_1}{\sqrt{1-V^2/c^2}}, \qquad x_2' = \frac{Vt_2+x_2}
-{\sqrt{1-V^2/c^2}} .
-\]
-
-\begin{proposicionc}[Contracción de longitud]
-Sea $l_0=x_2-x_1$ la longitud de reposo (medida en $K$, donde la regla
-está fija) y $l=x_2'-x_1'$ la longitud medida en $K'$ (donde la regla se
-mueve). Entonces
-\[
-l = l_0\sqrt{1-\frac{V^2}{c^2}} < l_0 .
-\]
-\end{proposicionc}
-
-\begin{proof}
-Para medir la longitud de la regla con respecto de $K'$ es necesario
-conocer las coordenadas $x'$ de ambos extremos de modo simultáneo en
-$K'$, es decir $t_1'=t_2'$. Igualando las expresiones anteriores con
-$t_1'=t_2'$ se obtiene $t_1\ne t_2$ en $K$; sustituyendo y despejando,
-\[
-l = x_2'-x_1' = \frac{V(t_2-t_1)+(x_2-x_1)}{\sqrt{1-V^2/c^2}}
-\]
-y, usando la relación entre $t_2-t_1$ y $x_2-x_1$ que impone
-$t_1'=t_2'$, se simplifica a $l=l_0\sqrt{1-V^2/c^2}$. \qedhere
-\end{proof}
-
-Esto significa que la longitud de un cuerpo en la dirección de su
-movimiento, con velocidad constante $V$, es reducida por un factor
-$\sqrt{1-V^2/c^2}$: es la \textbf{contracción de la longitud}. No hay
-efecto de contracción en las direcciones transversales a la dirección
-del movimiento.
-
-\subsection{Dilatación del tiempo}
-
-Sea un reloj fijo en $x=x_1$ en el sistema $K'$ que registra dos eventos
-sucesivos, separados por un intervalo $\Delta t'=T$ en $K'$: los eventos
-en $K'$ son $(x_1,t_1)$ y $(x_1,t_1+T)$.
-
-\begin{proposicionc}[Dilatación del tiempo]
-Sea $T'$ el intervalo de tiempo entre estos dos sucesos, medido desde
-$K$ (donde el reloj se mueve con rapidez $V$). Entonces
-\[
-T' = \frac{T}{\sqrt{1-V^2/c^2}} > T .
-\]
-\end{proposicionc}
-
-\begin{proof}
-Por la transformación de Lorentz,
-\[
-t_1' = \frac{t_1+\frac{V}{c^2}x_1}{\sqrt{1-V^2/c^2}}, \qquad t_2' =
-\frac{t_1+T+\frac{V}{c^2}x_1}{\sqrt{1-V^2/c^2}},
-\]
-de donde $T'=t_2'-t_1' = T/\sqrt{1-V^2/c^2}$. \qedhere
-\end{proof}
-
-Es decir, los relojes en movimiento marchan más lento en un factor
-$(1-V^2/c^2)^{-1/2}$; este fenómeno se llama \textbf{dilatación del
-tiempo}.
-
-\begin{observacion}[Confirmaciones experimentales]
-Esta predicción ha sido confirmada experimentalmente en múltiples
-ocasiones a través de mediciones del efecto Doppler transversal
-(experimento sugerido por Einstein en 1907): como consecuencia de la
-dilatación temporal, la radiación emitida por un átomo en movimiento
-transversal a la dirección de observación presenta una variación
-relativa de la longitud de onda $\Delta\lambda/\lambda_0\approx
-\gamma-1$. La primera confirmación se debe a Ives y Stilwell (1938),
-usando átomos de hidrógeno ($v/c\approx0.005$, $\gamma-1\approx10^{-5}$).
-En 2003, Saathoff \emph{et al.} usaron espectroscopía láser de iones
-rápidos ($v/c\approx0.064$), y en 2007 Reinhardt \emph{et al.} mejoraron
-la precisión con relojes ópticos atómicos. El récord actual lo tienen
-Chou \emph{et al.}, quienes verificaron la dilatación temporal con
-relojes atómicos de aluminio moviéndose a $v\approx10\ \text{m/s}$
-($\gamma-1\approx4\times10^{-16}$). Otros métodos incluyen medir la vida
-media de partículas en movimiento y comparar relojes atómicos en
-movimiento relativo (``paradoja de los gemelos'').
+\begin{observacion}[Ejercicio]
+Usando las transformaciones de Lorentz, encuentre la dilatación del
+tiempo y la contracción de la longitud (resultados ya obtenidos con el
+reloj de luz).
 \end{observacion}
 
 \subsection{Composición de velocidades}
@@ -1131,7 +1555,7 @@ de modo que
 x'^0 &= \cosh(\phi)x^0+\sinh(\phi)x^1 \\
 x'^1 &= \sinh(\phi)x^0+\cosh(\phi)x^1 \\
 x'^2 &= x^2, \qquad x'^3=x^3.
-\end{aligned} \tag{7}
+\end{aligned} \tag{40}
 \]
 
 Para entender el significado geométrico de $\phi$, comparemos con una
@@ -1139,11 +1563,11 @@ rotación bidimensional. Sea $Oxyz$ y $O'x'y'z'$ rotado un ángulo
 $\theta$ en torno al eje $z$:
 \[
 x' = x\cos\theta - y\sin\theta, \qquad y'=x\sin\theta+y\cos\theta,
-\qquad z'=z. \tag{8}
+\qquad z'=z. \tag{41}
 \]
 
 \begin{proposicionc}
-La rotación (8) deja invariante $x^2+y^2+z^2$, la métrica de Euclides,
+La rotación (41) deja invariante $x^2+y^2+z^2$, la métrica de Euclides,
 y forma un grupo llamado \textbf{grupo especial ortogonal}, $SO(3)$.
 \end{proposicionc}
 
@@ -1160,9 +1584,9 @@ i}(O^{-1})^l_{\ j}\delta_{kl} = \delta_{ij}$, es decir, se preserva.
 \end{proof}
 
 \begin{proposicionc}[Rotación compleja]
-Haciendo $\theta=i\phi$ en (8) y usando $\cos(i\phi)=\cosh(\phi)$,
+Haciendo $\theta=i\phi$ en (41) y usando $\cos(i\phi)=\cosh(\phi)$,
 $\sin(i\phi)=i\sinh(\phi)$, se recupera la transformación de Lorentz
-(7): las transformaciones de Lorentz corresponden a una \textbf{rotación
+(40): las transformaciones de Lorentz corresponden a una \textbf{rotación
 compleja} con ángulo imaginario $\theta=i\phi$.
 \end{proposicionc}
 
@@ -1173,10 +1597,10 @@ $x=i\phi$,
 \cos(i\phi) = \frac{e^{-\phi}+e^{\phi}}{2} = \cosh(\phi), \qquad
 \sin(i\phi) = \frac{e^{-\phi}-e^{\phi}}{2i} = i\sinh(\phi).
 \]
-Sustituyendo en (8), $x'=\cosh(\phi)x-i\sinh(\phi)y$,
+Sustituyendo en (41), $x'=\cosh(\phi)x-i\sinh(\phi)y$,
 $y'=i\sinh(\phi)x+\cosh(\phi)y$; multiplicando la primera por $i$,
 $ix'=\cosh(\phi)(ix)+\sinh(\phi)y$, $y'=\sinh(\phi)(ix)+\cosh(\phi)y$,
-que tiene la forma de (7) con $x^0\leftrightarrow ix$, $x^1
+que tiene la forma de (40) con $x^0\leftrightarrow ix$, $x^1
 \leftrightarrow y$. \qedhere
 \end{proof}
 
@@ -1187,7 +1611,7 @@ transformación involucra funciones hiperbólicas, probemos con
 $(ct)^2-x^2-y^2-z^2$.
 
 \begin{proposicionc}
-La cantidad $(ct)^2-x^2-y^2-z^2$ es invariante bajo (7).
+La cantidad $(ct)^2-x^2-y^2-z^2$ es invariante bajo (40).
 \end{proposicionc}
 
 \begin{proof}
@@ -1272,12 +1696,12 @@ es decir, $\Delta s_t^2\ne\Delta s_e^2$ en general.
 \begin{definicion}[Intervalo entre dos sucesos]
 Minkowski definió el \textbf{intervalo} entre dos sucesos como
 \[
-\Delta s^2 = c^2\Delta t^2 - \Delta x^2-\Delta y^2-\Delta z^2, \tag{9}
+\Delta s^2 = c^2\Delta t^2 - \Delta x^2-\Delta y^2-\Delta z^2, \tag{42}
 \]
 (definición original), o equivalentemente, en la forma relativista que
 usaremos,
 \[
-\Delta s^2 = -c^2\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2 . \tag{10}
+\Delta s^2 = -c^2\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2 . \tag{43}
 \]
 \end{definicion}
 
@@ -1322,24 +1746,24 @@ dos eventos no son simultáneos en $K'$.
 Si los dos eventos son infinitesimalmente contiguos, el intervalo se
 escribe
 \[
-ds^2 = -(dx^0)^2+(dx^1)^2+(dx^2)^2+(dx^3)^2. \tag{11}
+ds^2 = -(dx^0)^2+(dx^1)^2+(dx^2)^2+(dx^3)^2. \tag{44}
 \]
 Este elemento de línea nos dice que estamos en un espacio
 cuadridimensional. Denotamos las coordenadas de un punto de universo $P$
-como $x^\mu=(x^0,x^1,x^2,x^3)$, $\mu=0,1,2,3$. El elemento de línea (11)
+como $x^\mu=(x^0,x^1,x^2,x^3)$, $\mu=0,1,2,3$. El elemento de línea (44)
 se escribe entonces
 \[
-ds^2 = \eta_{\mu\nu}\,dx^\mu dx^\nu, \tag{13}
+ds^2 = \eta_{\mu\nu}\,dx^\mu dx^\nu, \tag{46}
 \]
 donde se ha introducido
 \[
 \eta_{\mu\nu} = \begin{pmatrix} -1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1
-\end{pmatrix}, \tag{14}
+\end{pmatrix}, \tag{47}
 \]
 llamada \textbf{métrica de Minkowski}. Esta métrica define el espacio
 de Minkowski, con símbolos de Christoffel
 \[
-\Gamma^\lambda_{\mu\nu} = 0, \tag{15}
+\Gamma^\lambda_{\mu\nu} = 0, \tag{48}
 \]
 puesto que $\eta_{\mu\nu}$ es constante. El signo menos en la componente
 temporal se debe a la constancia de la velocidad de la luz --más
@@ -1347,13 +1771,14 @@ explícitamente, a la existencia de una velocidad máxima.
 
 Una partícula moviéndose en el espacio cuadridimensional genera una
 curva llamada \textbf{línea de mundo} (o línea de universo). La
-pendiente de esta curva corresponde a la velocidad, que en cuatro
-dimensiones tendrá cuatro componentes y se llamará
-\textbf{cuadrivelocidad}. Como la velocidad de la luz es constante, la
+inversa de la pendiente de la recta tangente a la línea de mundo
+corresponde a la velocidad de la partícula, que en cuatro dimensiones
+tendrá cuatro componentes y se llamará \textbf{cuadrivelocidad}. Como la velocidad de la luz es constante, la
 velocidad de la partícula $\vec v$ --y por lo tanto la cuadrivelocidad--
 no puede tomar cualquier valor: la magnitud de la cuadrivelocidad está
-acotada, la pendiente de la línea de mundo está acotada, y las
-partículas no pueden describir cualquier línea de mundo. Los tipos de
+acotada, la pendiente de la tangente a la línea de mundo está acotada
+y, por lo tanto, las partículas no pueden describir cualquier línea de
+mundo. Los tipos de
 líneas de mundo se caracterizan entonces por la velocidad de las
 partículas.
 
@@ -1364,7 +1789,7 @@ $x^\mu=(x^0,x^i)$, con $i=1,2,3$ las componentes espaciales, de modo que
 la métrica de Minkowski se escribe compactamente
 \[
 \eta_{\mu\nu} = \begin{pmatrix} -1 & 0_{1\times3} \\ 0_{3\times1} &
-\delta_{ij} \end{pmatrix}, \tag{16}
+\delta_{ij} \end{pmatrix}, \tag{49}
 \]
 y el elemento de línea se descompone como $ds^2=\eta_{\mu\nu}dx^\mu
 dx^\nu = -c^2dt^2+\delta_{ij}dx^idx^j$.
@@ -1373,7 +1798,7 @@ dx^\nu = -c^2dt^2+\delta_{ij}dx^idx^j$.
 Sea una partícula que se mueve con velocidad $v^i$ en un S.R.I. $K$.
 Entonces
 \[
-ds^2 = -c^2dt^2\left(1-\frac{v^2}{c^2}\right). \tag{17}
+ds^2 = -c^2dt^2\left(1-\frac{v^2}{c^2}\right). \tag{50}
 \]
 \end{proposicionc}
 
@@ -1386,7 +1811,7 @@ ds^2 = -c^2dt^2+\delta_{ij}dx^idx^j = -c^2dt^2\left(1-\frac{1}{c^2}
 \]
 \end{proof}
 
-La expresión (17) permite clasificar los tipos de intervalo en
+La expresión (50) permite clasificar los tipos de intervalo en
 relatividad especial.
 
 \begin{definicion}[Clasificación del intervalo]
@@ -1598,13 +2023,13 @@ $\gamma=1/\sqrt{1-\beta^2}$, la transformación se reescribe
 \[
 \Lambda^0_{\ 0}=\gamma, \qquad \Lambda^i_{\ 0}=\gamma\beta^i, \qquad
 \Lambda^0_{\ j}=\gamma\beta_j, \qquad \Lambda^i_{\ j} = \delta^i_j+
-(\gamma-1)\hat n^i\hat n_j, \tag{19}
+(\gamma-1)\hat n^i\hat n_j, \tag{52}
 \]
 o, en forma matricial,
 \[
 \Lambda^\mu_{\ \nu}(\beta^k) = \begin{pmatrix} \gamma & \gamma\beta_j
 \\ \gamma\beta^i & \delta^i_j+(\gamma-1)\hat n^i\hat n_j \end{pmatrix},
-\tag{20}
+\tag{53}
 \]
 con inversa $(\Lambda^{-1})^\mu_{\ \nu}(\beta^k) = \Lambda^\mu_{\
 \nu}(-\beta^k)$ (se cambia el signo de los términos con un solo índice
@@ -1619,7 +2044,7 @@ x^0+\hat n^i\hat n_jx^j\big) + x^i - \hat n^i\hat n_jx^j .
 \end{proposicionc}
 
 \begin{proof}
-De $x'^\mu=\Lambda^\mu_{\ \nu}(\beta^k)x^\nu$ con (19),
+De $x'^\mu=\Lambda^\mu_{\ \nu}(\beta^k)x^\nu$ con (52),
 $x'^0=\Lambda^0_{\ 0}x^0+\Lambda^0_{\ i}x^i = \gamma x^0+\gamma\beta_i
 x^i$, y $x'^i = \Lambda^i_{\ 0}x^0+\Lambda^i_{\ j}x^j = \gamma\beta^i
 x^0 + (\delta^i_j+(\gamma-1)\hat n^i\hat n_j)x^j = \gamma\beta^ix^0+x^i+
@@ -1667,7 +2092,7 @@ A\times\hat n)$.
 \[
 x'^0 = \gamma\big(x^0+\beta x_\parallel\big), \qquad \vec x\,' =
 \gamma\big(\beta x^0+x_\parallel\big)\hat n + \hat n\times(\vec
-x\times\hat n) . \tag{31}
+x\times\hat n) . \tag{64}
 \]
 \end{proposicionc}
 
@@ -1682,11 +2107,11 @@ x'^i = \gamma(\beta x^0+x_\parallel)\hat n^i + \big(\delta^i_j-\hat
 n^i\hat n_j\big)x^j = \gamma(\beta x^0+x_\parallel)\hat n^i +
 \epsilon^{iln}\hat n_l\epsilon_{njk}x^j\hat n^k,
 \]
-que en notación vectorial da (31). \qedhere
+que en notación vectorial da (64). \qedhere
 \end{proof}
 
 \begin{observacion}
-De (31) se observa que la componente de $x^\mu$ \textbf{paralela} a la
+De (64) se observa que la componente de $x^\mu$ \textbf{paralela} a la
 velocidad es afectada por la transformación de Lorentz,
 \[
 x'^0 = \gamma(x^0+\beta x_\parallel), \qquad x_\parallel' = \gamma

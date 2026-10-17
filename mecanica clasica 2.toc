@@ -89,15 +89,18 @@
 \contentsline {subsection}{\numberline {7.2.5}La transformación de Lorentz}{61}{subsection.7.2.5}%
 \contentsline {subsection}{\numberline {7.2.6}El concepto de simultaneidad}{62}{subsection.7.2.6}%
 \contentsline {section}{\numberline {7.3}Postulados de Einstein}{62}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}El Boost de Lorentz}{63}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Contracción de longitud}{65}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Dilatación del tiempo}{65}{subsection.7.3.3}%
-\contentsline {subsection}{\numberline {7.3.4}Composición de velocidades}{66}{subsection.7.3.4}%
-\contentsline {subsection}{\numberline {7.3.5}Propiedades de las transformaciones de Lorentz}{66}{subsection.7.3.5}%
-\contentsline {subsubsection}{El ángulo de rapidez}{67}{section*.19}%
-\contentsline {section}{\numberline {7.4}Espacio de Minkowski}{68}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}El intervalo entre dos sucesos}{69}{subsection.7.4.1}%
-\contentsline {section}{\numberline {7.5}Cono de Luz}{70}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Rotaciones espaciales y el grupo de Lorentz}{71}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Subir y bajar índices con la métrica de Minkowski}{72}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}Boost de Lorentz en dirección arbitraria}{72}{subsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.3.1}El tiempo y el espacio en la visión newtoniana}{63}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Consecuencias del segundo postulado}{64}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Relatividad de la simultaneidad}{65}{subsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.3.4}Dilatación del tiempo: el reloj de luz}{65}{subsection.7.3.4}%
+\contentsline {subsection}{\numberline {7.3.5}Contracción de la longitud: la vara y el reloj de luz}{68}{subsection.7.3.5}%
+\contentsline {subsection}{\numberline {7.3.6}El Boost de Lorentz}{69}{subsection.7.3.6}%
+\contentsline {subsection}{\numberline {7.3.7}Composición de velocidades}{71}{subsection.7.3.7}%
+\contentsline {subsection}{\numberline {7.3.8}Propiedades de las transformaciones de Lorentz}{71}{subsection.7.3.8}%
+\contentsline {subsubsection}{El ángulo de rapidez}{72}{section*.54}%
+\contentsline {section}{\numberline {7.4}Espacio de Minkowski}{73}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}El intervalo entre dos sucesos}{74}{subsection.7.4.1}%
+\contentsline {section}{\numberline {7.5}Cono de Luz}{75}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Rotaciones espaciales y el grupo de Lorentz}{76}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Subir y bajar índices con la métrica de Minkowski}{77}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}Boost de Lorentz en dirección arbitraria}{77}{subsection.7.5.3}%
