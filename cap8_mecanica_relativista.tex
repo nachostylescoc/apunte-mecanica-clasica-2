@@ -1,0 +1,1307 @@
+\chapter{Mecánica Relativista}
+
+\section{Tensores de Minkowski}
+
+El tensor $A^\mu$, de orden $(1,0)$, de acuerdo con la ley de
+transformación de tensores bajo una transformación de coordenadas
+$x'^\mu=x'^\mu(x^\nu)$, cambia como
+\[
+A'^\mu = \frac{\partial x'^\mu}{\partial x^\nu}\,A^\nu .
+\]
+En el espacio de Minkowski $M^4$, las transformaciones de coordenadas
+son las transformaciones de Lorentz, $x'^\mu=\Lambda^\mu_{\ \nu}(\beta^k)
+x^\nu$, por lo tanto
+\[
+\frac{\partial x'^\mu}{\partial x^\nu} = \Lambda^\mu_{\ \nu}(\beta^k),
+\tag{1}
+\]
+tal que el tensor $A^\mu$ en $M^4$ transforma como
+\[
+A'^\mu = \Lambda^\mu_{\ \nu}(\beta^k)\,A^\nu . \tag{2}
+\]
+Usando la definición de $\Lambda^\mu_{\ \nu}(\beta^k)$ en (2) se obtiene
+\[
+A'^0 = \gamma\big(A^0+\beta_iA^i\big), \qquad A'^i = \gamma\big(\beta^i
+A^0+\hat n_jA^j\hat n^i\big)+\epsilon^{iln}\hat n_l\epsilon_{njk}A^j
+\hat n^k,
+\]
+o, en forma vectorial,
+\[
+A'^0 = \gamma\big(A^0+\vec\beta\cdot\vec A\big), \qquad \vec A\,' =
+\gamma\big(\vec\beta A^0+(\hat n\cdot\vec A)\hat n\big)+\hat n\times
+(\vec A\times\hat n). \tag{3}
+\]
+Las componentes de $A^\mu$ paralelas a $\hat n$ son las afectadas por las
+transformaciones de Lorentz (dilataciones y contracciones), mientras que
+las perpendiculares permanecen invariantes.
+
+Para el tensor $A_\mu$, de orden $(0,1)$, que cambia como
+$A'_\mu=(\partial x^\nu/\partial x'^\mu)A_\nu$, se tiene que, bajo
+transformaciones de Lorentz, $x'^\mu=\Lambda^\mu_{\ \nu}(\beta^k)x^\nu
+\Rightarrow x^\mu=(\Lambda^{-1})^\mu_{\ \nu}x'^\nu$, luego
+\[
+\frac{\partial x^\mu}{\partial x'^\nu} = (\Lambda^{-1})^\mu_{\ \nu}
+(\beta^k) = \Lambda^\mu_{\ \nu}(-\beta^k), \tag{4}
+\]
+tal que el tensor $A_\mu$ en $M^4$ transforma
+\[
+A'_\mu = (\Lambda^{-1})^\nu_{\ \mu}(\beta^k)A_\nu = \Lambda^\nu_{\ \mu}
+(-\beta^k)A_\nu . \tag{5}
+\]
+Usando la definición de $\Lambda^\nu_{\ \mu}(-\beta^k)$ en (5),
+\[
+A'_0 = \gamma\big(A_0-\beta^iA_i\big), \qquad A'_i = \gamma\big(-\beta_i
+A_0+\hat n^jA_j\hat n_i\big)+\epsilon_{iln}\hat n^l\epsilon^{njk}A_j
+\hat n_k,
+\]
+y en forma vectorial
+\[
+A'_0 = \gamma\big(A_0-\vec\beta\cdot\vec A\big), \qquad \vec A\,' =
+\gamma\big(-\vec\beta A_0+(\hat n\cdot\vec A)\hat n\big)+\hat n\times
+(\vec A\times\hat n). \tag{6}
+\]
+Nuevamente, las componentes paralelas a $\hat n$ son las afectadas por
+la transformación de Lorentz y las perpendiculares permanecen
+invariantes.
+
+En general, un tensor $T^{\mu_1\dots\mu_p}_{\quad\ \nu_1\dots\nu_q}$ de
+orden $(p,q)$, bajo una transformación general de coordenadas
+$x'^\mu=x'^\mu(x^\nu)$, cambia como
+\[
+T'^{\mu_1\dots\mu_p}_{\quad\ \nu_1\dots\nu_q} = \frac{\partial
+x'^{\mu_1}}{\partial x^{\alpha_1}}\cdots\frac{\partial
+x'^{\mu_p}}{\partial x^{\alpha_p}}\,\frac{\partial x^{\beta_1}}{\partial
+x'^{\nu_1}}\cdots\frac{\partial x^{\beta_q}}{\partial x'^{\nu_q}}\,
+T^{\alpha_1\dots\alpha_p}_{\quad\ \beta_1\dots\beta_q}.
+\]
+Para el caso particular del espacio de Minkowski, las transformaciones de
+coordenadas deben satisfacer (1) y (4). Por lo tanto, un tensor de orden
+$(p,q)$ en el espacio de Minkowski debe transformar con $p$
+transformaciones de Lorentz y $q$ transformaciones inversas de Lorentz.
+
+\begin{definicion}[Tensor de Minkowski]
+Un tensor $T^{\mu_1\dots\mu_p}_{\quad\ \nu_1\dots\nu_q}$ de orden
+$(p,q)$ se dice un \textbf{tensor de Minkowski} si transforma como
+\[
+T'^{\mu_1\dots\mu_p}_{\quad\ \nu_1\dots\nu_q} = \Lambda^{\mu_1}_{\
+\alpha_1}\cdots\Lambda^{\mu_p}_{\ \alpha_p}\,(\Lambda^{-1})^{\beta_1}_{\
+\nu_1}\cdots(\Lambda^{-1})^{\beta_q}_{\ \nu_q}\,T^{\alpha_1\dots
+\alpha_p}_{\quad\ \beta_1\dots\beta_q}. \tag{7}
+\]
+\end{definicion}
+
+Con el fin de pasar de la mecánica clásica (no relativista) a la
+mecánica relativista debemos exigir que las magnitudes físicas sean
+tensores de Lorentz (incluyendo escalares). Por ejemplo, la velocidad
+$\vec v$ es una cantidad de la mecánica clásica que debe generalizarse a
+un espacio de cuatro dimensiones: la nueva velocidad tendrá cuatro
+componentes, se llamará \textbf{cuadrivelocidad} y debe ser un tensor de
+Lorentz. La segunda ley de Newton también debe generalizarse,
+introduciendo una \textbf{cuadrifuerza} con cuatro componentes, y la
+segunda ley de Newton relativista debe escribirse de forma covariante de
+Lorentz.
+
+\section{Sistema de referencia propio}
+
+\subsection{El tiempo propio}
+
+Sea una partícula $P$ que se mueve respecto de un S.R.I. $K$, tal que su
+posición queda determinada por el cuadrivector posición $x^\mu$, con
+$\mu=0,1,2,3$. La partícula, al moverse en el espaciotiempo
+cuadridimensional, genera una línea de mundo. Un cambio infinitesimal de
+posición consiste en pasar de $x^\mu$ a $x^\mu+dx^\mu$, de modo que el
+cambio de posición es el tensor $dx^\mu$, que es tangente a la línea de
+mundo.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[-Stealth] (0,0) -- (4.4,0) node[right] {$x^1$};
+  \draw[-Stealth] (0,0) -- (0,4.4) node[above] {$x^0$};
+  \draw[thick,colordef] (1.6,0.2) .. controls (2.3,1.4) and (1.4,2.6) .. (2.2,4.0);
+  \node[colordef,right] at (2.3,3.6) {\footnotesize línea de mundo};
+  \fill (1.8625,2.025) circle (1.5pt) node[left] {$P$};
+  \draw[-Stealth,thick,colorprop] (1.8625,2.025) -- (1.81,2.85) node[right] {$dx^\mu$};
+\end{tikzpicture}
+\end{center}
+
+Para definir una cuadrivelocidad necesitamos una variable temporal que
+permita definir un antes y un después, tal que
+\[
+u^\mu = \frac{\text{cambio en } x^\mu}{\text{cambio en el tiempo}},
+\]
+y la definición debe ser tal que $u^\mu$ sea un tensor de Lorentz de
+orden $(1,0)$, esto es, debe transformar bajo una transformación de
+Lorentz como
+\[
+u'^\mu = \Lambda^\mu_{\ \nu}\,u^\nu . \tag{8}
+\]
+La tentación inicial es usar el tiempo medido en el S.R.I. $K$, es decir
+definir
+\[
+u^\mu = \frac{dx^\mu}{dt} . \tag{9}
+\]
+Sin embargo, el tiempo $t$ de $K$ es relativo: si cambiamos al S.R.I.
+$K'$,
+\[
+dx'^\mu = \Lambda^\mu_{\ \nu}dx^\nu, \qquad dt' = \frac1c\Lambda^0_{\
+\nu}dx^\nu = \Lambda^0_{\ 0}dt + \frac1c\Lambda^0_{\ j}dx^j,
+\]
+luego
+\[
+u'^\mu = \frac{dx'^\mu}{dt'} = \frac{\Lambda^\mu_{\ \nu}dx^\nu}{
+\Lambda^0_{\ 0}dt+\frac1c\Lambda^0_{\ j}dx^j} = \Lambda^\mu_{\ \nu}
+\frac{u^\nu}{\Lambda^0_{\ 0}+\Lambda^0_{\ j}\frac{v^j}{c}} \neq
+\Lambda^\mu_{\ \nu}u^\nu .
+\]
+Por lo tanto, la definición (9) no satisface la condición de covariancia
+de Lorentz (8). Para salvar la definición de la cuadrivelocidad como un
+tensor de Lorentz introduciremos el llamado \textbf{sistema de
+referencia propio}.
+
+Sea una partícula $P$ que se mueve con velocidad $v^i=dx^i/dt$ respecto
+del S.R.I. $K$. Definimos un sistema de referencia atado a la partícula,
+$K_P$, no necesariamente inercial: un observador atado a la partícula,
+con unidades de medida, es decir, con un reloj, reglas y balanza. Para
+entender la idea, recordemos una de las aventuras del barón Münchausen,
+en la que viaja sobre una bala de cañón: la bala sería la partícula bajo
+estudio y el barón el observador propio que viaja junto con la
+partícula.
+
+\begin{definicion}[Sistema coordenado propio]
+Se define un \textbf{sistema coordenado propio}, denotado $K_P$, como un
+observador que se mueve junto con la partícula, tal que la partícula
+está en reposo respecto de $K_P$, y hay un reloj asociado a $K_P$ en
+reposo respecto de la partícula que mide lo que se llama el
+\textbf{tiempo propio}, denotado $t_P=\tau$.
+\end{definicion}
+
+Las coordenadas de la partícula respecto de $K_P$ son
+\[
+x^\mu_P = \big(x^0_P,x^i_P\big) = (c\tau,\vec 0), \qquad x^i_P=0, \tag{10}
+\]
+y la condición $x^i_P=0$ es válida $\forall\tau$, pues el sistema $K_P$
+se mueve junto a la partícula, es decir, la partícula está en el origen
+de $K_P$. El elemento de línea respecto de $K_P$ es
+\[
+ds_P^2 = \eta_{\mu\nu}dx^\mu_Pdx^\nu_P = -(dx_P^0)^2+dx^i_Pdx^i_P =
+-c^2d\tau^2<0,
+\]
+es decir, es de tipo tiempo.
+
+Después de que la partícula se ha movido durante un intervalo de tiempo
+medido por el reloj del S.R.I. $K$, ha recorrido una distancia espacial
+$dl=\sqrt{dx^2+dy^2+dz^2}$ medida en $K$, y el elemento de línea en $K$
+es
+\[
+ds^2 = -c^2dt^2+dl^2 = -c^2dt^2+dx^2+dy^2+dz^2. \tag{11}
+\]
+En $K_P$ el reloj marca un intervalo $d\tau$ y la distancia espacial
+recorrida por la partícula es $dl_P=\sqrt{dx_P^2+dy_P^2+dz_P^2}=0$, por
+lo que
+\[
+ds_P^2 = -c^2d\tau^2 . \tag{12}
+\]
+
+\begin{proposicionc}[Tiempo propio]
+El tiempo medido en $K$ y el tiempo propio están relacionados por
+\[
+d\tau = dt\sqrt{1-\frac{v^2}{c^2}} . \tag{13}
+\]
+\end{proposicionc}
+
+\begin{proof}
+Los elementos de línea (11) y (12) deben ser iguales, $ds_P^2=ds^2$:
+\[
+-c^2d\tau^2 = -c^2dt^2+dx^2+dy^2+dz^2 \;\Rightarrow\;
+c^2d\tau^2 = c^2dt^2-dx^idx^i = c^2dt^2\left(1-\frac{v^iv_i}{c^2}\right),
+\]
+de donde $d\tau=dt\sqrt{1-v^2/c^2}$. \qedhere
+\end{proof}
+
+La expresión (13) relaciona el tiempo medido en $K$ con el tiempo
+propio, si se conoce la velocidad $v^i$ medida en $K$ (que puede variar
+con el tiempo, $v^i(t)$). Además, como $ds_P^2=ds^2$ implica
+$d\tau=\frac1c\sqrt{-ds^2}$, y el elemento de línea medido en $K$ debe
+ser de tipo tiempo ($ds^2<0$),
+\[
+d\tau = \frac{ds}{c}, \qquad ds:=\sqrt{-ds^2}. \tag{14}
+\]
+
+\begin{proposicionc}
+El tiempo propio es invariante bajo transformaciones de Lorentz: es un
+escalar de Lorentz.
+\end{proposicionc}
+
+\begin{proof}
+Como el elemento de línea es invariante bajo transformaciones de
+Lorentz, si efectuamos sucesivas transformaciones de Lorentz $K
+\xrightarrow{V^i}K'\xrightarrow{V'^i}K''\to\cdots$ se tiene
+$d\tau=\frac1cds=\frac1cds'=\frac1cds''=\dots$, es decir
+$d\tau=d\tau'=d\tau''=\dots$ \qedhere
+\end{proof}
+
+El tiempo propio es el tiempo que se mide en el sistema propio: si una
+mosca tiene una vida media de 28 días en su sistema propio, no importa
+si la mosca vuela a altas velocidades (una ``supermosca'') respecto de
+otros S.R.I.; su vida media en su sistema propio siempre será de 28
+días, aunque los observadores inerciales observen dilatación del tiempo.
+Como el tiempo propio es un invariante de Lorentz, lo podemos usar para
+medir la secuencia de eventos en el espaciotiempo $M^4$: la línea de
+mundo se parametriza con el tiempo propio de la partícula,
+\[
+\mathbb{R}\to M^4, \qquad \tau\mapsto x^\mu(\tau),
+\]
+y el cambio infinitesimal de posición se expresa como
+$dx^\mu=x^\mu(\tau+d\tau)-x^\mu(\tau)=\dfrac{dx^\mu}{d\tau}d\tau$.
+
+\subsection{La cuadrivelocidad}
+
+\begin{definicion}[Cuadrivelocidad]
+Se define la \textbf{cuadrivelocidad} de una partícula como
+\[
+u^\mu := \frac{dx^\mu}{d\tau} . \tag{15}
+\]
+\end{definicion}
+
+\begin{proposicionc}
+La cuadrivelocidad (15) es un tensor de Lorentz de orden $(1,0)$.
+\end{proposicionc}
+
+\begin{proof}
+Sea la transformación de Lorentz $x'^\mu=\Lambda^\mu_{\ \nu}x^\nu$;
+entonces $dx'^\mu=\Lambda^\mu_{\ \nu}dx^\nu$ y $d\tau'=d\tau$, de modo
+que
+\[
+u'^\mu = \frac{dx'^\mu}{d\tau'} = \Lambda^\mu_{\ \nu}\frac{dx^\nu}{d\tau}
+= \Lambda^\mu_{\ \nu}u^\nu,
+\]
+es decir, la cuadrivelocidad satisface la propiedad (8). \qedhere
+\end{proof}
+
+La cuadrivelocidad es tangente a la línea de mundo de la partícula. Para
+partículas físicas debe estar dentro del cono de luz, si $v<c$, o sobre
+el cono de luz, si $v=c$. Se debe mencionar que la cuadrivelocidad
+combina una cantidad medida por el S.R.I. $K$, $dx^\mu$, y una cantidad
+medida por el sistema propio $K_P$, $d\tau$:
+\[
+u^\mu = \frac{\text{cambio de posición medido en } K}{\text{cambio en el
+tiempo medido en } K_P}.
+\]
+El tiempo propio no es una cantidad medida directamente por $K$, pero
+ambas están relacionadas a través de (13). Si conocemos $v(t)$,
+integrando (13),
+\[
+\tau(t) = \tau_0+\int_{t_0}^t\sqrt{1-\frac{v^2(t)}{c^2}}\,dt,
+\]
+y si la partícula se mueve con velocidad constante respecto de $K$,
+$v=V$, se tiene $\tau=\sqrt{1-V^2/c^2}\,t$, es decir, $t=\gamma\tau$.
+
+Conocida la velocidad $v^i=dx^i/dt$ medida por $K$, podemos
+relacionarla con la cuadrivelocidad:
+\[
+u^\mu = \left(c\frac{dt}{d\tau},\frac{dx^i}{d\tau}\right) =
+\left(c\frac{dt}{d\tau},\frac{dt}{d\tau}\frac{dx^i}{dt}\right),
+\]
+y usando (13),
+\[
+u^0 = \frac{c}{\sqrt{1-v^2/c^2}} = c\gamma, \qquad u^i =
+\frac{v^i}{\sqrt{1-v^2/c^2}} = \gamma v^i, \qquad
+\gamma=\frac{1}{\sqrt{1-v^2/c^2}}. \tag{16, 17}
+\]
+
+\begin{proposicionc}[Ligadura de la cuadrivelocidad]
+La cuadrivelocidad satisface la ligadura
+\[
+u^2 = \eta_{\mu\nu}u^\mu u^\nu = -c^2, \tag{18}
+\]
+o, en otra notación, $u^\mu u_\mu=-c^2$ (19).
+\end{proposicionc}
+
+\begin{proof}
+Partiendo de la identidad $ds^2=ds_P^2$, $\eta_{\mu\nu}dx^\mu dx^\nu=
+-c^2d\tau^2$; como $x^\mu=x^\mu(\tau)$,
+$\eta_{\mu\nu}\dfrac{dx^\mu}{d\tau}\dfrac{dx^\nu}{d\tau}d\tau^2=
+-c^2d\tau^2$, de donde $\eta_{\mu\nu}u^\mu u^\nu=-c^2$. \qedhere
+\end{proof}
+
+La expresión (18) muestra que la cuadrivelocidad es de tipo tiempo, y
+que no todas sus componentes son independientes: las cuatro componentes
+de $u^\mu$ deben tomar solo valores que satisfagan la ligadura (18).
+Para entenderlo, consideremos una partícula que se mueve a lo largo del
+eje $x$ de $K$, es decir $u^2=u^3=0$; entonces
+\[
+-(u^0)^2+(u^1)^2=-c^2 \;\Longrightarrow\; (u^0)^2-(u^1)^2=c^2, \tag{20}
+\]
+que corresponde a una hipérbola en el espacio de las cuadrivelocidades.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[-Stealth] (-3,0) -- (3,0) node[right] {$u^1$};
+  \draw[-Stealth] (0,-3.2) -- (0,3.2) node[above] {$u^0$};
+  \draw[thick,colordef,domain=-2.2:2.2,samples=60,smooth]
+    plot ({\x},{1.0*sqrt(1+\x*\x)});
+  \draw[thick,colordef,domain=-2.2:2.2,samples=60,smooth]
+    plot ({\x},{-1.0*sqrt(1+\x*\x)});
+  \draw[dashed,gray] (-2.4,-2.4) -- (2.4,2.4);
+  \draw[dashed,gray] (-2.4,2.4) -- (2.4,-2.4);
+  \fill (1.2,1.562) circle (1.5pt) node[right] {$P$};
+  \fill (0.6,0.5) circle (1.5pt) node[right] {$Q$};
+  \node[left] at (0,1.0) {\footnotesize$c$};
+\end{tikzpicture}
+\end{center}
+
+Las componentes $u^\mu=(u^0,u^1,0,0)$ deben tomar solo valores sobre la
+hipérbola (la rama positiva o la negativa). La cuadrivelocidad puede
+tomar los valores del punto $P$ sobre la hipérbola, pero no los del
+punto $Q$, que no está sobre ella. De (20), $u^1=\sqrt{(u^0)^2-c^2}$, y
+es claro que $|u^0|\ge c>0$: la componente $u^0>0$ nunca se anula. Si una
+persona se sienta en una silla está en reposo, $u^1=0$, por lo tanto
+$u^0=c$: nos movemos en la dirección temporal, envejeciendo.
+
+\subsection{La cuadrivelocidad reducida}
+
+\begin{definicion}[Cuadrivelocidad reducida]
+Como $ds$ es de tipo tiempo, $ds^2<0$, podemos usarlo para definir un
+nuevo cuadrivector, la \textbf{cuadrivelocidad reducida},
+\[
+U^\mu := \frac{dx^\mu}{ds}, \tag{21}
+\]
+que es adimensional.
+\end{definicion}
+
+\begin{proposicionc}
+La cuadrivelocidad reducida es un tensor de Lorentz de orden $(1,0)$.
+\end{proposicionc}
+
+\begin{proof}
+Sea $x'^\mu=\Lambda^\mu_{\ \nu}x^\nu$, tal que $dx'^\mu=\Lambda^\mu_{\
+\nu}dx^\nu$ y $ds'=ds$. Entonces $U'^\mu=dx'^\mu/ds'=\Lambda^\mu_{\
+\nu}dx^\nu/ds=\Lambda^\mu_{\ \nu}U^\nu$, que satisface la propiedad (2).
+\qedhere
+\end{proof}
+
+Usando (14) en (21), $U^\mu=\dfrac{dx^\mu}{ds}=\dfrac1c\dfrac{dx^\mu}
+{d\tau}$, de modo que
+\[
+U^\mu = \frac{u^\mu}{c}, \tag{22}
+\]
+expresión que relaciona la cuadrivelocidad con la reducida. Las
+unidades son distintas: $[u^\mu]=L/T$, $[U^\mu]=1$. Calculemos $U^2$:
+\[
+U^2 = \eta_{\mu\nu}U^\mu U^\nu = \frac{1}{c^2}\eta_{\mu\nu}u^\mu u^\nu =
+-\frac{c^2}{c^2} = -1,
+\]
+usando (18). La cuadrivelocidad reducida es de tipo tiempo; desde el
+punto de vista geométrico, $U^\mu$ es el cuadrivector unitario tangente
+a la línea de mundo.
+
+\subsection{La cuadriaceleración}
+
+\begin{definicion}[Cuadriaceleración]
+Si $u^\mu$ es la cuadrivelocidad, se define la \textbf{cuadriaceleración}
+como
+\[
+W^\mu := \frac{du^\mu}{d\tau} = \frac{d^2x^\mu}{d\tau^2} . \tag{23}
+\]
+\end{definicion}
+
+\begin{proposicionc}
+La cuadriaceleración es un tensor de Lorentz de orden $(1,0)$.
+\end{proposicionc}
+
+\begin{proof}
+Sea $x'^\mu=\Lambda^\mu_{\ \nu}x^\nu$, tal que $u'^\mu=\Lambda^\mu_{\
+\nu}u^\nu$ y $d\tau'=d\tau$. Entonces $W'^\mu=\dfrac{du'^\mu}{d\tau'}=
+\dfrac{d}{d\tau}\big(\Lambda^\mu_{\ \nu}u^\nu\big)=\Lambda^\mu_{\
+\nu}\dfrac{du^\nu}{d\tau}=\Lambda^\mu_{\ \nu}W^\nu$. \qedhere
+\end{proof}
+
+Al igual que en la cuadrivelocidad, en la definición de la
+cuadriaceleración el cambio de tiempo corresponde al tiempo propio y no
+al tiempo del S.R.I. $K$. Sin embargo, podemos relacionar $W^\mu$ con el
+tiempo de $K$: $W^\mu=\dfrac{du^\mu}{d\tau}=\dfrac{dt}{d\tau}\dfrac{
+du^\mu}{dt}=\gamma\dfrac{du^\mu}{dt}$. Usando (16),
+\[
+W^0 = \gamma\frac{d}{dt}(c\gamma) = c\gamma\frac{d\gamma}{dt} =
+\frac c2\frac{d\gamma^2}{dt} = \frac c2\frac{d}{dt}\left(1-\frac{v^2}
+{c^2}\right)^{-1} = \frac1c\left(1-\frac{v^2}{c^2}\right)^{-2}v_i
+\frac{dv^i}{dt},
+\]
+\[
+W^i = \gamma\frac{d}{dt}\big(\gamma v^i\big) = \gamma^2\frac{dv^i}{dt}+
+\gamma v^i\frac{d\gamma}{dt} = \gamma^2\frac{dv^i}{dt} + \frac{1}{c^2}
+\left(1-\frac{v^2}{c^2}\right)^{-2}v^iv_j\frac{dv^j}{dt}.
+\]
+
+\begin{proposicionc}[Cuadriaceleración en términos de $\vec v$ y $\vec a$]
+Con $v^i=dx^i/dt$ y $a^i=dv^i/dt$,
+\[
+W^0 = \frac1c\gamma^4\,\vec v\cdot\vec a, \qquad W^i = \gamma^2a^i +
+\frac{1}{c^2}\gamma^4(\vec v\cdot\vec a)\,v^i . \tag{24}
+\]
+\end{proposicionc}
+
+Se ha relacionado $W^\mu$ con las magnitudes físicas medidas por $K$.
+
+\begin{proposicionc}
+La cuadrivelocidad y la cuadriaceleración son perpendiculares:
+\[
+u\cdot W = \eta_{\mu\nu}u^\mu W^\nu = 0, \tag{25}
+\]
+o, en otra notación, $u_\mu W^\mu=0$ (26).
+\end{proposicionc}
+
+\begin{proof}
+Derivamos la ligadura (18): $\dfrac{d}{d\tau}\big(\eta_{\mu\nu}u^\mu
+u^\nu\big)=-\dfrac{dc^2}{d\tau}=0$, es decir $2\eta_{\mu\nu}u^\mu
+\dfrac{du^\nu}{d\tau}=0$, o bien $u\cdot W=0$. \qedhere
+\end{proof}
+
+La expresión (25) es una ligadura para la cuadriaceleración: no todas
+las componentes de $W^\mu$ son independientes. En efecto,
+\[
+\eta_{\mu\nu}u^\mu W^\nu=0 \;\Rightarrow\; -u^0W^0+u^iW^i=0
+\;\Rightarrow\; -\gamma cW^0+\gamma v_iW^i=0,
+\]
+\[
+\therefore\quad W^0 = \frac1c\,v_iW^i = \frac1c\,\vec v\cdot\vec W .
+\tag{27}
+\]
+Si se reemplazan las expresiones (24) en (27) se obtiene una identidad.
+
+\section{Momentum lineal en el espacio de Minkowski}
+
+En mecánica de Newton el momentum lineal se define como
+\[
+p^i = mv^i, \tag{28}
+\]
+donde $m$ es la masa inercial, que mide la oposición del sistema a
+cambiar su estado de movimiento.
+
+\begin{definicion}[Cuadrimomentum lineal]
+Por analogía con (28) se define el \textbf{cuadrimomentum lineal} como
+\[
+p^\mu := m_0u^\mu, \tag{29}
+\]
+donde $m_0$ es la masa medida en el sistema propio $K_P$.
+\end{definicion}
+
+La masa $m_0$ medida en $K_P$ es la masa que se mide en reposo, y por eso
+se llama \textbf{masa en reposo}. Es una magnitud independiente del
+observador, es decir, un invariante bajo cambio de sistema de
+referencia, y por eso también se llama \textbf{masa invariante}: si una
+persona tiene una masa en reposo de $90\ \text{kg}$, no importa la
+velocidad con que se mueva, su masa propia no cambia.
+
+\begin{proposicionc}
+El cuadrimomentum lineal (29) es un tensor de Lorentz de orden $(1,0)$.
+\end{proposicionc}
+
+\begin{proof}
+Sea $x'^\mu=\Lambda^\mu_{\ \nu}x^\nu$, tal que $u'^\mu=\Lambda^\mu_{\
+\nu}u^\nu$ y $m_0'=m_0$. Entonces $p'^\mu=m_0'u'^\mu=m_0\Lambda^\mu_{\
+\nu}u^\nu=\Lambda^\mu_{\ \nu}p^\nu$. \qedhere
+\end{proof}
+
+Cambiando del tiempo propio al tiempo del S.R.I. $K$,
+$p^\mu=m_0u^\mu=m_0(c\gamma,\gamma v^i)$, así
+\[
+p^0 = m_0c\gamma, \qquad p^i = m_0\gamma v^i . \tag{30}
+\]
+Si comparamos (28) con la segunda ecuación de (30) podemos definir la
+nueva magnitud
+\[
+m = m(v) = m_0\gamma = \frac{m_0}{\sqrt{1-v^2/c^2}} . \tag{31}
+\]
+La masa (31) es la masa medida en el S.R.I. $K$, y claramente no es
+constante; se llama \textbf{masa relativista}.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[-Stealth] (0,0) -- (6.4,0) node[right] {$v$};
+  \draw[-Stealth] (0,0) -- (0,4.6) node[above] {$m(v)$};
+  \draw[dashed] (5,0) -- (5,4.4);
+  \node[below] at (5,0) {\footnotesize$c$};
+  \node[left] at (0,0.8) {\footnotesize$m_0$};
+  \draw[thick,colordef,domain=0:0.98,samples=80,smooth]
+    plot ({5*\x},{0.8/sqrt(1-\x*\x)});
+\end{tikzpicture}
+\end{center}
+
+En mecánica clásica se introduce la masa inercial, que es una constante.
+En relatividad especial también hay una masa inercial, que también mide
+la oposición a cambiar el estado de movimiento, pero varía con la
+velocidad: aumenta a medida que aumenta la velocidad. La razón es la
+constancia de la rapidez de la luz y, como consecuencia, la existencia
+de una velocidad máxima: a medida que aumenta la velocidad la masa
+inercial también aumenta, teóricamente hasta el infinito si $v\to c$,
+para que ninguna partícula supere la velocidad de la luz. La masa
+inercial es, por así decirlo, la ``policía'' de la relatividad especial:
+evita que la partícula viole el segundo postulado de Einstein.
+
+\begin{observacion}
+Consideremos una persona de masa en reposo $90\ \text{kg}$ que subimos a
+un vehículo espacial, aumentando la velocidad suavemente hasta alcanzar
+velocidades cercanas a la de la luz. El observador $K$ observará que la
+masa relativista de la persona aumenta de acuerdo con (31). Sin embargo,
+esto no significa que $K$ vea que la persona se vuelve obesa. Lo que
+observa es que la persona se mueve cada vez más lento a medida que
+aumenta la velocidad, debido a la dilatación del tiempo; el observador
+interpreta ese efecto de moverse lento como un aumento de la inercia, y
+como la inercia se relaciona con la masa, interpreta este incremento
+como un aumento de la masa relativista.
+\end{observacion}
+
+Las componentes del cuadrimomentum lineal no son todas independientes,
+pues satisfacen la ligadura
+\[
+p^2 = \eta_{\mu\nu}p^\mu p^\nu = m_0^2\eta_{\mu\nu}u^\mu u^\nu = -m_0^2c^2
+. \tag{32}
+\]
+El cuadrimomentum es un cuadrivector de tipo tiempo. La expresión (32)
+se denomina \textbf{capa de masa} (en inglés, \emph{mass shell}): dada
+una masa $m_0$, las componentes del cuadrimomentum tomarán los valores
+tales que (32) se satisfaga. Esto es particularmente importante en teoría
+cuántica de campos. Desarrollando (32),
+\[
+-(p^0)^2+p^ip^i = -m_0^2c^2 \;\Longrightarrow\; (p^0)^2-\|\vec p\|^2 =
+m_0^2c^2,
+\]
+que es un hiperboloide de dos hojas en el espacio de los
+cuadrimomentum (con $p^0>0$ solo la hoja superior); además se concluye
+que $p^0\neq0$.
+
+\section{Segunda ley de Newton relativista}
+
+Las ecuaciones de Newton son invariantes de forma (covariantes) bajo
+transformaciones de Galileo, pero no bajo transformaciones de Lorentz.
+En mecánica relativista deben generalizarse para satisfacer los
+postulados de Einstein, y deben desembocar en la segunda ley de Newton
+para velocidades muy pequeñas comparadas con la de la luz. Esto se
+resume en dos puntos:
+\begin{enumerate}
+\item Las ecuaciones de Newton generalizadas deben ser tensores de
+Lorentz (covariancia de Lorentz).
+\item Para $v\ll c$ deben desembocar en la segunda ley de Newton,
+\[
+v\ll c \;\Longrightarrow\; \frac{d}{dt}\big(m_0v^i\big) = F^i, \tag{33}
+\]
+porque la teoría de Newton ha sido exitosa en explicar la naturaleza a
+pequeñas velocidades.
+\end{enumerate}
+
+\begin{definicion}[Ecuaciones de Newton relativistas]
+Las ecuaciones de Newton relativistas son de la forma
+\[
+\frac{dp^\mu}{d\tau} = K^\mu, \tag{34}
+\]
+donde $K^\mu$ es la \textbf{cuadrifuerza}, también llamada \textbf{fuerza
+de Minkowski}.
+\end{definicion}
+
+\begin{proposicionc}
+La fuerza de Minkowski $K^\mu$ es un tensor de Lorentz de orden $(1,0)$.
+\end{proposicionc}
+
+\begin{proof}
+Sea $x'^\mu=\Lambda^\mu_{\ \nu}x^\nu$, tal que $p'^\mu=\Lambda^\mu_{\
+\nu}p^\nu$ y $d\tau'=d\tau$. Introduciendo en (34),
+$K'^\mu=\dfrac{dp'^\mu}{d\tau'}=\dfrac{d}{d\tau}\big(\Lambda^\mu_{\
+\nu}p^\nu\big)=\Lambda^\mu_{\ \nu}\dfrac{dp^\nu}{d\tau}=\Lambda^\mu_{\
+\nu}K^\nu$. \qedhere
+\end{proof}
+
+Para identificar las componentes de $K^\mu$ con las observaciones
+realizadas por el S.R.I. $K$ debemos pasar del tiempo propio al tiempo
+del observador $K$:
+\[
+K^\mu = \frac{dp^\mu}{d\tau} = \frac{dt}{d\tau}\frac{dp^\mu}{dt} =
+\gamma\frac{dp^\mu}{dt} \;\Rightarrow\; \big(K^0,K^i\big) = \left(\gamma
+\frac{d}{dt}(m_0c\gamma),\ \gamma\frac{d}{dt}(m_0\gamma v^i)\right),
+\tag{35}
+\]
+e identificando los términos de cada lado,
+\[
+K^0 = \gamma\frac{dp^0}{dt} = \gamma\frac{d}{dt}(m_0c\gamma), \qquad
+K^i = \gamma\frac{dp^i}{dt} = \gamma\frac{d}{dt}\big(m_0\gamma v^i\big).
+\tag{36}
+\]
+Comparando (28) con la segunda ecuación de (36) realizamos la
+identificación
+\[
+\frac{dp^i}{dt} = \frac{d}{dt}\big(m_0\gamma v^i\big) = \frac{d}{dt}
+\big(m(v)v^i\big) = F^i . \tag{37}
+\]
+Esta identificación se debe a dos razones. La primera es que, para
+$v\ll c$, se debe desembocar en la segunda ley de Newton no
+relativista. En efecto, desarrollando $\gamma$ en serie,
+\[
+\gamma = \frac{1}{\sqrt{1-v^2/c^2}} = 1+\frac{v^2}{2c^2}+\frac{3v^4}
+{8c^4}+\dots
+\]
+y entonces
+\[
+F^i = \frac{d}{dt}\big(m_0\gamma v^i\big) = \frac{d}{dt}\big(m_0v^i\big)
++ \frac{d}{dt}\left(\frac{m_0v^iv^2}{2c^2}+\frac{3m_0v^iv^4}{8c^4}+\dots
+\right) = \frac{d}{dt}\big(m_0v^i\big)+\dots,
+\]
+de modo que, para velocidades pequeñas comparadas con la de la luz,
+$F^i\approx\dfrac{d}{dt}(m_0v^i)$, que concuerda con (33). La segunda
+razón es conceptual: en mecánica clásica el momentum contiene a la masa
+inercial $m$, que es constante porque no hay límite superior a la
+velocidad. En relatividad hay una velocidad máxima, y por lo tanto la
+inercia crece a medida que aumenta la velocidad, y este crecimiento se
+debe a la prohibición de superar la velocidad de la luz; como la masa es
+la medida de la inercia, la masa inercial debe también crecer:
+\[
+p^i = \frac{d}{dt}(m_0v^i) \;\xrightarrow{\text{relativista}}\; p^i =
+\frac{d}{dt}\left(\frac{m_0}{\sqrt{1-v^2/c^2}}\,v^i\right).
+\]
+Introduciendo (37) en la segunda ecuación de (36),
+\[
+K^i = \gamma F^i . \tag{38}
+\]
+Desarrollando la primera ecuación de (36),
+\[
+K^0 = \gamma\frac{d}{dt}(m_0c\gamma) = cm_0\gamma\frac{d\gamma}{dt} =
+\frac{m_0c}{2}\frac{d\gamma^2}{dt} \;\Rightarrow\; K^0 = \frac{m_0}{c}
+\gamma^4\,\vec v\cdot\vec a . \tag{39}
+\]
+Desarrollando la segunda ecuación de (36),
+\[
+K^i = \gamma\frac{d}{dt}\big(m_0\gamma v^i\big) = m_0\gamma^2\frac{dv^i}
+{dt}+\frac{m_0}{2}v^i\frac{d\gamma^2}{dt} = \Big(m_0\gamma^2\delta^i_j+
+\frac{m_0}{c^2}\gamma^4v^iv_j\Big)a^j,
+\]
+es decir,
+\[
+K^i = \gamma\Big(m_0\gamma\delta^i_j+\frac{m_0}{c^2}\gamma^3v^iv_j\Big)
+a^j . \tag{40}
+\]
+Definimos la cantidad de masa (\textbf{no es un tensor})
+\[
+M^i_{\ j} = m_0\gamma\,\delta^i_j+\frac{m_0}{c^2}\gamma^3v^iv_j,
+\tag{41}
+\]
+de modo que reemplazando (41) en (40),
+\[
+K^i = \gamma M^i_{\ j}a^j . \tag{42}
+\]
+Para obtener información de (41) escribamos la velocidad como
+$v^i=v\hat n^i$ (43), donde $\hat n^i$ es el vector unitario en la
+dirección de la velocidad y $v$ la rapidez. Entonces
+\[
+M^i_{\ j} = m_0\gamma\delta^i_j+\frac{m_0v^2}{c^2}\gamma^3\hat n^i\hat
+n_j = m_0\gamma\big(\delta^i_j-\hat n^i\hat n_j\big)+\Big(\frac{m_0v^2}
+{c^2}\gamma^3+m_0\gamma\Big)\hat n^i\hat n_j,
+\]
+y como $\dfrac{v^2}{c^2}+\gamma^{-2}=1$, se obtiene
+\[
+M^i_{\ j} = m_0\gamma\big(\delta^i_j-\hat n^i\hat n_j\big)+m_0\gamma^3
+\hat n^i\hat n_j = m_0\gamma P^i_{\ j}+m_0\gamma^3\hat n^i\hat n_j .
+\tag{44, 45}
+\]
+El primer término es proporcional al operador proyector $P^i_{\ j}$, por
+lo que es perpendicular a la velocidad y posee una masa $m_0\gamma$; el
+segundo es paralelo a la velocidad y posee una masa $m_0\gamma^3$. Para
+entender su significado físico pasemos al S.R.I. $K$: introduciendo (38)
+en (42), $\gamma F^i=\gamma M^i_{\ j}a^j$, es decir
+\[
+F^i = M^i_{\ j}a^j . \tag{46}
+\]
+La aceleración puede descomponerse en una parte paralela y otra
+perpendicular a la velocidad, $a^i=a^i_\parallel+a^i_\perp$. Como
+$a^i=\dfrac{d}{dt}(v\hat n^i)$,
+\[
+a^i = \frac{dv}{dt}\hat n^i+v\frac{d\hat n^i}{dt} . \tag{47}
+\]
+El término $\hat n^i\,dv/dt$ es paralelo a la velocidad. El término
+$v\,d\hat n^i/dt$ es perpendicular a ella; en efecto, contrayendo con
+$\hat n_i$,
+\[
+\hat n_i\frac{d\hat n^i}{dt} = \frac12\frac{d}{dt}(\hat n^2) = \frac12
+\frac{d}{dt}(1) = 0. \tag{48}
+\]
+Resumiendo,
+\[
+a^i_\parallel = \frac{dv}{dt}\hat n^i, \qquad a^i_\perp = v\frac{d\hat
+n^i}{dt}. \tag{49, 50}
+\]
+Reemplazando en (46), $F^i=M^i_{\ j}a^j_\parallel+M^i_{\ j}a^j_\perp$.
+Calculamos cada término:
+\[
+M^i_{\ j}a^j_\parallel = \big(m_0\gamma P^i_{\ j}\hat n^j+m_0\gamma^3
+\hat n^i\hat n^2\big)\frac{dv}{dt} = m_0\gamma^3a^i_\parallel, \tag{51}
+\]
+\[
+M^i_{\ j}a^j_\perp = m_0\gamma\big(\delta^i_j-\hat n^i\hat n_j\big)
+\frac{d\hat n^j}{dt}v = m_0\gamma\,a^i_\perp, \tag{52}
+\]
+usando (48). Reemplazando (51) y (52) en (46),
+\[
+F^i = m_0\gamma^3a^i_\parallel+m_0\gamma\,a^i_\perp . \tag{53}
+\]
+En mecánica clásica, la razón entre fuerza y aceleración es la masa
+inercial. La expresión (53) no cumple con esto: hay una masa en la
+dirección paralela y una masa diferente en la dirección perpendicular a
+la velocidad. En la dirección paralela aparece la \textbf{masa
+longitudinal}
+\[
+m_l = m_0\gamma^3 = \frac{m_0}{(1-v^2/c^2)^{3/2}}, \tag{54}
+\]
+y en la dirección perpendicular aparece la \textbf{masa transversal}
+\[
+m_t = m_0\gamma = \frac{m_0}{\sqrt{1-v^2/c^2}} . \tag{55}
+\]
+Como $\gamma^3\ge\gamma$, se tiene $m_l\ge m_t$: cuesta más acelerar la
+partícula en la dirección paralela a la velocidad que en la
+perpendicular.
+
+\begin{proposicionc}
+La cuadrifuerza y la cuadrivelocidad son perpendiculares:
+\[
+u\cdot K = u_\mu K^\mu = 0 . \tag{56}
+\]
+\end{proposicionc}
+
+\begin{proof}
+\[
+u_\mu K^\mu = \eta_{\mu\nu}u^\nu\frac{dp^\mu}{d\tau} = m_0\eta_{\mu\nu}
+u^\nu\frac{du^\mu}{d\tau} = \frac{m_0}{2}\frac{d}{d\tau}\big(\eta_{\mu\nu}
+u^\mu u^\nu\big) = -\frac{m_0}{2}\frac{dc^2}{d\tau} = 0 . \qedhere
+\]
+\end{proof}
+
+La ecuación (56) es una ligadura para la cuadrifuerza: no todas las
+componentes $K^\mu$ son independientes. Desarrollándola,
+$-u^0K^0+u^iK^i=0$, es decir $-c\gamma K^0+\gamma v_iK^i=0$, y por lo
+tanto
+\[
+K^0 = \frac1c v_iK^i = \frac1c\,\vec v\cdot\vec K . \tag{57}
+\]
+Introduciendo (38) en (57) se obtiene $K^0=\dfrac{\gamma}{c}F^iv_i=
+\dfrac\gamma c\vec F\cdot\vec v$. La cantidad $\vec F\cdot\vec v$ es la
+potencia $\mathcal P$, luego
+\[
+K^0 = \frac\gamma c\mathcal P = \frac\gamma c\frac{dW}{dt}, \tag{58}
+\]
+donde $W$ es el trabajo mecánico. La componente $K^0$ está dada también
+por la primera ecuación de (36); igualando,
+\[
+\frac\gamma c\frac{dW}{dt} = \gamma\frac{d}{dt}(m_0c\gamma)
+\;\Longrightarrow\; \frac{dW}{dt} = \frac{d}{dt}\big(m_0c^2\gamma\big).
+\tag{59}
+\]
+Como la fuerza es la fuerza neta, por el teorema de las fuerzas vivas el
+trabajo mecánico es igual a la energía cinética $T$. Luego
+\[
+\frac{dT}{dt} = \frac{d}{dt}\big(m_0c^2\gamma\big) = \frac{d}{dt}\left(
+\frac{m_0c^2}{\sqrt{1-v^2/c^2}}\right). \tag{60}
+\]
+Integrando (60) con respecto del tiempo,
+\[
+T = \frac{m_0c^2}{\sqrt{1-v^2(t)/c^2}}-\frac{m_0c^2}{\sqrt{1-v^2(0)/c^2}},
+\tag{61}
+\]
+y para $t=0$ se escoge $v(0)=0$, de modo que
+\[
+T = \frac{m_0c^2}{\sqrt{1-v^2(t)/c^2}}-m_0c^2 . \tag{62}
+\]
+Debemos notar que hemos calculado la energía cinética de una partícula
+de masa en reposo $m_0$ y masa relativista $m_0\gamma$. Esta expresión
+puede escribirse
+\[
+T+m_0c^2 = m_0c^2\gamma = mc^2 . \tag{63}
+\]
+El término $m_0c^2$ apareció de la condición de que para $t=0$ la
+velocidad de la partícula es cero; por esta razón se llama \textbf{energía
+en reposo}. En la integración que permitió obtener (61) se integró desde
+$t=0$, $v(0)=0$, pero se pudo integrar desde $t=t_1$ hasta $t=t_2>t_1$,
+\[
+T = \frac{m_0c^2}{\sqrt{1-v^2(t_2)/c^2}}-\frac{m_0c^2}{\sqrt{1-v^2(t_1)/
+c^2}}. \tag{64}
+\]
+Decimos que la partícula en $t=t_1$ tiene velocidad $v^i_1$ o masa
+relativista $m_1=m_0/\sqrt{1-v_1^2/c^2}$, y en $t=t_2$ aumenta su
+velocidad a $v^i_2$ o su masa relativista a $m_2$, tal que la energía
+cinética es
+\[
+T = m_2c^2-m_1c^2 = (m_2-m_1)c^2 = \Delta m\,c^2 . \tag{65}
+\]
+Este es un resultado de gran importancia en la física: relaciona la
+energía cinética con la variación de la masa inercial de la partícula a
+causa del aumento de la velocidad. Volviendo al caso $v(0)=0$, si la
+energía cinética está dada por (63), entonces la energía $E$ de la
+partícula libre es $E=T+m_0c^2=mc^2$, es decir,
+\[
+E = mc^2 = \frac{m_0c^2}{\sqrt{1-v^2/c^2}} . \tag{66}
+\]
+Este resultado es uno de los más conocidos de la relatividad especial y
+establece que \textbf{la masa es una forma de energía}. La energía (66)
+se llama \textbf{energía total}: para una partícula libre, está
+compuesta de la energía en reposo $m_0c^2$ y la energía cinética $T$.
+
+Le hemos llamado \emph{energía cinética} a la expresión (62); para ver
+por qué, consideremos velocidades pequeñas, $v\ll c$, y expandamos:
+\[
+T = m_0c^2\left(1+\frac12\frac{v^2}{c^2}+\frac38\frac{v^4}{c^4}+\dots
+\right)-m_0c^2 = \frac12m_0v^2+\frac38m_0\frac{v^4}{c^2}+\dots \tag{67}
+\]
+De manera que para velocidades bajas o cotidianas se tiene la
+aproximación $T\approx\frac12m_0v^2$, que corresponde a la ecuación no
+relativista de la energía cinética. Para una partícula sometida a una
+fuerza conservativa, la energía total incluye una energía potencial. La
+interpretación de la energía en reposo $m_0c^2$ es la de un nuevo tipo
+de energía. La equivalencia entre masa y energía, ecuación (66), ha sido
+confirmada experimentalmente en una variedad de casos, por ejemplo en la
+fusión nuclear de los núcleos atómicos.
+
+\section{Energía en el espacio de Minkowski}
+
+Retomemos la expresión (57) y desarrollémosla un poco:
+\[
+K^0 = \frac1cK^iv_i \;\Rightarrow\; \gamma\frac{d}{dt}(m_0c\gamma) =
+\frac\gamma cF^iv_i \;\Rightarrow\; \frac{d}{dt}\big(m_0c^2\gamma\big) =
+\vec F\cdot\vec v . \tag{68}
+\]
+En el caso en que la fuerza $F^i$ provenga de un potencial, es decir,
+sea una fuerza conservativa, $\vec F=-\vec\nabla U$, entonces
+\[
+\frac{d}{dt}\big(m_0c^2\gamma\big) = -\vec\nabla U\cdot\vec v = -
+\frac{dU}{dt} \;\Longrightarrow\; \frac{d}{dt}\big(m_0c^2\gamma+U\big) =
+0. \tag{69}
+\]
+La integración de (69) conduce a la \textbf{ley relativista de la
+energía},
+\[
+E = m_0c^2\gamma+U = \text{constante}. \tag{70}
+\]
+La expresión (70) es la energía total de la partícula en presencia de una
+fuerza conservativa. Para velocidades bajas o cotidianas se aproxima a
+$E\approx m_0c^2+\frac12m_0v^2+U+\dots$ (la constante $m_0c^2$ puede
+absorberse en la definición de la energía).
+
+Volvamos al caso de la partícula libre, $U=0$. La componente temporal del
+cuadrimomentum es
+\[
+p^0 = m_0u^0 = m_0\frac{dx^0}{d\tau} = m_0c\gamma = mc = \frac{mc^2}{c} =
+\frac Ec, \qquad\text{es decir,}\qquad p^0 = \frac Ec , \tag{71}
+\]
+donde se usó (66): la componente temporal del cuadrimomentum representa
+la energía total de la partícula libre. Volvamos a la componente espacial
+de la segunda ley de Newton relativista, $K^i=\dfrac{dp^i}{d\tau}$, es
+decir $\gamma F^i=\dfrac{d}{d\tau}\Big(\dfrac{m_0v^i}{\sqrt{1-v^2/c^2}}
+\Big)$. Si la trifuerza que actúa sobre la partícula es nula, $F^i=0$,
+entonces
+\[
+\frac{m_0v^i}{\sqrt{1-v^2/c^2}} = \text{constante}, \tag{72}
+\]
+que es la forma relativista de la ley de conservación del momentum lineal
+para una partícula libre. Esta ecuación vectorial implica que la
+dirección de $v^i$ es constante. Además, multiplicando (72) por sí misma,
+$\dfrac{m_0^2v^2}{1-v^2/c^2}=\text{constante}^2$, de modo que la rapidez
+es constante: por lo tanto, la velocidad es constante.
+
+Sea ahora la componente temporal de la segunda ley relativista,
+$K^0=\dfrac{dp^0}{d\tau}$, con $p^0=E/c$: $\dfrac{d}{d\tau}(m_0c\gamma)=
+\dfrac{d}{d\tau}\Big(\dfrac Ec\Big)$, es decir
+\[
+\frac{d}{d\tau}\big(m_0c^2\gamma\big) = \frac{dE}{d\tau}\quad\Longrightarrow
+\quad E=m_0c^2\gamma=\text{constante}, \tag{73}
+\]
+que es la ley de conservación de la energía para la partícula libre. Si
+hay una fuerza conservativa, la conservación de la energía está dada por
+(70).
+
+Volviendo a la partícula libre, escribamos el cuadrimomentum de modo que
+en la componente temporal aparezca la energía total,
+\[
+p^\mu = \left(\frac Ec,p^i\right), \tag{74}
+\]
+y calculemos $p^2$:
+\[
+p^2 = \eta_{\mu\nu}p^\mu p^\nu = -m_0^2c^2 = -\frac{E^2}{c^2}+\|\vec
+p\|^2 \;\Longrightarrow\; E^2 = m_0^2c^4+c^2\|\vec p\|^2, \quad
+E=\sqrt{m_0^2c^4+c^2\|\vec p\|^2}. \tag{75}
+\]
+La expresión (75) relaciona la energía con el cuadrimomentum de una
+partícula libre. Aparentemente tenemos dos fórmulas para la energía de
+una partícula libre, (66) y (75), pero son equivalentes:
+\[
+E^2 = m_0^2c^4+c^2m_0\gamma v^im_0\gamma v_i = m_0^2c^4+m_0^2c^2\gamma^2
+v^2 = m_0^2c^4\gamma^2\Big(\gamma^{-2}+\frac{v^2}{c^2}\Big) =
+m_0^2c^4\gamma^2 \;\Rightarrow\; E=m_0c^2\gamma=mc^2 .
+\]
+De (66) despejamos
+\[
+\gamma = \frac{E}{m_0c^2}, \tag{76}
+\]
+y reemplazando en la segunda ecuación de (30), $p^i=m_0\gamma v^i=
+m_0\dfrac{E}{m_0c^2}v^i$, es decir
+\[
+p^i = \frac{E}{c^2}v^i , \tag{77}
+\]
+lo que nos dice que la energía tiene momentum. La magnitud del
+trimomentum es
+\[
+\|\vec p\| = \frac{E}{c^2}v . \tag{78}
+\]
+
+\begin{proposicionc}
+Si una partícula tiene masa en reposo nula, entonces se mueve a la
+velocidad de la luz.
+\end{proposicionc}
+
+\begin{proof}
+Por hipótesis $m_0=0$; reemplazando en (75),
+\[
+E = c\|\vec p\| . \tag{79}
+\]
+Introduciendo (79) en (78), $\|\vec p\|=\dfrac{c\|\vec p\|}{c^2}v$, de
+donde $v=c$. \qedhere
+\end{proof}
+
+La mecánica cuántica nos enseña que una partícula se comporta como onda
+y como partícula. Einstein, para explicar el efecto fotoeléctrico,
+postuló que la luz se comporta como una partícula, y nosotros aquí
+consideramos la luz como una partícula de masa en reposo igual a cero, a
+la que llamaremos \textbf{fotón}. El cuadrimomentum lineal del fotón lo
+designaremos $k^\mu$, en vez de $p^\mu$, tal que
+\[
+k^2 = \eta_{\mu\nu}k^\mu k^\nu = -m_0^2c^2 = 0 , \tag{80}
+\]
+es decir, el cuadrimomentum del fotón es de tipo luz. Debe escribirse en
+la forma (74). Esta forma se dedujo a partir de la partícula libre; sin
+embargo, es más general e incluye, por ejemplo, el caso de partículas de
+masa en reposo nula.
+
+En la obtención del cuadrimomentum primero se definió la cuadrivelocidad
+(15), donde el tiempo propio cumple un papel preponderante. Sin embargo,
+para una partícula de tipo luz se cumple que
+\[
+ds^2=0 \;\Rightarrow\; ds=0, \tag{81}
+\]
+y entonces, por (14), $d\tau=0$: no se puede definir una cuadrivelocidad
+a partir del tiempo propio, pues la expresión (15) se indetermina.
+Definir la cuadrivelocidad de una partícula de tipo luz es complicado,
+porque hay que buscar un nuevo invariante asociado a ella que permita
+definir un antes y un después. Es por ello que el cuadrimomentum se
+vuelve fundamental, y asumiremos que la definición (74) es válida para
+cualquier tipo de partícula física.
+
+La energía del fotón está relacionada con su frecuencia en la forma
+\[
+E = h\nu, \tag{82}
+\]
+donde
+\[
+h \approx 6.626\times10^{-34}\ \frac{\text{kg}\,\text{m}^2}{\text{s}}
+\tag{83}
+\]
+es la constante de Planck. El cuadrimomentum del fotón se escribe
+\[
+k^\mu = \left(\frac Ec,k^i\right) = \left(\frac{h\nu}{c},k^i\right).
+\tag{84}
+\]
+Introduciendo (84) en (80): $-\dfrac{h^2\nu^2}{c^2}+k^ik^i=0$, luego
+\[
+\|\vec k\| = \frac{h\nu}{c} = \frac h\lambda, \tag{85}
+\]
+donde $\lambda$ es la longitud de onda. El trimomentum $k^i$ se puede
+escribir en la forma
+\[
+k^i = \frac{h\nu}{c}\hat k^i, \tag{86}
+\]
+con $\hat k^i$ un vector unitario en la dirección del movimiento del
+fotón. Por lo tanto,
+\[
+k^\mu = \left(\frac{h\nu}{c},\frac{h\nu}{c}\hat k^i\right). \tag{87}
+\]
+Resumimos: el cuadrimomentum de una partícula con masa en reposo
+$m_0\neq0$ está dado por (74) y la energía por (70) si hay presente una
+fuerza conservativa; para el fotón, el cuadrimomentum está dado por (87)
+y la energía por (82).
+
+Si hay $N$ partículas, la segunda ley de Newton relativista del sistema
+se escribe
+\[
+\frac{dp^\mu_1}{d\tau}+\frac{dp^\mu_2}{d\tau}+\dots+\frac{dp^\mu_N}
+{d\tau} = K^\mu, \tag{88}
+\]
+donde $K^\mu$ es la cuadrifuerza externa sobre el sistema (las fuerzas
+internas se anulan por la tercera ley de Newton). Definimos el
+\textbf{cuadrimomentum total}
+\[
+p^\mu = p^\mu_1+p^\mu_2+\dots+p^\mu_N = \sum_{i=1}^Np^\mu_i, \tag{89}
+\]
+y entonces
+\[
+\frac{dp^\mu}{d\tau} = K^\mu . \tag{90}
+\]
+Un caso de interés físico es cuando la cuadrifuerza se anula, $K^\mu=0$:
+\[
+\frac{dp^\mu}{d\tau}=0 \;\Rightarrow\; p^\mu=\text{constante}, \tag{91}
+\]
+que también se escribe
+\[
+p^\mu_{\text{inicial}} = p^\mu_{\text{final}} . \tag{92}
+\]
+La expresión (92) es análoga al caso de la mecánica clásica para el
+estudio de colisiones. Sin embargo, aquí no solo sirve para estudiar
+colisiones, sino también, por ejemplo, desintegraciones atómicas,
+decaimiento de partículas, etc.
+
+\begin{observacion}[Antipartículas]
+En la obtención de la energía (75) se extrajo una raíz cuadrada y se
+asumió el signo positivo para la energía; el signo menos se eliminó. Sin
+embargo, el físico Paul Dirac, al estudiar campos de espín $1/2$
+(fermiones), encontró que la energía negativa aparecía en sus ecuaciones
+y no logró eliminarla; por lo tanto decidió estudiarlas y denominó
+\textbf{antipartículas} a las partículas con energía negativa. La
+predicción de Dirac de la existencia de antimateria fue confirmada
+experimentalmente por Carl D.~Anderson, en Caltech, quien descubrió el
+positrón en 1932. Veintitrés años después, en 1955, Emilio Segrè y Owen
+Chamberlain, en la Universidad de Berkeley, descubrieron el antiprotón y
+el antineutrón. En 1933 se otorgó el premio Nobel de física a Paul
+Dirac.
+\end{observacion}
+
+\begin{ejemplo}[Una partícula cargada con velocidad constante no emite un fotón]
+Supongamos una partícula cargada que se mueve con velocidad constante y
+emite un fotón de frecuencia $\nu$. Sea $p^\mu_i$ su cuadrimomentum
+inicial y $p^\mu_f$ el final; las líneas continuas representan
+partículas masivas y la línea ondulada un fotón. Como la partícula se
+mueve con velocidad constante, usamos un S.R.I. $K$ tal que la partícula
+se encuentra en reposo respecto de $K$; entonces su cuadrimomentum
+inicial se reduce a
+\[
+p^\mu_i = \left(\frac{E_i}{c},0\right) = \left(\frac{m_0c^2}{c},0\right)
+= (m_0c,0). \tag{93}
+\]
+Después de emitir el fotón, la energía y la velocidad de la partícula
+cambian, $p^\mu_f=(E_f/c,p^i_f)$ (94), y el cuadrimomentum del fotón está
+dado por (87). Como la cuadrifuerza externa es cero, de (92),
+\[
+p^\mu_i = p^\mu_f+k^\mu \quad\Longrightarrow\quad p^\mu_i-k^\mu =
+p^\mu_f . \tag{95, 96}
+\]
+Elevando al cuadrado, y usando $p_i^2=p_f^2=-m_0^2c^2$ y $k^2=0$,
+\[
+p_i^2-2p_i\cdot k+k^2=p_f^2 \;\Rightarrow\; -m_0^2c^2-2\eta_{\mu\nu}
+p^\mu_ik^\nu = -m_0^2c^2 \;\Rightarrow\; \eta_{\mu\nu}p^\mu_ik^\nu=0 .
+\]
+Desarrollando, $-p^0_ik^0+p^i_ik^i=0$, y con (93),
+$-m_0c\,\dfrac{h\nu}{c}+0\cdot k^i=0$, es decir $m_0h\nu=0$, de donde
+\[
+\nu = 0 .
+\]
+La partícula no emite un fotón.
+\end{ejemplo}
+
+\section{Efecto Compton}
+
+El \textbf{efecto Compton} (o dispersión Compton) consiste en el
+aumento de la longitud de onda de un fotón cuando choca con un electrón
+libre y pierde parte de su energía. La frecuencia o la longitud de onda
+de la radiación dispersada depende únicamente del ángulo de dispersión.
+Fue estudiado por el físico Arthur Compton en 1923, quien pudo
+explicarlo utilizando la noción cuántica de la radiación
+electromagnética como cuantos de energía y la mecánica relativista.
+Constituyó la demostración final de la naturaleza cuántica de la luz,
+tras los estudios de Planck sobre el cuerpo negro y la explicación de
+Einstein del efecto fotoeléctrico.
+
+Compton descubrió este efecto al experimentar con rayos X dirigidos
+contra una de las caras de un bloque de carbón. Al chocar, los rayos X se
+difundieron en varias direcciones; a medida que el ángulo de los rayos
+difundidos aumentaba, también se incrementaba su longitud de onda. Con
+base en la teoría cuántica, Compton afirmó que el efecto se debía a que
+el cuanto de rayos X actúa como una partícula material al chocar contra
+el electrón, por lo cual la energía cinética que el cuanto comunica al
+electrón representa una pérdida en su energía original. Como
+consecuencia de estos estudios, Compton ganó el Premio Nobel de Física
+en 1927.
+
+Este efecto es de especial relevancia científica, ya que no puede ser
+explicado a través de la naturaleza ondulatoria de la luz: esta debe
+comportarse como partícula para poder explicar dichas observaciones, por
+lo que adquiere una dualidad onda--corpúsculo característica de la
+mecánica cuántica.
+
+Consideremos un electrón libre. Esto parece un poco raro, si el electrón
+está confinado a ser parte de un material (originalmente Compton usó
+carbón); sin embargo, los electrones más externos del material se
+comportan, en buena aproximación, como si estuvieran libres.
+
+Sea un electrón libre de masa en reposo $m_0=m_e=9.10938291(40)\times
+10^{-31}\ \text{kg}$. Escogemos un S.R.I. $K$ en que el electrón está en
+reposo, entonces
+\[
+p^\mu_i = \left(\frac{E_i}{c},p^i_i\right) = \left(\frac{m_ec^2}{c},0
+\right) = (m_ec,0).
+\]
+Un fotón, con frecuencia inicial $\nu_i=\nu$, incide sobre el electrón;
+su cuadrimomentum inicial es $k^\mu_i=\Big(\dfrac{h\nu}{c},\dfrac{h\nu}{c}
+\hat n^i_i\Big)$, donde $\hat n_i^i$ es la dirección inicial hacia donde
+se mueve el fotón.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \fill (0,0) circle (2.5pt) node[below left] {$e^-$};
+  \draw[-Stealth,thick,colordef] (-3.2,0) -- (-0.15,0)
+    node[midway,above] {\footnotesize$k_i^\mu\ (\nu)$};
+  \draw[-Stealth,thick,colordef] (0.15,0.08) -- (2.8,1.7)
+    node[above right] {\footnotesize$k_f^\mu\ (\nu')$};
+  \draw[-Stealth,thick,colorprop] (0.15,-0.08) -- (2.6,-1.5)
+    node[below right] {\footnotesize$p_f^\mu$};
+  \draw (1.1,0) arc (0:31:1.1);
+  \node at (1.45,0.3) {\footnotesize$\theta$};
+\end{tikzpicture}
+\end{center}
+
+Una vez que el fotón y el electrón interactúan, ambos se dispersan. El
+electrón adquiere velocidad, por lo tanto su energía aumenta, y su
+cuadrimomentum final es $p^\mu_f=(E_f/c,p^i_f)$. El fotón también cambia
+su energía, es decir su frecuencia $\nu_f=\nu'$, y su dirección, tal que
+$k^\mu_f=\Big(\dfrac{h\nu'}{c},\dfrac{h\nu'}{c}\hat n^i_f\Big)$, donde
+$\hat n^i_f$ es la nueva dirección de propagación del fotón.
+
+Como es una colisión (las fuerzas internas se anulan) y no hay fuerzas
+externas, se conserva el cuadrimomentum del sistema, ecuación (92):
+\[
+p^\mu_f+k^\mu_f = p^\mu_i+k^\mu_i . \tag{97}
+\]
+La componente temporal de (97), $p^0_f+k^0_f=p^0_i+k^0_i$, da
+\[
+\frac{E_f}{c}+\frac{h\nu'}{c} = m_ec+\frac{h\nu}{c} \;\Rightarrow\;
+E_f+h\nu' = m_ec^2+h\nu , \tag{98}
+\]
+que es la conservación de la energía. Reescribiendo (97) en la forma
+\[
+p^\mu_f-p^\mu_i = k^\mu_i-k^\mu_f \tag{99}
+\]
+y elevando al cuadrado,
+\[
+p_f^2-2p_f\cdot p_i+p_i^2 = k_f^2-2k_f\cdot k_i+k_i^2 \;\Rightarrow\;
+-m_e^2c^2-2p_f\cdot p_i-m_e^2c^2 = -2k_f\cdot k_i,
+\]
+es decir
+\[
+p_f\cdot p_i+m_e^2c^2 = k_f\cdot k_i . \tag{100}
+\]
+Calculemos cada producto. Como $p_i^\mu=(m_ec,0)$,
+\[
+p_f\cdot p_i = -m_ec\frac{E_f}{c}+0\cdot p^i_f = -m_eE_f, \tag{101}
+\]
+y
+\[
+k_f\cdot k_i = -\frac{h^2\nu\nu'}{c^2}+\frac{h^2\nu\nu'}{c^2}\hat n_i\cdot
+\hat n_f = -\frac{h^2\nu\nu'}{c^2}\,(1-\cos\theta), \tag{102}
+\]
+pues $\hat n_i\cdot\hat n_f=\cos\theta$. Introduciendo (101) y (102) en
+(100),
+\[
+m_eE_f-m_e^2c^2 = \frac{h^2\nu\nu'}{c^2}(1-\cos\theta). \tag{103}
+\]
+De (98) despejamos
+\[
+E_f = m_ec^2+h(\nu-\nu'), \tag{104}
+\]
+e introduciéndola en (103),
+\[
+m_e\big(m_ec^2+h(\nu-\nu')\big)-m_e^2c^2 = \frac{h^2\nu\nu'}{c^2}
+(1-\cos\theta) \;\Rightarrow\; m_eh(\nu-\nu') = \frac{h^2\nu\nu'}{c^2}
+(1-\cos\theta),
+\]
+\[
+\nu-\nu' = \frac{h\nu\nu'}{m_ec^2}(1-\cos\theta).
+\]
+Multiplicando por $c/\nu\nu'$ se obtiene $\dfrac c{\nu'}-\dfrac c\nu=
+\dfrac h{m_ec}(1-\cos\theta)$, y como $\lambda=c/\nu$,
+\[
+\lambda'-\lambda = \frac{h}{m_ec}\,(1-\cos\theta). \tag{105}
+\]
+La ecuación (105) se conoce como \textbf{efecto Compton}.
+
+\begin{definicion}[Longitud de onda de Compton]
+Se define la \textbf{longitud de onda de Compton} de una partícula de
+masa en reposo $m_0$ como
+\[
+\lambda_c = \frac{h}{m_0c} . \tag{106}
+\]
+\end{definicion}
+
+Con esta definición el efecto Compton se reescribe como
+\[
+\Delta\lambda = \lambda_c\,(1-\cos\theta). \tag{107}
+\]
+Esta expresión proviene del análisis de la interacción como si fuera una
+colisión elástica, y su deducción requiere únicamente la utilización de
+los principios de conservación de la energía y del momentum.
+
+\section{Caja de Einstein}
+
+En el experimento pensado por A.~Einstein en 1906, llamado la
+\textbf{caja de Einstein}, se estudia la relación entre la inercia de la
+materia y la energía de radiación. Estudiaremos qué cantidad de masa
+relativista equivale a una energía dada. Para ello suponemos que en el
+extremo izquierdo de una caja de masa $M$ y longitud $L$, inicialmente en
+reposo, se emite un fotón de energía $E$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[thick] (0,1.6) rectangle (5,2.6);
+  \draw[-Stealth,thick,colordef] (0.2,2.1) -- (4.8,2.1)
+    node[midway,above] {\footnotesize fotón $E$};
+  \node at (2.5,2.85) {\footnotesize antes: caja en reposo};
+  \draw[thick] (-0.6,-0.1) rectangle (4.4,0.9);
+  \draw[Stealth-Stealth] (-0.6,-0.4) -- (0,-0.4) node[midway,below] {\footnotesize$\Delta x$};
+  \node at (1.9,1.15) {\footnotesize después: la caja retrocedió};
+\end{tikzpicture}
+\end{center}
+
+El fotón lleva un momentum $k=E/c$. Debido a que el momentum total del
+sistema caja--fotón debe conservarse, y como inicialmente la caja está
+en reposo y no hay fotón, el momentum inicial total es nulo y, por lo
+tanto, el momentum total final también se anula; así, con la emisión del
+fotón la caja recibe una transferencia de impulso $p=-E/c$. Debido a este
+retroceso, la caja se mueve con la velocidad
+\[
+v = -\frac{E}{Mc} . \tag{108}
+\]
+Después de un tiempo $\Delta t$, el fotón incide en la pared opuesta de la
+caja, la cual se detiene, debido a que el momentum transferido para
+frenarla es igual al negativo del impulso inicial. Por tanto, la caja se
+desplaza una distancia
+\[
+\Delta x = v\Delta t = -\frac{E\Delta t}{Mc} . \tag{109}
+\]
+Por otro lado, el fotón demora el mismo tiempo en recorrer el largo de
+la caja,
+\[
+\Delta t = \frac Lc , \tag{110}
+\]
+e introduciendo (110) en (109),
+\[
+\Delta x = -\frac{EL}{Mc^2} . \tag{111}
+\]
+Si ponemos el centro de masa $x_{CM}$ del sistema en el origen del
+sistema coordenado, su posición debe permanecer inalterada después de
+terminar el experimento. Entonces $X_{CM,\text{inicial}}=X_{CM,
+\text{final}}$, es decir $0=\Delta xM/M$, de donde $\Delta x=0$, lo cual
+es una contradicción, pues la caja se movió. Esta contradicción solo es
+posible salvarla si atribuimos una masa $m$ al fotón, tal que
+\[
+\frac{\Delta xM+mL}{M+m} = 0 \;\Longrightarrow\; mL = -\Delta xM .
+\tag{112}
+\]
+Introduciendo (111) en (112), $mL=\dfrac{ELM}{Mc^2}$, es decir
+\[
+E = mc^2 . \tag{113}
+\]
+La ecuación (113) describe la inercia de la energía: cualquier cambio $E$
+de la energía de un cuerpo provoca un cambio correspondiente $\Delta m$
+de su masa relativista. En el extremo de la caja donde se emite el fotón,
+la masa relativista se reduce en $E/c^2$. En consecuencia, la masa
+relativista de la caja aumenta de nuevo en la misma cantidad cuando el
+fotón se detiene o se termaliza en el otro extremo de la caja.

@@ -422,6 +422,9 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx050
 INPUT .\cap7_relatividad_especial.tex
 INPUT .\cap7_relatividad_especial.tex
 INPUT cap7_relatividad_especial.tex
+INPUT .\cap8_mecanica_relativista.tex
+INPUT .\cap8_mecanica_relativista.tex
+INPUT cap8_mecanica_relativista.tex
 INPUT mecanica clasica 2.aux
 INPUT .\mecanica clasica 2.out
 INPUT .\mecanica clasica 2.out
@@ -487,6 +490,8 @@ INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\nacho\AppData\Local\Programs\MiKTeX\fonts\type1\public\rsfs\rsfs10.pfb
