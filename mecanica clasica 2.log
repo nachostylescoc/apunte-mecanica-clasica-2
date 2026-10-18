@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.30)  17 OCT 2026 19:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.4.30)  18 OCT 2026 20:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1018,9 +1018,47 @@ Cap\'{\i }tulo 8.
 
 [94]
 
-[95])
+[95]) (cap9_accion_covariante.tex
 
-[96] (mecanica clasica 2.aux
+[96]
+Cap\'{\i }tulo 9.
+
+
+[97
+
+]
+
+[98]
+
+[99]
+
+[100]
+
+[101]
+
+[102]
+
+[103]
+
+[104]
+
+[105]
+
+[106]
+
+[107]
+
+[108]
+
+[109]
+
+[110]
+
+[111]
+
+[112])
+
+[113] (mecanica clasica 2.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1029,20 +1067,20 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
 Package rerunfilecheck Info: File `"mecanica clasica 2".out' has not changed.
-(rerunfilecheck)             Checksum: BD43FC473A5C8E4889AE41DE4DFD74BB;24595.
+(rerunfilecheck)             Checksum: EE3F8935BBD4ABD8A43F280062E58784;28341.
  ) 
 Here is how much of TeX's memory you used:
- 33169 strings out of 469959
- 669306 string characters out of 5469834
- 1071202 words of memory out of 5000000
- 58678 multiletter control sequences out of 15000+600000
+ 33389 strings out of 469959
+ 671567 string characters out of 5469834
+ 1071208 words of memory out of 5000000
+ 58716 multiletter control sequences out of 15000+600000
  650713 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,18n,121p,605b,1062s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,18n,121p,605b,1068s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1000.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1000.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\nacho\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/nacho/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on "mecanica clasica 2.pdf" (102 pages, 1067413 bytes).
+Output written on "mecanica clasica 2.pdf" (119 pages, 1191301 bytes).
 PDF statistics:
- 2324 PDF objects out of 2487 (max. 8388607)
- 725 named destinations out of 1000 (max. 500000)
- 1089 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2667 PDF objects out of 2984 (max. 8388607)
+ 904 named destinations out of 1000 (max. 500000)
+ 1201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

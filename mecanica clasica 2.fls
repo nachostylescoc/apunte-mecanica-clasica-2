@@ -425,6 +425,9 @@ INPUT cap7_relatividad_especial.tex
 INPUT .\cap8_mecanica_relativista.tex
 INPUT .\cap8_mecanica_relativista.tex
 INPUT cap8_mecanica_relativista.tex
+INPUT .\cap9_accion_covariante.tex
+INPUT .\cap9_accion_covariante.tex
+INPUT cap9_accion_covariante.tex
 INPUT mecanica clasica 2.aux
 INPUT .\mecanica clasica 2.out
 INPUT .\mecanica clasica 2.out

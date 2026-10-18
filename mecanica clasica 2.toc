@@ -116,3 +116,17 @@
 \contentsline {section}{\numberline {8.5}Energía en el espacio de Minkowski}{90}{section.8.5}%
 \contentsline {section}{\numberline {8.6}Efecto Compton}{93}{section.8.6}%
 \contentsline {section}{\numberline {8.7}Caja de Einstein}{95}{section.8.7}%
+\contentsline {chapter}{\numberline {9}Principio de Acción para Sistemas Covariantes}{97}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Principio de acción de la partícula libre}{97}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Energía y momentum de la partícula libre}{100}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Acción de Maxwell}{100}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Las ecuaciones de Maxwell y la conservación de la carga}{100}{subsection.9.3.1}%
+\contentsline {subsection}{\numberline {9.3.2}Las ecuaciones con fuentes en forma covariante}{101}{subsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.3.3}Las ecuaciones sin fuentes en forma covariante}{102}{subsection.9.3.3}%
+\contentsline {subsection}{\numberline {9.3.4}Covariancia de Lorentz de las ecuaciones de Maxwell}{104}{subsection.9.3.4}%
+\contentsline {subsection}{\numberline {9.3.5}El cuadripotencial electromagnético}{105}{subsection.9.3.5}%
+\contentsline {subsection}{\numberline {9.3.6}El principio de acción de Maxwell}{107}{subsection.9.3.6}%
+\contentsline {section}{\numberline {9.4}Invariancia del principio de acción de Maxwell}{108}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Invariancia de gauge}{109}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Teoría de Klein--Gordon}{111}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Campo escalar de Klein--Gordon con fuente}{113}{section.9.7}%
